@@ -1,0 +1,165 @@
+import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'sonner'
+import { useTranslation } from 'react-i18next'
+import { useAvailableAccounts, useSubmitAccounts } from '@/hooks/use-accounts'
+import { AccountCard } from '@/components/accounts/account-card'
+import { PageContainer } from '@/components/layout/page-container'
+import { LoadingSpinner } from '@/components/layout/loading-spinner'
+import { Button } from '@/components/ui/button'
+
+export function FinishPage() {
+  const navigate = useNavigate()
+  const { t } = useTranslation()
+  const { data, isLoading, error } = useAvailableAccounts()
+  const submitAccounts = useSubmitAccounts()
+  const [selected, setSelected] = useState<Set<string>>(new Set())
+
+  useEffect(() => {
+    if (data?.status === 'device_info_required') {
+      navigate('/device-info', { replace: true })
+      return
+    }
+    if (data?.accounts) {
+      setSelected(new Set(data.accounts.map((a) => `${a.game}_${a.uid}`)))
+    }
+  }, [data, navigate])
+
+  function toggleAccount(id: string, checked: boolean) {
+    setSelected((prev) => {
+      const next = new Set(prev)
+      if (checked) next.add(id)
+      else next.delete(id)
+      return next
+    })
+  }
+
+  function handleSubmit() {
+    submitAccounts.mutate(
+      { selected_accounts: Array.from(selected) },
+      {
+        onSuccess: (result) => {
+          if (result.message?.startsWith('discord://')) {
+            window.location.href = result.message
+          } else {
+            toast.success(result.message ?? 'Accounts saved successfully!')
+          }
+        },
+        onError: (err) => {
+          toast.error(err instanceof Error ? err.message : 'Failed to save accounts')
+        },
+      },
+    )
+  }
+
+  if (isLoading) return <LoadingSpinner fullPage />
+
+  if (error) {
+    return (
+      <PageContainer narrow>
+        <div className="flex flex-col items-center gap-6 py-16 text-center">
+          <div
+            className="rounded-xl px-4 py-3 text-sm"
+            style={{
+              background: 'color-mix(in oklch, var(--destructive) 10%, transparent)',
+              color: 'var(--destructive)',
+              border: '1px solid color-mix(in oklch, var(--destructive) 25%, transparent)',
+            }}
+          >
+            {error instanceof Error ? error.message : 'Failed to load accounts'}
+          </div>
+          <Button onClick={() => navigate('/')} variant="outline">
+            {t('web.go_home', 'Go Home')}
+          </Button>
+        </div>
+      </PageContainer>
+    )
+  }
+
+  const accounts = data?.accounts ?? []
+
+  return (
+    <PageContainer narrow>
+      <div className="flex flex-col gap-8 stagger-children">
+        {/* Header */}
+        <div className="flex flex-col gap-1">
+          <h1
+            className="text-2xl font-semibold tracking-tight text-foreground"
+            style={{ fontFamily: 'var(--font-display)' }}
+          >
+            {t('web.select_accounts_title', 'Select Accounts')}
+          </h1>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            {t('web.select_accounts_desc', 'Choose which game accounts to add to Hoyo Buddy. All accounts are selected by default.')}
+          </p>
+        </div>
+
+        {/* Account list */}
+        {accounts.length === 0 ? (
+          <div className="flex flex-col items-center gap-3 py-12 text-center">
+            <div
+              className="h-12 w-12 rounded-xl flex items-center justify-center text-2xl"
+              style={{ background: 'var(--muted)' }}
+            >
+              🎮
+            </div>
+            <p className="text-sm text-muted-foreground">{t('web.no_accounts_found', 'No accounts found.')}</p>
+          </div>
+        ) : (
+          <div className="flex flex-col gap-2">
+            {accounts.map((account) => {
+              const key = `${account.game}_${account.uid}`
+              return (
+                <AccountCard
+                  key={key}
+                  account={account}
+                  checked={selected.has(key)}
+                  onCheckedChange={(checked) => toggleAccount(key, checked)}
+                />
+              )
+            })}
+          </div>
+        )}
+
+        {/* Selection controls */}
+        {accounts.length > 0 && (
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => setSelected(new Set(accounts.map((a) => `${a.game}_${a.uid}`)))}
+              className="text-xs text-muted-foreground hover:text-foreground transition-colors duration-150"
+            >
+              {t('web.select_all', 'Select all')}
+            </button>
+            <span className="text-border">·</span>
+            <button
+              onClick={() => setSelected(new Set())}
+              className="text-xs text-muted-foreground hover:text-foreground transition-colors duration-150"
+            >
+              {t('web.deselect_all', 'Deselect all')}
+            </button>
+            <span className="ml-auto text-xs text-muted-foreground">
+              {t('web.selected_count', '{selected} of {total} selected', {
+                selected: selected.size,
+                total: accounts.length,
+              })}
+            </span>
+          </div>
+        )}
+
+        {/* Submit */}
+        <Button
+          onClick={handleSubmit}
+          disabled={submitAccounts.isPending || selected.size === 0}
+          className="w-full h-10 font-semibold"
+          style={{ fontFamily: 'var(--font-display)' }}
+        >
+          {submitAccounts.isPending
+            ? t('web.saving', 'Saving…')
+            : selected.size === 1
+              ? t('web.add_accounts_button', 'Add {count} Account to Hoyo Buddy', { count: selected.size })
+              : t('web.add_accounts_button_plural', 'Add {count} Accounts to Hoyo Buddy', { count: selected.size })}
+        </Button>
+      </div>
+    </PageContainer>
+  )
+}
