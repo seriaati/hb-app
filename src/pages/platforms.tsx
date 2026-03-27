@@ -38,14 +38,12 @@ export function PlatformsPage() {
       id: 'hoyolab',
       name: 'HoYoLAB',
       image: '/images/hoyolab.webp',
-      description: t('web.platform_hoyolab_desc'),
-      accentColor: 'oklch(0.55 0.22 10)',
+      accentColor: 'oklch(0.56 0.17 12)',
     },
     {
       id: 'miyoushe',
-      name: 'Miyoushe',
+      name: '米游社',
       image: '/images/miyoushe.webp',
-      description: t('web.platform_miyoushe_desc'),
       accentColor: 'oklch(0.48 0.16 265)',
     },
   ]
@@ -103,15 +101,12 @@ export function PlatformsPage() {
                 className="h-12 w-12 rounded-xl object-cover shrink-0"
               />
               <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2">
-                  <p
-                    className="font-semibold text-foreground"
-                    style={{ fontFamily: 'var(--font-display)' }}
-                  >
-                    {platform.name}
-                  </p>
-                </div>
-                <p className="text-sm text-muted-foreground mt-0.5">{platform.description}</p>
+                <p
+                  className="font-semibold text-foreground"
+                  style={{ fontFamily: 'var(--font-display)' }}
+                >
+                  {platform.name}
+                </p>
               </div>
               <ChevronRight
                 size={16}
@@ -121,7 +116,7 @@ export function PlatformsPage() {
           ))}
         </div>
 
-        {/* Account security note */}
+        {/* Account security FAQ */}
         <a
           href={accountSecurityUrl}
           target="_blank"
@@ -130,7 +125,7 @@ export function PlatformsPage() {
         >
           <ShieldCheck size={14} className="shrink-0 text-muted-foreground" />
           <span className="flex-1 text-xs text-muted-foreground leading-relaxed">
-            {t('web.select_platform_security_note', 'We take your account security seriously.')}
+            {t('web.select_platform_security_note', 'We treat your account security seriously.')}
           </span>
           <ChevronRight size={13} className="shrink-0 text-muted-foreground/50 transition-transform duration-200 group-hover:translate-x-0.5" />
         </a>

@@ -14,6 +14,7 @@ import { EmailVerifyPage } from '@/pages/email-verify'
 import { DeviceInfoPage } from '@/pages/device-info'
 import { FinishPage } from '@/pages/finish'
 import { GachaLogPage } from '@/pages/gacha-log'
+import { NotFoundPage } from '@/pages/not-found'
 
 export const router = createBrowserRouter([
   {
@@ -111,5 +112,9 @@ export const router = createBrowserRouter([
   {
     path: '/gacha_log',
     element: <GachaLogPage />,
+  },
+  {
+    path: '*',
+    element: <NotFoundPage />,
   },
 ])

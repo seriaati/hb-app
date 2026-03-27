@@ -153,7 +153,7 @@ export function LoginLayout({ panel, children }: LoginLayoutProps) {
                 <p className="text-xs text-muted-foreground leading-relaxed">{securityNote}</p>
               </div>
             )}
-            <FooterLinks className="flex items-center gap-0" />
+            <FooterLinks className="flex items-center" />
           </div>
         </div>
 

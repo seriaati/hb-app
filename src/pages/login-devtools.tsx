@@ -21,7 +21,7 @@ const FIELDS = [
 
 type FieldKey = (typeof FIELDS)[number]['key']
 
-const ACCENT_HOYOLAB = 'oklch(0.55 0.22 10)'
+const ACCENT_HOYOLAB = 'oklch(0.56 0.17 12)'
 const ACCENT_MIYOUSHE = 'oklch(0.48 0.16 265)'
 
 const STEPS = [
@@ -77,7 +77,7 @@ export function LoginDevtoolsPage() {
             <Code2 size={28} style={{ color: ACCENT }} />
           </div>
         ),
-        eyebrow: 'HoYoLAB · Miyoushe',
+        eyebrow: platform === 'miyoushe' ? 'Miyoushe' : 'HoYoLAB',
         title: t('web.devtools_title'),
         description: t('web.devtools_panel_desc'),
         features: [
@@ -93,11 +93,14 @@ export function LoginDevtoolsPage() {
         <div className="flex flex-col gap-1">
           <div className="flex items-center gap-3 mb-1">
             <div className="flex items-center gap-1.5">
-              <img src="/images/hoyolab.webp" alt="HoYoLAB" className="h-6 w-6 rounded-md object-cover" />
-              <img src="/images/miyoushe.webp" alt="Miyoushe" className="h-6 w-6 rounded-md object-cover" />
+              <img
+                src={platform === 'miyoushe' ? '/images/miyoushe.webp' : '/images/hoyolab.webp'}
+                alt={platform === 'miyoushe' ? 'Miyoushe' : 'HoYoLAB'}
+                className="h-6 w-6 rounded-md object-cover"
+              />
             </div>
             <span className="text-xs font-medium tracking-widest uppercase text-muted-foreground">
-              HoYoLAB · Miyoushe
+              {platform === 'miyoushe' ? 'Miyoushe' : 'HoYoLAB'}
             </span>
           </div>
           <h1
