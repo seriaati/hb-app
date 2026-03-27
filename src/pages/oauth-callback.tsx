@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { toast } from 'sonner'
+import { useTranslation } from 'react-i18next'
 import { discordCallback } from '@/api/auth'
 import { LoadingSpinner } from '@/components/layout/loading-spinner'
 import { PageContainer } from '@/components/layout/page-container'
@@ -12,6 +13,7 @@ export function OAuthCallbackPage() {
   const [searchParams] = useSearchParams()
   const [error, setError] = useState<string | null>(null)
   const called = useRef(false)
+  const { t } = useTranslation()
 
   useEffect(() => {
     if (called.current) return
@@ -21,7 +23,7 @@ export function OAuthCallbackPage() {
     const state = searchParams.get('state')
 
     if (!code || !state) {
-      setError('Missing OAuth parameters. Please try again.')
+      setError(t('web.missing_oauth_params'))
       return
     }
 
@@ -32,18 +34,18 @@ export function OAuthCallbackPage() {
         navigate(originalRoute, { replace: true })
       })
       .catch((err: unknown) => {
-        const message = err instanceof Error ? err.message : 'Authentication failed'
+        const message = err instanceof Error ? err.message : t('web.auth_failed')
         setError(message)
         toast.error(message)
       })
-  }, [navigate, searchParams])
+  }, [navigate, searchParams, t])
 
   if (error) {
     return (
       <PageContainer narrow>
         <div className="flex flex-col items-center gap-4 py-16 text-center">
           <p className="text-destructive">{error}</p>
-          <Button onClick={() => navigate('/')}>Go Home</Button>
+          <Button onClick={() => navigate('/')}>{t('web.go_home')}</Button>
         </div>
       </PageContainer>
     )
@@ -52,7 +54,7 @@ export function OAuthCallbackPage() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center gap-4">
       <LoadingSpinner size={32} />
-      <p className="text-muted-foreground">Completing sign in…</p>
+      <p className="text-muted-foreground">{t('web.completing_sign_in')}</p>
     </div>
   )
 }

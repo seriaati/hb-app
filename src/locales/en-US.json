@@ -1,0 +1,164 @@
+{
+  "web": {
+    "back": "← Back",
+    "submitting": "Submitting…",
+    "verifying": "Verifying…",
+    "go_home": "Go Home",
+    "login_failed": "Login failed",
+    "unknown_status": "Unknown status",
+    "verification_failed": "Verification failed",
+    "geetest_failed": "Geetest verification failed",
+    "geetest_email_verify_title": "One more verification",
+    "geetest_email_verify_desc": "To send your verification code, please complete this security check.",
+    "loading_captcha": "Loading captcha…",
+    "launch_captcha": "Launch Captcha",
+    "captcha_closed": "Captcha was closed.",
+
+    "home_tagline": "Your HoYoverse companion bot",
+    "home_open_via_discord": "Open via Discord to get started",
+
+    "completing_sign_in": "Completing sign in…",
+    "missing_oauth_params": "Missing OAuth parameters. Please try again.",
+    "auth_failed": "Authentication failed",
+
+    "select_platform": "Select Platform",
+    "select_platform_desc": "Choose the platform you want to add an account for",
+    "platform_hoyolab_desc": "Global platform",
+    "platform_miyoushe_desc": "米游社 · Chinese platform",
+    "add_account_title": "Add Account",
+    "add_account_desc": "Connect your HoYoverse account to unlock gacha log tracking, daily check-ins, real-time notes, and more — all in one place.",
+    "add_account_security_cta": "Learn how we keep your account safe →",
+
+    "feature_gacha_logs": "Gacha Logs",
+    "feature_daily_checkin": "Daily Check-in",
+    "feature_realtime_notes": "Real-time Notes",
+    "feature_multi_account": "Multi-account",
+
+    "select_platform_security_note": "We take your account security seriously.",
+    "select_platform_security_link": "Learn more →",
+
+    "login_method_faq_note": "Not sure which method to use?",
+    "login_method_faq_link": "See the guide →",
+
+    "select_login_method": "Select Login Method",
+    "select_login_method_desc": "Choose how you'd like to authenticate",
+    "back_to_platforms": "← Back to platforms",
+
+    "hoyolab_tagline": "Global Community Platform",
+    "hoyolab_description": "Connect your HoYoLAB account to access gacha logs, daily check-ins, and real-time notes for all your HoYoverse games.",
+
+    "login_method": {
+      "email": {
+        "label": "Email & Password",
+        "desc": "Sign in with your email and password"
+      },
+      "devtools": {
+        "label": "DevTools Cookies",
+        "desc": "Extract cookies from browser developer tools"
+      }
+    },
+
+    "email_login_title": "Email & Password",
+    "email_login_desc": "Sign in with your HoYoverse account credentials",
+    "email_login_panel_desc": "Sign in securely with your HoYoverse account email and password. Two-factor authentication and CAPTCHA challenges are handled automatically.",
+    "email_login_how_it_works": "How does this work?",
+    "email_login_console": "I am a console player",
+    "email_login_no_account": "I don't have a HoYoverse account (login with Google, Facebook)",
+    "email_address": "Email address",
+    "password": "Password",
+    "signing_in": "Signing in…",
+    "sign_in": "Sign In",
+    "feature_secure_login": "Secure Login",
+    "feature_auto_captcha": "Auto CAPTCHA",
+    "feature_2fa": "2FA Support",
+
+    "devtools_title": "DevTools Cookies",
+    "devtools_desc": "Follow the steps below to extract your session cookies from your browser's developer tools.",
+    "devtools_panel_desc": "Extract your session cookies directly from your browser's developer tools. Works on both HoYoLAB and Miyoushe — computer only.",
+    "devtools_step1_label": "Go to HoYoLAB or Miyoushe",
+    "devtools_step1_desc": "Open your browser and navigate to one of the platforms:",
+    "devtools_step1_hoyolab": "HoYoLAB (Global)",
+    "devtools_step1_miyoushe": "Miyoushe (China)",
+    "devtools_step2_label": "Open DevTools",
+    "devtools_step2_desc": "Press F12 or Ctrl+Shift+I to open the browser developer tools.",
+    "devtools_step3_label": "Go to Application tab",
+    "devtools_step3_desc": "Click on the \"Application\" tab in the DevTools panel.",
+    "devtools_step4_label": "Open Cookies",
+    "devtools_step4_desc": "In the left panel, click on \"Cookies\", then click on the current website (e.g. www.hoyolab.com).",
+    "devtools_step5_label": "Filter by \"v2\"",
+    "devtools_step5_desc": "Use the filter box to search for \"v2\" to narrow down the relevant cookies.",
+    "devtools_step6_label": "Copy and paste the values",
+    "devtools_step6_desc": "Copy each cookie value and paste them into the fields below.",
+    "devtools_enter_cookies": "Enter Cookies",
+    "devtools_modal_title": "Enter Cookie Values",
+    "devtools_modal_desc": "Copy each value from the DevTools Application → Cookies panel and paste below.",
+    "devtools_tutorial_show": "Show tutorial",
+    "devtools_tutorial_hide": "Hide tutorial",
+    "submit_cookies": "Submit Cookies",
+    "click_to_enlarge": "Click to enlarge",
+    "feature_no_password": "No Password Needed",
+    "feature_browser_based": "Browser-based",
+    "feature_computer_only": "Computer Only",
+    "devtools_security_note": "Cookie values are transmitted directly to the HoYoverse API and never stored on our servers. Tokens expire naturally when you log out.",
+
+    "email_verify_title": "Email Verification",
+    "email_verify_desc": "Enter the 6-digit verification code sent to your email address",
+    "verification_code": "Verification Code",
+    "code_expires_note": "Check your inbox — the code expires in a few minutes",
+    "verify_code": "Verify Code",
+
+    "processing_verification": "Processing verification…",
+
+    "select_accounts_title": "Select Accounts",
+    "select_accounts_desc": "Choose which game accounts to add to Hoyo Buddy. All accounts are selected by default.",
+    "no_accounts_found": "No accounts found.",
+    "select_all": "Select all",
+    "deselect_all": "Deselect all",
+    "selected_count": "{{selected}} of {{total}} selected",
+    "saving": "Saving…",
+    "add_accounts_button": "Add {{count}} Account to Hoyo Buddy",
+    "add_accounts_button_plural": "Add {{count}} Accounts to Hoyo Buddy",
+    "failed_to_load_accounts": "Failed to load accounts",
+    "accounts_saved": "Accounts saved successfully!",
+    "failed_to_save_accounts": "Failed to save accounts",
+
+    "default_security_note": "Your credentials are never stored on our servers. Authentication tokens are saved locally and used only to communicate with HoYoverse APIs.",
+    "privacy_policy": "Privacy Policy",
+    "account_security_docs": "Account Security",
+    "footer_links_separator": "·",
+
+    "switch_account": "Switch",
+    "switch_discord_account": "Switch Discord account",
+
+    "gacha_history": "Gacha History",
+    "missing_account_id": "Missing account_id parameter.",
+
+    "gacha_banner_fallback": "Banner {{type}}",
+    "gacha_banner_permanent": "Permanent",
+    "gacha_banner_character": "Character",
+    "gacha_banner_weapon": "Weapon",
+    "gacha_banner_chronicled": "Chronicled",
+    "gacha_banner_stellar": "Stellar",
+    "gacha_banner_light_cone": "Light Cone",
+    "gacha_banner_departure": "Departure",
+    "gacha_banner_standard": "Standard",
+    "gacha_banner_exclusive": "Exclusive",
+    "gacha_banner_w_engine": "W-Engine",
+    "gacha_banner_bangboo": "Bangboo",
+
+    "rarity_label": "Rarity:",
+    "search_by_name": "Search by name…",
+
+    "table_header_number": "#",
+    "table_header_name": "Name",
+    "table_header_rarity": "Rarity",
+    "table_header_pity": "Pity",
+    "table_header_time": "Time",
+    "no_gacha_records": "No gacha records found.",
+    "page_of": "Page {{page}} of {{maxPage}} · {{total}} total",
+
+    "stat_total_pulls": "Total Pulls",
+    "stat_pity": "Pity",
+    "stat_avg_per_5star": "Avg / 5★"
+  }
+}

@@ -1,14 +1,16 @@
 import { useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { ChevronRight } from 'lucide-react'
+import { ChevronRight, ShieldCheck } from 'lucide-react'
 import { useLoginStore } from '@/stores/login-store'
 import { LoginLayout } from '@/components/layout/login-layout'
+import { getAccountSecurityUrl } from '@/lib/constants'
 
 export function PlatformsPage() {
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const accountSecurityUrl = getAccountSecurityUrl(i18n.language)
   const setParams = useLoginStore((s) => s.setParams)
   const setPlatform = useLoginStore((s) => s.setPlatform)
 
@@ -36,22 +38,29 @@ export function PlatformsPage() {
       id: 'hoyolab',
       name: 'HoYoLAB',
       image: '/images/hoyolab.webp',
-      description: t('web.platform_hoyolab_desc', 'Global platform'),
-      tag: 'Global',
+      description: t('web.platform_hoyolab_desc'),
+      accentColor: 'oklch(0.55 0.22 10)',
     },
     {
       id: 'miyoushe',
       name: 'Miyoushe',
       image: '/images/miyoushe.webp',
-      description: t('web.platform_miyoushe_desc', '米游社 · Chinese platform'),
-      tag: 'CN',
+      description: t('web.platform_miyoushe_desc'),
+      accentColor: 'oklch(0.48 0.16 265)',
     },
+  ]
+
+  const features = [
+    t('web.feature_gacha_logs'),
+    t('web.feature_daily_checkin'),
+    t('web.feature_realtime_notes'),
+    t('web.feature_multi_account'),
   ]
 
   return (
     <LoginLayout
       panel={{
-        accentColor: 'oklch(0.55 0.22 10)',
+        accentColor: 'oklch(0.56 0.17 12)',
         hero: (
           <img
             src="/images/logo.png"
@@ -60,31 +69,22 @@ export function PlatformsPage() {
           />
         ),
         eyebrow: 'Hoyo Buddy',
-        title: t('web.add_account_title', 'Add Account'),
-        description: t(
-          'web.add_account_desc',
-          'Connect your HoYoverse account to unlock gacha log tracking, daily check-ins, real-time notes, and more — all in one place.',
-        ),
-        features: ['Gacha Logs', 'Daily Check-in', 'Real-time Notes', 'Multi-account'],
+        title: t('web.add_account_title'),
+        description: t('web.add_account_desc'),
+        features,
       }}
     >
       <div className="flex flex-col gap-8 stagger-children">
         {/* Header */}
         <div className="flex flex-col gap-1">
-          <div className="flex items-center gap-3 mb-1">
-            <img src="/images/logo.png" alt="Hoyo Buddy" className="h-8 w-8 rounded-lg object-cover" />
-            <span className="text-xs font-medium tracking-widest uppercase text-muted-foreground">
-              Hoyo Buddy
-            </span>
-          </div>
           <h1
             className="text-2xl font-semibold tracking-tight text-foreground"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            {t('web.select_platform', 'Select Platform')}
+            {t('web.select_platform')}
           </h1>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            {t('web.select_platform_desc', 'Choose the platform you want to add an account for')}
+            {t('web.select_platform_desc')}
           </p>
         </div>
 
@@ -95,11 +95,12 @@ export function PlatformsPage() {
               key={platform.id}
               onClick={() => handleSelect(platform.id)}
               className="method-card group flex items-center gap-4 rounded-xl border border-border bg-card p-4 text-left w-full"
+              style={{ '--accent': platform.accentColor } as React.CSSProperties}
             >
               <img
                 src={platform.image}
                 alt={platform.name}
-                className="h-12 w-12 rounded-xl object-cover flex-shrink-0"
+                className="h-12 w-12 rounded-xl object-cover shrink-0"
               />
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2">
@@ -109,25 +110,30 @@ export function PlatformsPage() {
                   >
                     {platform.name}
                   </p>
-                  <span
-                    className="rounded-full px-2 py-0.5 text-[10px] font-semibold tracking-wider uppercase"
-                    style={{
-                      background: 'color-mix(in oklch, var(--accent) 15%, transparent)',
-                      color: 'var(--accent)',
-                    }}
-                  >
-                    {platform.tag}
-                  </span>
                 </div>
                 <p className="text-sm text-muted-foreground mt-0.5">{platform.description}</p>
               </div>
               <ChevronRight
                 size={16}
-                className="flex-shrink-0 text-muted-foreground transition-transform duration-200 group-hover:translate-x-0.5"
+                className="shrink-0 text-muted-foreground transition-transform duration-200 group-hover:translate-x-0.5"
               />
             </button>
           ))}
         </div>
+
+        {/* Account security note */}
+        <a
+          href={accountSecurityUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2.5 rounded-xl border border-border/60 bg-card/60 px-4 py-3 text-left transition-colors hover:border-border hover:bg-card group"
+        >
+          <ShieldCheck size={14} className="shrink-0 text-muted-foreground" />
+          <span className="flex-1 text-xs text-muted-foreground leading-relaxed">
+            {t('web.select_platform_security_note', 'We take your account security seriously.')}
+          </span>
+          <ChevronRight size={13} className="shrink-0 text-muted-foreground/50 transition-transform duration-200 group-hover:translate-x-0.5" />
+        </a>
       </div>
     </LoginLayout>
   )

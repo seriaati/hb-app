@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import {
   Table,
   TableBody,
@@ -47,6 +48,8 @@ export function GachaLogTable({
   names,
   onPageChange,
 }: GachaLogTableProps) {
+  const { t } = useTranslation()
+
   if (isLoading) {
     return (
       <div className="flex flex-col gap-2">
@@ -63,19 +66,19 @@ export function GachaLogTable({
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead className="w-12">#</TableHead>
+              <TableHead className="w-12">{t('web.table_header_number')}</TableHead>
               <TableHead className="w-10"></TableHead>
-              <TableHead>Name</TableHead>
-              <TableHead className="w-24">Rarity</TableHead>
-              <TableHead className="w-16 text-right">Pity</TableHead>
-              <TableHead className="w-36 text-right">Time</TableHead>
+              <TableHead>{t('web.table_header_name')}</TableHead>
+              <TableHead className="w-24">{t('web.table_header_rarity')}</TableHead>
+              <TableHead className="w-16 text-right">{t('web.table_header_pity')}</TableHead>
+              <TableHead className="w-36 text-right">{t('web.table_header_time')}</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {items.length === 0 ? (
               <TableRow>
                 <TableCell colSpan={6} className="py-12 text-center text-muted-foreground">
-                  No gacha records found.
+                  {t('web.no_gacha_records')}
                 </TableCell>
               </TableRow>
             ) : (
@@ -120,7 +123,7 @@ export function GachaLogTable({
       {max_page > 1 && (
         <div className="flex items-center justify-between text-sm text-muted-foreground">
           <span>
-            Page {page} of {max_page} · {total.toLocaleString()} total
+            {t('web.page_of', { page, maxPage: max_page, total: total.toLocaleString() })}
           </span>
           <Pagination>
             <PaginationContent>

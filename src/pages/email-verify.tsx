@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { toast } from 'sonner'
 import { useTranslation } from 'react-i18next'
 import { useEmailVerify } from '@/hooks/use-login'
+import { handleLoginFlowResponse } from '@/lib/login-flow'
 import { PageContainer } from '@/components/layout/page-container'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -18,16 +19,10 @@ export function EmailVerifyPage() {
     e.preventDefault()
     verify.mutate(code, {
       onSuccess: (data) => {
-        if (data.status === 'success') {
-          navigate('/finish')
-        } else if (data.status === 'geetest_required') {
-          navigate('/geetest')
-        } else {
-          toast.info(data.message ?? 'Unknown status')
-        }
+        handleLoginFlowResponse(data, navigate)
       },
       onError: (err) => {
-        toast.error(err instanceof Error ? err.message : 'Verification failed')
+        toast.error(err instanceof Error ? err.message : t('web.verification_failed'))
       },
     })
   }
@@ -41,10 +36,10 @@ export function EmailVerifyPage() {
             className="text-2xl font-semibold tracking-tight text-foreground"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            {t('web.email_verify_title', 'Email Verification')}
+            {t('web.email_verify_title')}
           </h1>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            {t('web.email_verify_desc', 'Enter the 6-digit verification code sent to your email address')}
+            {t('web.email_verify_desc')}
           </p>
         </div>
 
@@ -52,7 +47,7 @@ export function EmailVerifyPage() {
         <form onSubmit={handleSubmit} className="flex flex-col gap-6">
           <div className="flex flex-col gap-3">
             <Label htmlFor="code" className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-              {t('web.verification_code', 'Verification Code')}
+              {t('web.verification_code')}
             </Label>
             <Input
               id="code"
@@ -67,7 +62,7 @@ export function EmailVerifyPage() {
               style={{ fontFamily: 'var(--font-display)' }}
             />
             <p className="text-xs text-muted-foreground text-center">
-              {t('web.code_expires_note', 'Check your inbox — the code expires in a few minutes')}
+              {t('web.code_expires_note')}
             </p>
           </div>
 
@@ -77,7 +72,7 @@ export function EmailVerifyPage() {
             className="w-full h-10 font-semibold"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            {verify.isPending ? t('web.verifying', 'Verifying…') : t('web.verify_code', 'Verify Code')}
+            {verify.isPending ? t('web.verifying') : t('web.verify_code')}
           </Button>
         </form>
       </div>

@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'sonner'
 import { Smartphone } from 'lucide-react'
-import { useTranslation } from 'react-i18next'
 import { useMobileSendOtp, useMobileVerify } from '@/hooks/use-login'
+import { handleLoginFlowResponse } from '@/lib/login-flow'
 import { LoginLayout } from '@/components/layout/login-layout'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -13,7 +13,6 @@ const ACCENT = 'oklch(0.48 0.16 265)'
 
 export function LoginMobilePage() {
   const navigate = useNavigate()
-  const { t } = useTranslation()
   const sendOtp = useMobileSendOtp()
   const verifyOtp = useMobileVerify()
   const [mobile, setMobile] = useState('')
@@ -22,19 +21,17 @@ export function LoginMobilePage() {
 
   function handleSendOtp(e: React.FormEvent) {
     e.preventDefault()
-    sendOtp.mutate(mobile, {
+    sendOtp.mutate(`+86${mobile}`, {
       onSuccess: (data) => {
-        if (data.status === 'geetest_required') {
-          navigate('/geetest')
-        } else if (data.status === 'otp_sent') {
-          setOtpSent(true)
-          toast.success('OTP sent to your mobile number')
-        } else {
-          toast.info(data.message ?? 'Unknown status')
-        }
+        handleLoginFlowResponse(data, navigate, {
+          onVerifyOtp: () => {
+            setOtpSent(true)
+            toast.success('验证码已发送至您的手机号')
+          },
+        })
       },
       onError: (err) => {
-        toast.error(err instanceof Error ? err.message : 'Failed to send OTP')
+        toast.error(err instanceof Error ? err.message : '发送验证码失败')
       },
     })
   }
@@ -43,16 +40,10 @@ export function LoginMobilePage() {
     e.preventDefault()
     verifyOtp.mutate(otp, {
       onSuccess: (data) => {
-        if (data.status === 'success') {
-          navigate('/finish')
-        } else if (data.status === 'geetest_required') {
-          navigate('/geetest')
-        } else {
-          toast.info(data.message ?? 'Unknown status')
-        }
+        handleLoginFlowResponse(data, navigate)
       },
       onError: (err) => {
-        toast.error(err instanceof Error ? err.message : 'Verification failed')
+        toast.error(err instanceof Error ? err.message : '验证失败')
       },
     })
   }
@@ -72,51 +63,54 @@ export function LoginMobilePage() {
             <Smartphone size={28} style={{ color: ACCENT }} />
           </div>
         ),
-        eyebrow: 'Miyoushe',
-        title: t('web.mobile_title', 'Mobile OTP'),
-        description:
-          'Sign in with your Chinese mobile number registered on Miyoushe. An OTP will be sent via SMS to verify your identity.',
-        features: ['SMS Verification', 'Miyoushe Only', 'No Password'],
-        securityNote:
-          'Your mobile number is used only to request an OTP from Miyoushe servers. It is never stored or shared.',
+        eyebrow: '米游社',
+        title: '手机验证码登录',
+        description: '使用已注册米游社的中国大陆手机号登录，系统将通过短信发送验证码验证您的身份。',
+        features: ['短信验证', '仅限米游社', '无需密码'],
+        securityNote: '您的手机号仅用于向米游社服务器请求验证码，不会被存储或共享。',
       }}
     >
       <div className="flex flex-col gap-8 stagger-children">
         {/* Header */}
         <div className="flex flex-col gap-1">
           <div className="flex items-center gap-3 mb-1">
-            <img src="/images/miyoushe.webp" alt="Miyoushe" className="h-8 w-8 rounded-lg object-cover" />
+            <img src="/images/miyoushe.webp" alt="米游社" className="h-8 w-8 rounded-lg object-cover" />
             <span className="text-xs font-medium tracking-widest uppercase text-muted-foreground">
-              Miyoushe
+              米游社
             </span>
           </div>
           <h1
             className="text-2xl font-semibold tracking-tight text-foreground"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            {t('web.mobile_title', 'Mobile OTP')}
+            手机验证码登录
           </h1>
           <p className="text-sm text-muted-foreground">
-            {t('web.mobile_desc', 'Sign in with your Miyoushe mobile number')}
+            使用米游社手机号登录
           </p>
         </div>
 
         {!otpSent ? (
           <form onSubmit={handleSendOtp} className="flex flex-col gap-4">
-            <div className="flex flex-col gap-1.5">
-              <Label htmlFor="mobile" className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-                {t('web.mobile_number', 'Mobile Number')}
-              </Label>
-              <Input
-                id="mobile"
-                type="tel"
-                placeholder="+86 1xx xxxx xxxx"
-                value={mobile}
-                onChange={(e) => setMobile(e.target.value)}
-                required
-                className="h-10"
-              />
-            </div>
+              <div className="flex flex-col gap-1.5">
+                <Label htmlFor="mobile" className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
+                  手机号
+                </Label>
+                <div className="flex h-10 items-stretch rounded-md border border-input bg-transparent shadow-xs transition-[color,box-shadow] focus-within:ring-[3px] focus-within:ring-ring/50 focus-within:border-ring">
+                  <span className="flex items-center px-3 text-sm font-medium text-muted-foreground border-r border-input select-none bg-muted/40 rounded-l-md">
+                    +86
+                  </span>
+                  <Input
+                    id="mobile"
+                    type="tel"
+                    placeholder="1xx xxxx xxxx"
+                    value={mobile}
+                    onChange={(e) => setMobile(e.target.value)}
+                    required
+                    className="h-full border-0 shadow-none focus-visible:ring-0 focus-visible:ring-offset-0 rounded-l-none flex-1"
+                  />
+                </div>
+              </div>
 
             <div className="flex flex-col gap-2 pt-1">
               <Button
@@ -125,14 +119,14 @@ export function LoginMobilePage() {
                 className="w-full h-10 font-semibold"
                 style={{ fontFamily: 'var(--font-display)' }}
               >
-                {sendOtp.isPending ? t('web.sending', 'Sending…') : t('web.send_otp', 'Send OTP')}
+                {sendOtp.isPending ? '发送中…' : '发送验证码'}
               </Button>
               <button
                 type="button"
                 onClick={() => navigate(-1)}
-                className="text-xs text-muted-foreground hover:text-foreground transition-colors duration-150 text-center py-1"
+                className="cursor-pointer text-xs text-muted-foreground hover:text-foreground transition-colors duration-150 text-center py-1"
               >
-                {t('web.back', '← Back')}
+                ← 返回
               </button>
             </div>
           </form>
@@ -147,15 +141,15 @@ export function LoginMobilePage() {
                 color: 'var(--foreground)',
               }}
             >
-              {t('web.otp_sent_to', 'OTP sent to {mobile}', { mobile }).replace('{mobile}', '')}{' '}
+              验证码已发送至{' '}
               <span className="font-semibold" style={{ color: 'var(--accent)' }}>
-                {mobile}
+                +86{mobile}
               </span>
             </div>
 
             <div className="flex flex-col gap-1.5">
               <Label htmlFor="otp" className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-                {t('web.otp_code', 'OTP Code')}
+                验证码
               </Label>
               <Input
                 id="otp"
@@ -178,14 +172,14 @@ export function LoginMobilePage() {
                 className="w-full h-10 font-semibold"
                 style={{ fontFamily: 'var(--font-display)' }}
               >
-                {verifyOtp.isPending ? t('web.verifying', 'Verifying…') : t('web.verify_otp', 'Verify OTP')}
+                {verifyOtp.isPending ? '验证中…' : '验证'}
               </Button>
               <button
                 type="button"
                 onClick={() => setOtpSent(false)}
-                className="text-xs text-muted-foreground hover:text-foreground transition-colors duration-150 text-center py-1"
+                className="cursor-pointer text-xs text-muted-foreground hover:text-foreground transition-colors duration-150 text-center py-1"
               >
-                {t('web.change_number', '← Change number')}
+                ← 更换号码
               </button>
             </div>
           </form>

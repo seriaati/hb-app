@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { toast } from 'sonner'
 import { useTranslation } from 'react-i18next'
 import { useAvailableAccounts, useSubmitAccounts } from '@/hooks/use-accounts'
+import { handleLoginFlowResponse } from '@/lib/login-flow'
 import { AccountCard } from '@/components/accounts/account-card'
 import { PageContainer } from '@/components/layout/page-container'
 import { LoadingSpinner } from '@/components/layout/loading-spinner'
@@ -39,14 +40,10 @@ export function FinishPage() {
       { selected_accounts: Array.from(selected) },
       {
         onSuccess: (result) => {
-          if (result.message?.startsWith('discord://')) {
-            window.location.href = result.message
-          } else {
-            toast.success(result.message ?? 'Accounts saved successfully!')
-          }
+          handleLoginFlowResponse(result, navigate)
         },
         onError: (err) => {
-          toast.error(err instanceof Error ? err.message : 'Failed to save accounts')
+          toast.error(err instanceof Error ? err.message : t('web.failed_to_save_accounts'))
         },
       },
     )
@@ -66,10 +63,10 @@ export function FinishPage() {
               border: '1px solid color-mix(in oklch, var(--destructive) 25%, transparent)',
             }}
           >
-            {error instanceof Error ? error.message : 'Failed to load accounts'}
+            {error instanceof Error ? error.message : t('web.failed_to_load_accounts')}
           </div>
           <Button onClick={() => navigate('/')} variant="outline">
-            {t('web.go_home', 'Go Home')}
+            {t('web.go_home')}
           </Button>
         </div>
       </PageContainer>
@@ -87,10 +84,10 @@ export function FinishPage() {
             className="text-2xl font-semibold tracking-tight text-foreground"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            {t('web.select_accounts_title', 'Select Accounts')}
+            {t('web.select_accounts_title')}
           </h1>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            {t('web.select_accounts_desc', 'Choose which game accounts to add to Hoyo Buddy. All accounts are selected by default.')}
+            {t('web.select_accounts_desc')}
           </p>
         </div>
 
@@ -103,7 +100,7 @@ export function FinishPage() {
             >
               🎮
             </div>
-            <p className="text-sm text-muted-foreground">{t('web.no_accounts_found', 'No accounts found.')}</p>
+            <p className="text-sm text-muted-foreground">{t('web.no_accounts_found')}</p>
           </div>
         ) : (
           <div className="flex flex-col gap-2">
@@ -126,19 +123,19 @@ export function FinishPage() {
           <div className="flex items-center gap-3">
             <button
               onClick={() => setSelected(new Set(accounts.map((a) => `${a.game}_${a.uid}`)))}
-              className="text-xs text-muted-foreground hover:text-foreground transition-colors duration-150"
+              className="cursor-pointer text-xs text-muted-foreground hover:text-foreground transition-colors duration-150"
             >
-              {t('web.select_all', 'Select all')}
+              {t('web.select_all')}
             </button>
             <span className="text-border">·</span>
             <button
               onClick={() => setSelected(new Set())}
-              className="text-xs text-muted-foreground hover:text-foreground transition-colors duration-150"
+              className="cursor-pointer text-xs text-muted-foreground hover:text-foreground transition-colors duration-150"
             >
-              {t('web.deselect_all', 'Deselect all')}
+              {t('web.deselect_all')}
             </button>
             <span className="ml-auto text-xs text-muted-foreground">
-              {t('web.selected_count', '{selected} of {total} selected', {
+              {t('web.selected_count', {
                 selected: selected.size,
                 total: accounts.length,
               })}
@@ -154,10 +151,10 @@ export function FinishPage() {
           style={{ fontFamily: 'var(--font-display)' }}
         >
           {submitAccounts.isPending
-            ? t('web.saving', 'Saving…')
+            ? t('web.saving')
             : selected.size === 1
-              ? t('web.add_accounts_button', 'Add {count} Account to Hoyo Buddy', { count: selected.size })
-              : t('web.add_accounts_button_plural', 'Add {count} Accounts to Hoyo Buddy', { count: selected.size })}
+              ? t('web.add_accounts_button', { count: selected.size })
+              : t('web.add_accounts_button_plural', { count: selected.size })}
         </Button>
       </div>
     </PageContainer>

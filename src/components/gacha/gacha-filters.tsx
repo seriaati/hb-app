@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -18,6 +19,7 @@ export function GachaFilters({
   nameSearch,
   onNameSearchChange,
 }: GachaFiltersProps) {
+  const { t } = useTranslation()
   const [localSearch, setLocalSearch] = useState(nameSearch)
 
   // Debounce name search
@@ -39,7 +41,7 @@ export function GachaFilters({
   return (
     <div className="flex flex-wrap items-center gap-4">
       <div className="flex items-center gap-3">
-        <span className="text-sm font-medium text-muted-foreground">Rarity:</span>
+        <span className="text-sm font-medium text-muted-foreground">{t('web.rarity_label')}</span>
         {RARITIES.map((rarity) => (
           <div key={rarity} className="flex items-center gap-1.5">
             <Checkbox
@@ -54,9 +56,9 @@ export function GachaFilters({
         ))}
       </div>
 
-      <div className="flex-1 min-w-[200px]">
+      <div className="flex-1 min-w-50">
         <Input
-          placeholder="Search by name…"
+          placeholder={t('web.search_by_name')}
           value={localSearch}
           onChange={(e) => setLocalSearch(e.target.value)}
           className="h-8"

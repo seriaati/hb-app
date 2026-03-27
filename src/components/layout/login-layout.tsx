@@ -1,6 +1,8 @@
-import { ThemeToggle } from '@/components/ui/theme-toggle'
+import { useTranslation } from 'react-i18next'
 import { LanguageSelector } from '@/components/ui/language-selector'
 import { PageContainer } from '@/components/layout/page-container'
+import { DiscordUserBadge } from '@/components/auth/discord-user-badge'
+import { FooterLinks } from '@/components/layout/footer-links'
 import { ShieldCheck } from 'lucide-react'
 
 export interface LoginLayoutPanel {
@@ -16,7 +18,7 @@ export interface LoginLayoutPanel {
   description: string
   /** Optional feature pill labels */
   features?: string[]
-  /** Optional security/disclaimer note. Defaults to the standard credentials note. */
+  /** Optional security/disclaimer note. Defaults to the standard credentials note. Pass null to suppress. */
   securityNote?: string | null
 }
 
@@ -25,9 +27,6 @@ interface LoginLayoutProps {
   children: React.ReactNode
 }
 
-const DEFAULT_SECURITY_NOTE =
-  'Your credentials are never stored on our servers. Authentication tokens are saved locally and used only to communicate with HoYoverse APIs.'
-
 /**
  * Shared two-column layout for all login/auth pages.
  *
@@ -35,6 +34,7 @@ const DEFAULT_SECURITY_NOTE =
  * - Desktop (lg+): left info panel + right form panel side-by-side.
  */
 export function LoginLayout({ panel, children }: LoginLayoutProps) {
+  const { t } = useTranslation()
   const {
     accentColor,
     hero,
@@ -42,22 +42,22 @@ export function LoginLayout({ panel, children }: LoginLayoutProps) {
     title,
     description,
     features,
-    securityNote = DEFAULT_SECURITY_NOTE,
+    securityNote = t('web.default_security_note'),
   } = panel
 
   return (
     <>
       {/* ── Mobile layout (< lg) ── */}
-      <div className="lg:hidden">
+      <div className="lg:hidden" style={{ '--accent': accentColor, '--ring': accentColor, '--primary': accentColor } as React.CSSProperties}>
         <PageContainer narrow>{children}</PageContainer>
       </div>
 
       {/* ── Desktop layout (lg+) ── */}
       <div className="hidden lg:flex min-h-screen bg-background bg-texture text-foreground">
         {/* Controls */}
-        <div className="fixed top-4 right-4 z-50 flex items-center gap-1">
+        <div className="fixed top-4 right-4 z-50 flex items-center gap-2">
+          <DiscordUserBadge />
           <LanguageSelector />
-          <ThemeToggle />
         </div>
 
         {/* Left panel — branding & context */}
@@ -100,7 +100,7 @@ export function LoginLayout({ panel, children }: LoginLayoutProps) {
             {/* Hero icon/image */}
             <div className="flex items-center gap-4">
               <div
-                className="flex-shrink-0"
+                className="shrink-0"
                 style={{ filter: `drop-shadow(0 8px 24px color-mix(in oklch, ${accentColor} 35%, transparent))` }}
               >
                 {hero}
@@ -145,17 +145,23 @@ export function LoginLayout({ panel, children }: LoginLayoutProps) {
             )}
           </div>
 
-          {/* Bottom: security note */}
-          {securityNote && (
-            <div className="relative flex items-start gap-3 rounded-xl border border-border/60 bg-card/40 p-4 backdrop-blur-sm">
-              <ShieldCheck size={16} className="mt-0.5 flex-shrink-0 text-muted-foreground" />
-              <p className="text-xs text-muted-foreground leading-relaxed">{securityNote}</p>
-            </div>
-          )}
+          {/* Bottom: security note + footer links */}
+          <div className="relative flex flex-col gap-3">
+            {securityNote && (
+              <div className="flex items-start gap-3 rounded-xl border border-border/60 bg-card/40 p-4 backdrop-blur-sm">
+                <ShieldCheck size={16} className="mt-0.5 shrink-0 text-muted-foreground" />
+                <p className="text-xs text-muted-foreground leading-relaxed">{securityNote}</p>
+              </div>
+            )}
+            <FooterLinks className="flex items-center gap-0" />
+          </div>
         </div>
 
         {/* Right panel — form */}
-        <div className="flex w-1/2 items-center justify-center p-12">
+        <div
+          className="flex w-1/2 items-center justify-center p-12"
+          style={{ '--accent': accentColor, '--ring': accentColor, '--primary': accentColor } as React.CSSProperties}
+        >
           <div className="w-full max-w-md page-enter">{children}</div>
         </div>
       </div>

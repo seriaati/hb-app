@@ -29,12 +29,12 @@ export function AccountCard({ account, checked, onCheckedChange }: AccountCardPr
         checked={checked}
         onCheckedChange={onCheckedChange}
         onClick={(e) => e.stopPropagation()}
-        className="flex-shrink-0"
+        className="shrink-0"
       />
       <img
         src={iconSrc}
         alt={gameName}
-        className="h-10 w-10 flex-shrink-0 rounded-xl object-cover"
+        className="h-10 w-10 shrink-0 rounded-xl object-cover"
       />
       <div className="flex-1 min-w-0">
         <p

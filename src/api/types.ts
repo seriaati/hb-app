@@ -15,23 +15,46 @@ export interface AuthCallbackRequest {
 }
 
 // Login flow types
-export type LoginFlowStatus =
-  | 'success'
-  | 'geetest_required'
-  | 'email_verify_required'
-  | 'otp_sent'
-  | 'device_info_required'
-  | 'qrcode_created'
-  | 'qrcode_scanned'
-  | 'qrcode_confirmed'
-  | 'qrcode_expired'
+export type LoginFlowNextStep = 'geetest' | 'email_verify' | 'verify_otp' | 'finish' | 'redirect'
+
+// MMT data embedded in LoginFlowResponse when next_step === 'geetest'
+export interface GeetestMMTData {
+  gt: string
+  challenge: string
+  new_captcha: number | boolean
+  success: number | boolean
+  session_id?: string
+  check_id?: string
+  risk_type?: string
+}
 
 export interface LoginFlowResponse {
-  status: LoginFlowStatus
-  next_step: string | null
+  next_step: LoginFlowNextStep
   gt_version: number | null
+  mmt: GeetestMMTData | null
   message: string | null
 }
+
+// Payload for POST /login/geetest-callback (v3) — SessionMMTResult
+export interface SessionMMTResult {
+  session_id: string
+  check_id?: string
+  geetest_challenge: string
+  geetest_validate: string
+  geetest_seccode: string
+}
+
+// Payload for POST /login/geetest-callback (v4) — SessionMMTv4Result
+export interface SessionMMTv4Result {
+  session_id: string
+  check_id?: string
+  lot_number: string
+  captcha_output: string
+  pass_token: string
+  gen_time: string
+}
+
+export type GeetestCallbackRequest = SessionMMTResult | SessionMMTv4Result
 
 export interface EmailPasswordRequest {
   email: string
@@ -44,10 +67,6 @@ export interface DevToolsCookiesRequest {
   ltoken_v2: string
   ltmid_v2: string
   account_mid_v2: string
-}
-
-export interface RawCookiesRequest {
-  cookies: string
 }
 
 export interface ModAppRequest {
@@ -135,12 +154,6 @@ export interface GachaParams {
   size?: number
   page?: number
   name_contains?: string
-}
-
-// i18n types
-export interface I18nResponse {
-  locale: string
-  translations: Record<string, string>
 }
 
 // Error type

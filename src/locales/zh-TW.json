@@ -1,0 +1,142 @@
+{
+  "web": {
+    "back": "← 返回",
+    "submitting": "提交中…",
+    "verifying": "驗證中…",
+    "go_home": "回到首頁",
+    "login_failed": "登入失敗",
+    "unknown_status": "未知狀態",
+    "verification_failed": "驗證失敗",
+    "geetest_failed": "Geetest 驗證失敗",
+
+    "home_tagline": "您的原神宇宙夥伴機器人",
+    "home_open_via_discord": "透過 Discord 開啟以開始使用",
+
+    "completing_sign_in": "正在完成登入…",
+    "missing_oauth_params": "缺少 OAuth 參數，請重試。",
+    "auth_failed": "驗證失敗",
+
+    "select_platform": "選擇平台",
+    "select_platform_desc": "選擇您要新增帳號的平台",
+    "platform_hoyolab_desc": "全球平台",
+    "platform_miyoushe_desc": "米游社 · 中國平台",
+    "add_account_title": "新增帳號",
+    "add_account_desc": "連結您的 HoYoverse 帳號，解鎖祈願記錄追蹤、每日簽到、即時便箋等功能，一站式管理所有內容。",
+    "add_account_security_cta": "了解我們如何保護您的帳號安全 →",
+
+    "feature_gacha_logs": "祈願記錄",
+    "feature_daily_checkin": "每日簽到",
+    "feature_realtime_notes": "即時便箋",
+    "feature_multi_account": "多帳號",
+
+    "select_platform_security_note": "我們非常重視您的帳號安全。",
+    "select_platform_security_link": "了解更多 →",
+
+    "login_method_faq_note": "不確定要使用哪種方式？",
+    "login_method_faq_link": "查看指南 →",
+
+    "select_login_method": "選擇登入方式",
+    "select_login_method_desc": "選擇您偏好的驗證方式",
+    "back_to_platforms": "← 返回平台選擇",
+
+    "hoyolab_tagline": "全球社群平台",
+    "hoyolab_description": "連結您的 HoYoLAB 帳號，存取所有 HoYoverse 遊戲的祈願記錄、每日簽到和即時便箋。",
+
+    "login_method": {
+      "email": {
+        "label": "電子郵件與密碼",
+        "desc": "使用電子郵件和密碼登入"
+      },
+      "devtools": {
+        "label": "DevTools Cookie",
+        "desc": "從瀏覽器開發者工具提取 Cookie"
+      }
+    },
+
+    "email_login_title": "電子郵件與密碼",
+    "email_login_desc": "使用您的 HoYoverse 帳號憑證登入",
+    "email_login_panel_desc": "使用您的 HoYoverse 帳號電子郵件和密碼安全登入。雙重驗證和 CAPTCHA 挑戰將自動處理。",
+    "email_login_how_it_works": "這是如何運作的？",
+    "email_login_console": "我是主機玩家",
+    "email_login_no_account": "我沒有 HoYoverse 帳號（使用 Google、Facebook 登入）",
+    "email_address": "電子郵件地址",
+    "password": "密碼",
+    "signing_in": "登入中…",
+    "sign_in": "登入",
+    "feature_secure_login": "安全登入",
+    "feature_auto_captcha": "自動 CAPTCHA",
+    "feature_2fa": "支援雙重驗證",
+
+    "devtools_title": "DevTools Cookie",
+    "devtools_desc": "開啟瀏覽器 DevTools → 應用程式 → Cookie，並複製以下數值",
+    "devtools_panel_desc": "直接從瀏覽器開發者工具提取您的 Session Cookie。在 hoyolab.com 開啟 DevTools → 應用程式 → Cookie 並複製數值。",
+    "devtools_enter_cookies": "輸入 Cookie",
+    "devtools_modal_title": "輸入 Cookie 數值",
+    "devtools_modal_desc": "從 DevTools 應用程式 → Cookie 面板複製每個數值並貼上。",
+    "devtools_tutorial_show": "顯示教學",
+    "devtools_tutorial_hide": "隱藏教學",
+    "submit_cookies": "提交 Cookie",
+    "click_to_enlarge": "點擊放大",
+    "feature_no_password": "無需密碼",
+    "feature_browser_based": "基於瀏覽器",
+    "feature_hoyolab_only": "僅限 HoYoLAB",
+    "devtools_security_note": "Cookie 數值直接傳輸至 HoYoverse API，從不儲存於我們的伺服器。當您登出 HoYoLAB 時，Token 會自然過期。",
+
+    "email_verify_title": "電子郵件驗證",
+    "email_verify_desc": "輸入發送至您電子郵件地址的 6 位數驗證碼",
+    "verification_code": "驗證碼",
+    "code_expires_note": "請查看您的收件匣 — 驗證碼將在幾分鐘後過期",
+    "verify_code": "驗證碼",
+
+    "processing_verification": "正在處理驗證…",
+
+    "select_accounts_title": "選擇帳號",
+    "select_accounts_desc": "選擇要新增至 Hoyo Buddy 的遊戲帳號。預設選取所有帳號。",
+    "no_accounts_found": "未找到帳號。",
+    "select_all": "全選",
+    "deselect_all": "取消全選",
+    "selected_count": "已選取 {{selected}} / {{total}}",
+    "saving": "儲存中…",
+    "add_accounts_button": "新增 {{count}} 個帳號至 Hoyo Buddy",
+    "add_accounts_button_plural": "新增 {{count}} 個帳號至 Hoyo Buddy",
+    "failed_to_load_accounts": "載入帳號失敗",
+    "accounts_saved": "帳號儲存成功！",
+    "failed_to_save_accounts": "儲存帳號失敗",
+
+    "default_security_note": "您的憑證從不儲存於我們的伺服器。驗證 Token 儲存於本地，僅用於與 HoYoverse API 通訊。",
+    "privacy_policy": "隱私政策",
+    "account_security_docs": "帳號安全",
+    "footer_links_separator": "·",
+
+    "gacha_history": "祈願歷史",
+    "missing_account_id": "缺少 account_id 參數。",
+
+    "gacha_banner_fallback": "卡池 {{type}}",
+    "gacha_banner_permanent": "常駐",
+    "gacha_banner_character": "角色",
+    "gacha_banner_weapon": "武器",
+    "gacha_banner_chronicled": "集錄",
+    "gacha_banner_stellar": "星際",
+    "gacha_banner_light_cone": "光錐",
+    "gacha_banner_departure": "始發",
+    "gacha_banner_standard": "常駐頻道",
+    "gacha_banner_exclusive": "獨家頻道",
+    "gacha_banner_w_engine": "音擎頻道",
+    "gacha_banner_bangboo": "邦布頻道",
+
+    "rarity_label": "稀有度：",
+    "search_by_name": "依名稱搜尋…",
+
+    "table_header_number": "#",
+    "table_header_name": "名稱",
+    "table_header_rarity": "稀有度",
+    "table_header_pity": "保底",
+    "table_header_time": "時間",
+    "no_gacha_records": "未找到祈願記錄。",
+    "page_of": "第 {{page}} / {{maxPage}} 頁 · 共 {{total}} 筆",
+
+    "stat_total_pulls": "總祈願數",
+    "stat_pity": "保底",
+    "stat_avg_per_5star": "平均 / 5★"
+  }
+}

@@ -13,3 +13,7 @@ export async function discordCallback(code: string, state: string): Promise<User
   const body: AuthCallbackRequest = { code, state }
   return apiClient.post('api/auth/discord/callback', { json: body }).json<UserResponse>()
 }
+
+export async function logout(): Promise<void> {
+  await apiClient.post('api/auth/logout')
+}

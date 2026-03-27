@@ -6,7 +6,6 @@ import { PlatformsPage } from '@/pages/platforms'
 import { LoginMethodsPage } from '@/pages/login-methods'
 import { LoginEmailPage } from '@/pages/login-email'
 import { LoginDevtoolsPage } from '@/pages/login-devtools'
-import { LoginRawCookiesPage } from '@/pages/login-raw-cookies'
 import { LoginModAppPage } from '@/pages/login-mod-app'
 import { LoginMobilePage } from '@/pages/login-mobile'
 import { LoginQRCodePage } from '@/pages/login-qrcode'
@@ -54,14 +53,6 @@ export const router = createBrowserRouter([
     element: (
       <AuthGuard>
         <LoginDevtoolsPage />
-      </AuthGuard>
-    ),
-  },
-  {
-    path: '/login/:platform/rawcookies',
-    element: (
-      <AuthGuard>
-        <LoginRawCookiesPage />
       </AuthGuard>
     ),
   },

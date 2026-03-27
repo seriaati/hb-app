@@ -13,7 +13,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
     <button
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
       className={cn(
-        'group relative flex h-8 w-8 items-center justify-center rounded-md',
+        'group relative flex h-8 w-8 cursor-pointer items-center justify-center rounded-md',
         'text-muted-foreground transition-colors duration-200',
         'hover:bg-muted hover:text-foreground',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',

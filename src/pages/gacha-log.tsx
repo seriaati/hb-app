@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react'
 import { useSearchParams } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { useGachaLogs, useGachaIcons, useGachaNames } from '@/hooks/use-gacha'
 import { GachaBannerTabs } from '@/components/gacha/gacha-banner-tabs'
 import { GachaFilters } from '@/components/gacha/gacha-filters'
@@ -10,6 +11,7 @@ import { ThemeToggle } from '@/components/ui/theme-toggle'
 
 export function GachaLogPage() {
   const [searchParams] = useSearchParams()
+  const { t } = useTranslation()
 
   const accountId = searchParams.get('account_id') ?? ''
   const locale = searchParams.get('locale') ?? 'en-US'
@@ -64,7 +66,7 @@ export function GachaLogPage() {
   if (!accountId) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-background bg-texture">
-        <p className="text-sm text-muted-foreground">Missing account_id parameter.</p>
+        <p className="text-sm text-muted-foreground">{t('web.missing_account_id')}</p>
       </div>
     )
   }
@@ -89,7 +91,7 @@ export function GachaLogPage() {
             className="text-2xl font-semibold tracking-tight text-foreground"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            Gacha History
+            {t('web.gacha_history')}
           </h1>
         </div>
 

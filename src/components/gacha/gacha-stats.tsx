@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import type { GachaItem } from '@/api/types'
 
 interface GachaStatsProps {
@@ -6,6 +7,8 @@ interface GachaStatsProps {
 }
 
 export function GachaStats({ items, total }: GachaStatsProps) {
+  const { t } = useTranslation()
+
   const fiveStarItems = items.filter((i) => i.rarity === 5)
   const fourStarItems = items.filter((i) => i.rarity === 4)
 
@@ -18,11 +21,11 @@ export function GachaStats({ items, total }: GachaStatsProps) {
       : null
 
   const stats = [
-    { label: 'Total Pulls', value: total.toLocaleString(), highlight: false },
-    { label: 'Pity', value: currentPity.toString(), highlight: currentPity >= 70 },
+    { label: t('web.stat_total_pulls'), value: total.toLocaleString(), highlight: false },
+    { label: t('web.stat_pity'), value: currentPity.toString(), highlight: currentPity >= 70 },
     { label: '5★', value: fiveStarItems.length.toString(), highlight: false },
     { label: '4★', value: fourStarItems.length.toString(), highlight: false },
-    { label: 'Avg / 5★', value: avgPer5Star !== null ? `${avgPer5Star}` : '—', highlight: false },
+    { label: t('web.stat_avg_per_5star'), value: avgPer5Star !== null ? `${avgPer5Star}` : '—', highlight: false },
   ]
 
   return (

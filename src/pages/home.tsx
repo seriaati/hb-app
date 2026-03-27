@@ -1,10 +1,12 @@
 import { useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { ThemeToggle } from '@/components/ui/theme-toggle'
 
 export function HomePage() {
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
+  const { t } = useTranslation()
 
   useEffect(() => {
     const userId = searchParams.get('user_id')
@@ -58,7 +60,7 @@ export function HomePage() {
             Hoyo Buddy
           </h1>
           <p className="text-base text-muted-foreground max-w-xs leading-relaxed">
-            Your HoYoverse companion bot
+            {t('web.home_tagline')}
           </p>
         </div>
 
@@ -70,7 +72,7 @@ export function HomePage() {
         </div>
 
         <p className="text-xs text-muted-foreground tracking-widest uppercase">
-          Open via Discord to get started
+          {t('web.home_open_via_discord')}
         </p>
       </div>
     </div>

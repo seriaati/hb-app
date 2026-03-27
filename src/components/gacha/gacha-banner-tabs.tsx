@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
 interface GachaBannerTabsProps {
@@ -7,36 +8,38 @@ interface GachaBannerTabsProps {
   game: string
 }
 
-function getBannerLabel(bannerType: number, game: string): string {
-  const labels: Record<string, Record<number, string>> = {
-    genshin: {
-      1: 'Permanent',
-      2: 'Character',
-      3: 'Weapon',
-      11: 'Chronicled',
-    },
-    hkrpg: {
-      1: 'Stellar',
-      2: 'Character',
-      6: 'Light Cone',
-      7: 'Departure',
-    },
-    nap: {
-      1: 'Standard',
-      2: 'Exclusive',
-      3: 'W-Engine',
-      5: 'Bangboo',
-    },
-  }
-  return labels[game]?.[bannerType] ?? `Banner ${bannerType}`
-}
-
 export function GachaBannerTabs({
   bannerTypes,
   currentBannerType,
   onBannerTypeChange,
   game,
 }: GachaBannerTabsProps) {
+  const { t } = useTranslation()
+
+  function getBannerLabel(bannerType: number, game: string): string {
+    const labels: Record<string, Record<number, string>> = {
+      genshin: {
+        1: t('web.gacha_banner_permanent'),
+        2: t('web.gacha_banner_character'),
+        3: t('web.gacha_banner_weapon'),
+        11: t('web.gacha_banner_chronicled'),
+      },
+      hkrpg: {
+        1: t('web.gacha_banner_stellar'),
+        2: t('web.gacha_banner_character'),
+        6: t('web.gacha_banner_light_cone'),
+        7: t('web.gacha_banner_departure'),
+      },
+      nap: {
+        1: t('web.gacha_banner_standard'),
+        2: t('web.gacha_banner_exclusive'),
+        3: t('web.gacha_banner_w_engine'),
+        5: t('web.gacha_banner_bangboo'),
+      },
+    }
+    return labels[game]?.[bannerType] ?? t('web.gacha_banner_fallback', { type: bannerType })
+  }
+
   return (
     <Tabs
       value={String(currentBannerType)}
