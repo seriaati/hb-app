@@ -30,7 +30,7 @@ export function DiscordUserBadge({ className }: DiscordUserBadgeProps) {
 
       {/* Username */}
       <span
-        className="text-xs font-medium text-foreground/80 max-w-[120px] truncate"
+        className="text-xs font-medium text-foreground/80 max-w-30 truncate"
         style={{ fontFamily: 'var(--font-display)' }}
       >
         {user.username}
