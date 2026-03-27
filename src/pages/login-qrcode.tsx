@@ -97,7 +97,7 @@ export function LoginQRCodePage() {
         eyebrow: '米游社',
         title: '二维码登录',
         description: '生成二维码并使用米游社手机App扫描，即可免密码快速登录。',
-        features: ['免密码', '米游社App', '自动刷新'],
+        features: ['无需密码', '需要App'],
         securityNote: '二维码由米游社服务器生成，短时间内过期。我们的服务器不存储任何凭证。',
       }}
     >

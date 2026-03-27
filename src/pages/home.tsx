@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { ThemeToggle } from '@/components/ui/theme-toggle'
 
 export function HomePage() {
   const navigate = useNavigate()
@@ -17,11 +16,6 @@ export function HomePage() {
 
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center bg-background bg-texture overflow-hidden">
-      {/* Theme toggle */}
-      <div className="fixed top-4 right-4 z-50">
-        <ThemeToggle />
-      </div>
-
       {/* Decorative background elements */}
       <div
         className="pointer-events-none absolute inset-0 overflow-hidden"
@@ -60,7 +54,7 @@ export function HomePage() {
             Hoyo Buddy
           </h1>
           <p className="text-base text-muted-foreground max-w-xs leading-relaxed">
-            {t('web.home_tagline')}
+            {t('home_tagline')}
           </p>
         </div>
 
@@ -72,7 +66,7 @@ export function HomePage() {
         </div>
 
         <p className="text-xs text-muted-foreground tracking-widest uppercase">
-          {t('web.home_open_via_discord')}
+          {t('home_open_via_discord')}
         </p>
       </div>
     </div>

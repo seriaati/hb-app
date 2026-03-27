@@ -103,9 +103,9 @@ Filtering in [`LoginMethodsPage`](src/pages/login-methods.tsx) via `method.platf
 
 Translations are **fetched from the backend** at runtime via `GET api/i18n/{locale}`, cached in a module-level `Map`. Not bundled. `useSuspense: false`.
 
-**Key convention**: `'web.<snake_case_key>'`. Always provide a fallback:
+**Key convention**: `'<snake_case_key>'`. Always provide a fallback:
 ```tsx
-t('web.sign_in', 'Sign In')
+t('sign_in', 'Sign In')
 ```
 
 **Supported locales** (frontend): only `en-US` and `zh-TW` are in `SUPPORTED_LOCALES`. [`resolveLocale()`](src/lib/constants.ts) maps browser locales to these, falling back to `'en-US'`.

@@ -22,7 +22,7 @@ export function EmailVerifyPage() {
         handleLoginFlowResponse(data, navigate)
       },
       onError: (err) => {
-        toast.error(err instanceof Error ? err.message : t('web.verification_failed'))
+        toast.error(err instanceof Error ? err.message : t('verification_failed'))
       },
     })
   }
@@ -36,10 +36,10 @@ export function EmailVerifyPage() {
             className="text-2xl font-semibold tracking-tight text-foreground"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            {t('web.email_verify_title')}
+            {t('email_verify_title')}
           </h1>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            {t('web.email_verify_desc')}
+            {t('email_verify_desc')}
           </p>
         </div>
 
@@ -47,7 +47,7 @@ export function EmailVerifyPage() {
         <form onSubmit={handleSubmit} className="flex flex-col gap-6">
           <div className="flex flex-col gap-3">
             <Label htmlFor="code" className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-              {t('web.verification_code')}
+              {t('verification_code')}
             </Label>
             <Input
               id="code"
@@ -62,7 +62,7 @@ export function EmailVerifyPage() {
               style={{ fontFamily: 'var(--font-display)' }}
             />
             <p className="text-xs text-muted-foreground text-center">
-              {t('web.code_expires_note')}
+              {t('code_expires_note')}
             </p>
           </div>
 
@@ -72,7 +72,7 @@ export function EmailVerifyPage() {
             className="w-full h-10 font-semibold"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            {verify.isPending ? t('web.verifying') : t('web.verify_code')}
+            {verify.isPending ? t('verifying') : t('verify_code')}
           </Button>
         </form>
       </div>

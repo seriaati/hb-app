@@ -60,9 +60,8 @@ export function LoginModAppPage() {
         ),
         eyebrow: '米游社 · Miyoushe',
         title: '改装版米游社 App 登录',
-        description: '使用改装版米游社 App 拦截并提取您的登录信息。此方法适用于米游社账号。',
-        features: ['适合移动端', '无需浏览器'],
-        securityNote: '从改装 App 提取的登录信息仅用于向米游社 API 验证身份，不会存储于我们的服务器。',
+        description: '使用改装版米游社 App 拦截并提取您的登录信息。',
+        features: ['移动端', '需要下载'],
       }}
     >
       <div className="flex flex-col gap-8 stagger-children">

@@ -19,25 +19,25 @@ export function GachaBannerTabs({
   function getBannerLabel(bannerType: number, game: string): string {
     const labels: Record<string, Record<number, string>> = {
       genshin: {
-        1: t('web.gacha_banner_permanent'),
-        2: t('web.gacha_banner_character'),
-        3: t('web.gacha_banner_weapon'),
-        11: t('web.gacha_banner_chronicled'),
+        1: t('gacha_banner_permanent'),
+        2: t('gacha_banner_character'),
+        3: t('gacha_banner_weapon'),
+        11: t('gacha_banner_chronicled'),
       },
       hkrpg: {
-        1: t('web.gacha_banner_stellar'),
-        2: t('web.gacha_banner_character'),
-        6: t('web.gacha_banner_light_cone'),
-        7: t('web.gacha_banner_departure'),
+        1: t('gacha_banner_stellar'),
+        2: t('gacha_banner_character'),
+        6: t('gacha_banner_light_cone'),
+        7: t('gacha_banner_departure'),
       },
       nap: {
-        1: t('web.gacha_banner_standard'),
-        2: t('web.gacha_banner_exclusive'),
-        3: t('web.gacha_banner_w_engine'),
-        5: t('web.gacha_banner_bangboo'),
+        1: t('gacha_banner_standard'),
+        2: t('gacha_banner_exclusive'),
+        3: t('gacha_banner_w_engine'),
+        5: t('gacha_banner_bangboo'),
       },
     }
-    return labels[game]?.[bannerType] ?? t('web.gacha_banner_fallback', { type: bannerType })
+    return labels[game]?.[bannerType] ?? t('gacha_banner_fallback', { type: bannerType })
   }
 
   return (

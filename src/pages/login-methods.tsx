@@ -14,18 +14,16 @@ export function LoginMethodsPage() {
 
   const PLATFORM_META: Record<
     string,
-    { name: string; tagline: string; description: string; accentColor: string }
+    { name: string; description: string; accentColor: string }
   > = {
     hoyolab: {
       name: 'HoYoLAB',
-      tagline: t('web.hoyolab_tagline'),
-      description: t('web.hoyolab_description'),
+      description: t('add_account_desc'),
       accentColor: 'oklch(0.56 0.17 12)',
     },
     miyoushe: {
       name: 'Miyoushe',
-      tagline: t('web.miyoushe_tagline'),
-      description: t('web.miyoushe_description'),
+      description: t('add_account_desc'),
       accentColor: 'oklch(0.48 0.16 265)',
     },
   }
@@ -35,40 +33,40 @@ export function LoginMethodsPage() {
   const loginMethods = [
     {
       id: 'email',
-      label: t('web.login_method.email.label'),
-      description: t('web.login_method.email.desc'),
+      label: t('login_method.email.label'),
+      description: t('login_method.email.desc'),
       icon: <Mail size={18} />,
       path: 'email',
       platforms: ['hoyolab', 'miyoushe'],
     },
     {
       id: 'devtools',
-      label: t('web.login_method.devtools.label'),
-      description: t('web.login_method.devtools.desc'),
+      label: t('login_method.devtools.label'),
+      description: t('login_method.devtools.desc'),
       icon: <Code2 size={18} />,
       path: 'devtools',
-      platforms: ['hoyolab'],
+      platforms: ['hoyolab', 'miyoushe'],
     },
     {
       id: 'modapp',
-      label: t('web.login_method_modapp_label'),
-      description: t('web.login_method_modapp_desc'),
+      label: '通过改装版 App',
+      description: '使用改装版米游社 App 拦截并提取您的登录信息',
       icon: <Wrench size={18} />,
       path: 'modapp',
       platforms: ['miyoushe'],
     },
     {
       id: 'mobile',
-      label: t('web.login_method_mobile_label'),
-      description: t('web.login_method_mobile_desc'),
+      label: '短信验证码登录',
+      description: '使用短信验证码登录您的账户',
       icon: <Smartphone size={18} />,
       path: 'mobile',
       platforms: ['miyoushe'],
     },
     {
       id: 'qrcode',
-      label: t('web.login_method_qrcode_label'),
-      description: t('web.login_method_qrcode_desc'),
+      label: '二维码登录',
+      description: '使用米游社 App 扫描二维码登录',
       icon: <QrCode size={18} />,
       path: 'qrcode',
       platforms: ['miyoushe'],
@@ -78,10 +76,9 @@ export function LoginMethodsPage() {
   const availableMethods = loginMethods.filter((m) => m.platforms.includes(platform ?? ''))
 
   const features = [
-    t('web.feature_gacha_logs'),
-    t('web.feature_daily_checkin'),
-    t('web.feature_realtime_notes'),
-    t('web.feature_multi_account'),
+    t('feature_daily_checkin'),
+    t('feature_build_card'),
+    t('feature_multi_account'),
   ]
 
   return (
@@ -95,7 +92,6 @@ export function LoginMethodsPage() {
             className="h-16 w-16 rounded-2xl object-cover shadow-lg"
           />
         ),
-        eyebrow: meta.tagline,
         title: meta.name,
         description: meta.description,
         features,
@@ -118,10 +114,10 @@ export function LoginMethodsPage() {
             className="text-2xl font-semibold tracking-tight text-foreground"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            {t('web.select_login_method')}
+            {t('select_login_method')}
           </h1>
           <p className="text-sm text-muted-foreground">
-            {t('web.select_login_method_desc')}
+            {t('select_login_method_desc')}
           </p>
         </div>
 
@@ -174,7 +170,7 @@ export function LoginMethodsPage() {
         >
           <BookOpen size={14} className="shrink-0 text-muted-foreground" />
           <span className="flex-1 text-xs text-muted-foreground leading-relaxed">
-            {t('web.login_method_faq_note', 'Not sure which method to use?')}
+            {t('login_method_faq_note', 'Not sure which method to use?')}
           </span>
           <ChevronRight size={13} className="shrink-0 text-muted-foreground/50 transition-transform duration-200 group-hover:translate-x-0.5" />
         </a>
@@ -184,7 +180,7 @@ export function LoginMethodsPage() {
           onClick={() => navigate(-1)}
           className="cursor-pointer text-xs text-muted-foreground hover:text-foreground transition-colors duration-150 text-left"
         >
-          {t('web.back_to_platforms')}
+          {t('back_to_platforms')}
         </button>
       </div>
     </LoginLayout>

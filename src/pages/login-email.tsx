@@ -35,7 +35,7 @@ export function LoginEmailPage() {
           handleLoginFlowResponse(data, navigate)
         },
         onError: (err) => {
-          toast.error(err instanceof Error ? err.message : t('web.login_failed'))
+          toast.error(err instanceof Error ? err.message : t('login_failed'))
         },
       },
     )
@@ -57,13 +57,13 @@ export function LoginEmailPage() {
           </div>
         ),
         eyebrow: platformName,
-        title: t('web.email_login_title'),
-        description: t('web.email_login_panel_desc'),
+        title: t('email_login_title'),
+        description: t('email_login_panel_desc'),
         features: [
-          t('web.feature_secure_login'),
-          t('web.feature_auto_captcha'),
-          t('web.feature_2fa'),
+          t('feature_all_platforms'),
+          t('feature_code_redeem'),
         ],
+        securityNote: t('email_login_security_note'),
       }}
     >
       <div className="flex flex-col gap-8 stagger-children">
@@ -83,10 +83,10 @@ export function LoginEmailPage() {
             className="text-2xl font-semibold tracking-tight text-foreground"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            {t('web.email_login_title')}
+            {t('email_login_title')}
           </h1>
           <p className="text-sm text-muted-foreground">
-            {t('web.email_login_desc')}
+            {t('email_login_desc')}
           </p>
         </div>
 
@@ -94,7 +94,7 @@ export function LoginEmailPage() {
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
           <div className="flex flex-col gap-2">
             <Label htmlFor="email" className="text-sm font-medium">
-              {t('web.email_address')}
+              {t('email_address')}
             </Label>
             <Input
               id="email"
@@ -110,7 +110,7 @@ export function LoginEmailPage() {
 
           <div className="flex flex-col gap-2">
             <Label htmlFor="password" className="text-sm font-medium">
-              {t('web.password')}
+              {t('password')}
             </Label>
             <Input
               id="password"
@@ -131,14 +131,14 @@ export function LoginEmailPage() {
               className="w-full h-10 font-semibold"
               style={{ fontFamily: 'var(--font-display)' }}
             >
-              {login.isPending ? t('web.signing_in') : t('web.sign_in')}
+              {login.isPending ? t('signing_in') : t('sign_in')}
             </Button>
             <button
               type="button"
               onClick={() => navigate(-1)}
               className="cursor-pointer text-xs text-muted-foreground hover:text-foreground transition-colors duration-150 text-center py-1"
             >
-              {t('web.back')}
+              {t('back')}
             </button>
           </div>
         </form>
@@ -146,9 +146,9 @@ export function LoginEmailPage() {
         {/* Help cards */}
         <div className="flex flex-col gap-2">
           {[
-            { href: docsUrl, icon: <BookOpen size={14} />, label: t('web.email_login_how_it_works', 'How does this work?') },
-            { href: consoleUrl, icon: <Gamepad2 size={14} />, label: t('web.email_login_console', 'I am a console player') },
-            { href: beforeStartUrl, icon: <UserX size={14} />, label: t('web.email_login_no_account', "I don't have a HoYoverse account (login with Google, Facebook)") },
+            { href: docsUrl, icon: <BookOpen size={14} />, label: t('email_login_how_it_works', 'How does this work?') },
+            { href: consoleUrl, icon: <Gamepad2 size={14} />, label: t('email_login_console', 'I am a console player') },
+            { href: beforeStartUrl, icon: <UserX size={14} />, label: t('email_login_no_account', "I don't have a HoYoverse account (login with Google, Facebook)") },
           ].map(({ href, icon, label }) => (
             <a
               key={href}

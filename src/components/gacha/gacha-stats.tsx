@@ -21,11 +21,11 @@ export function GachaStats({ items, total }: GachaStatsProps) {
       : null
 
   const stats = [
-    { label: t('web.stat_total_pulls'), value: total.toLocaleString(), highlight: false },
-    { label: t('web.stat_pity'), value: currentPity.toString(), highlight: currentPity >= 70 },
+    { label: t('stat_total_pulls'), value: total.toLocaleString(), highlight: false },
+    { label: t('stat_pity'), value: currentPity.toString(), highlight: currentPity >= 70 },
     { label: '5★', value: fiveStarItems.length.toString(), highlight: false },
     { label: '4★', value: fourStarItems.length.toString(), highlight: false },
-    { label: t('web.stat_avg_per_5star'), value: avgPer5Star !== null ? `${avgPer5Star}` : '—', highlight: false },
+    { label: t('stat_avg_per_5star'), value: avgPer5Star !== null ? `${avgPer5Star}` : '—', highlight: false },
   ]
 
   return (

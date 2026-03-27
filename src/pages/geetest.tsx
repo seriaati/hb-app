@@ -118,7 +118,7 @@ export function GeetestPage() {
         onSuccess: (data) =>
           handleLoginFlowResponse(data, navigate, { geetestPurpose: 'email_verify' }),
         onError: (err) => {
-          const message = err instanceof Error ? err.message : t('web.geetest_failed')
+          const message = err instanceof Error ? err.message : t('geetest_failed')
           setError(message)
           toast.error(message)
           setCaptchaState('error')
@@ -143,7 +143,7 @@ export function GeetestPage() {
         onSuccess: (data) =>
           handleLoginFlowResponse(data, navigate, { geetestPurpose: 'email_verify' }),
         onError: (err) => {
-          const message = err instanceof Error ? err.message : t('web.geetest_failed')
+          const message = err instanceof Error ? err.message : t('geetest_failed')
           setError(message)
           toast.error(message)
           setCaptchaState('error')
@@ -154,7 +154,7 @@ export function GeetestPage() {
 
   function initV3(mmtData: GeetestMMTData) {
     if (!window.initGeetest) {
-      setError(t('web.geetest_failed'))
+      setError(t('geetest_failed'))
       setCaptchaState('error')
       return
     }
@@ -186,7 +186,7 @@ export function GeetestPage() {
 
         captcha.onError((err) => {
           console.error('Geetest v3 error:', err)
-          const message = t('web.geetest_failed')
+          const message = t('geetest_failed')
           setError(message)
           toast.error(message)
           setCaptchaState('error')
@@ -197,7 +197,7 @@ export function GeetestPage() {
 
   function initV4(mmtData: GeetestMMTData) {
     if (!window.initGeetest4) {
-      setError(t('web.geetest_failed'))
+      setError(t('geetest_failed'))
       setCaptchaState('error')
       return
     }
@@ -226,7 +226,7 @@ export function GeetestPage() {
 
         captcha.onError((err) => {
           console.error('Geetest v4 error:', err)
-          const message = t('web.geetest_failed')
+          const message = t('geetest_failed')
           setError(message)
           toast.error(message)
           setCaptchaState('error')
@@ -237,7 +237,7 @@ export function GeetestPage() {
 
   useEffect(() => {
     if (gtVersion === null || mmt === null) {
-      setError(t('web.geetest_failed'))
+      setError(t('geetest_failed'))
       setCaptchaState('error')
       return
     }
@@ -271,7 +271,7 @@ export function GeetestPage() {
         }
       })
       .catch((err) => {
-        const message = err instanceof Error ? err.message : t('web.geetest_failed')
+        const message = err instanceof Error ? err.message : t('geetest_failed')
         setError(message)
         toast.error(message)
         setCaptchaState('error')
@@ -293,8 +293,8 @@ export function GeetestPage() {
     return (
       <PageContainer narrow>
         <div className="flex flex-col items-center gap-4 py-16 text-center">
-          <p className="text-destructive">{error ?? t('web.geetest_failed')}</p>
-          <Button onClick={handleBack}>{t('web.back')}</Button>
+          <p className="text-destructive">{error ?? t('geetest_failed')}</p>
+          <Button onClick={handleBack}>{t('back')}</Button>
         </div>
       </PageContainer>
     )
@@ -304,7 +304,7 @@ export function GeetestPage() {
     return (
       <div className="flex min-h-screen flex-col items-center justify-center gap-4">
         <LoadingSpinner size={32} />
-        <p className="text-muted-foreground">{t('web.processing_verification')}</p>
+        <p className="text-muted-foreground">{t('processing_verification')}</p>
       </div>
     )
   }
@@ -319,24 +319,24 @@ export function GeetestPage() {
                 <Mail className="h-4 w-4" style={{ color: 'var(--accent)' }} />
               </div>
               <p className="text-sm font-medium" style={{ fontFamily: 'var(--font-display)' }}>
-                {t('web.geetest_email_verify_title', 'One more verification')}
+                {t('geetest_email_verify_title', 'One more verification')}
               </p>
               <p className="text-xs text-muted-foreground">
                 {t(
-                  'web.geetest_email_verify_desc',
+                  'geetest_email_verify_desc',
                   'To send your verification code, please complete this security check.',
                 )}
               </p>
             </div>
           )}
-          <p className="text-muted-foreground">{t('web.captcha_closed')}</p>
-          <Button onClick={handleLaunchCaptcha}>{t('web.launch_captcha')}</Button>
+          <p className="text-muted-foreground">{t('captcha_closed')}</p>
+          <Button onClick={handleLaunchCaptcha}>{t('launch_captcha')}</Button>
           <button
             type="button"
             onClick={handleBack}
             className="text-xs text-muted-foreground hover:text-foreground transition-colors duration-150"
           >
-            {t('web.back')}
+            {t('back')}
           </button>
         </div>
       </PageContainer>
@@ -352,18 +352,18 @@ export function GeetestPage() {
             <Mail className="h-5 w-5" style={{ color: 'var(--accent)' }} />
           </div>
           <p className="text-sm font-medium" style={{ fontFamily: 'var(--font-display)' }}>
-            {t('web.geetest_email_verify_title', 'One more verification')}
+            {t('geetest_email_verify_title', 'One more verification')}
           </p>
           <p className="text-xs text-muted-foreground">
             {t(
-              'web.geetest_email_verify_desc',
+              'geetest_email_verify_desc',
               'To send your verification code, please complete this security check.',
             )}
           </p>
         </div>
       )}
       <LoadingSpinner size={32} />
-      <p className="text-muted-foreground">{t('web.loading_captcha')}</p>
+      <p className="text-muted-foreground">{t('loading_captcha')}</p>
       <div id="geetest-captcha" />
     </div>
   )

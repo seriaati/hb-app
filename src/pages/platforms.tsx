@@ -49,10 +49,9 @@ export function PlatformsPage() {
   ]
 
   const features = [
-    t('web.feature_gacha_logs'),
-    t('web.feature_daily_checkin'),
-    t('web.feature_realtime_notes'),
-    t('web.feature_multi_account'),
+    t('feature_daily_checkin'),
+    t('feature_build_card'),
+    t('feature_multi_account'),
   ]
 
   return (
@@ -67,8 +66,8 @@ export function PlatformsPage() {
           />
         ),
         eyebrow: 'Hoyo Buddy',
-        title: t('web.add_account_title'),
-        description: t('web.add_account_desc'),
+        title: t('add_account_title'),
+        description: t('add_account_desc'),
         features,
       }}
     >
@@ -79,10 +78,10 @@ export function PlatformsPage() {
             className="text-2xl font-semibold tracking-tight text-foreground"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            {t('web.select_platform')}
+            {t('select_platform')}
           </h1>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            {t('web.select_platform_desc')}
+            {t('select_platform_desc')}
           </p>
         </div>
 
@@ -125,7 +124,7 @@ export function PlatformsPage() {
         >
           <ShieldCheck size={14} className="shrink-0 text-muted-foreground" />
           <span className="flex-1 text-xs text-muted-foreground leading-relaxed">
-            {t('web.select_platform_security_note', 'We treat your account security seriously.')}
+            {t('select_platform_security_note', 'We treat your account security seriously.')}
           </span>
           <ChevronRight size={13} className="shrink-0 text-muted-foreground/50 transition-transform duration-200 group-hover:translate-x-0.5" />
         </a>

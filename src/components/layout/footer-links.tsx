@@ -22,10 +22,10 @@ export function FooterLinks({ className }: FooterLinksProps) {
         rel="noopener noreferrer"
         className="text-xs text-muted-foreground hover:text-foreground transition-colors underline-offset-2 hover:underline"
       >
-        {t('web.privacy_policy', 'Privacy Policy')}
+        {t('privacy_policy', 'Privacy Policy')}
       </a>
       <span className="text-xs text-muted-foreground/50 mx-1.5">
-        {t('web.footer_links_separator', '·')}
+        {t('footer_links_separator', '·')}
       </span>
       <a
         href={accountSecurityUrl}
@@ -33,7 +33,7 @@ export function FooterLinks({ className }: FooterLinksProps) {
         rel="noopener noreferrer"
         className="text-xs text-muted-foreground hover:text-foreground transition-colors underline-offset-2 hover:underline"
       >
-        {t('web.account_security_docs', 'Account Security')}
+        {t('account_security_docs', 'Account Security')}
       </a>
     </div>
   )

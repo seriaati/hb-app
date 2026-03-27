@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next'
 import { LanguageSelector } from '@/components/ui/language-selector'
 import { PageContainer } from '@/components/layout/page-container'
 import { DiscordUserBadge } from '@/components/auth/discord-user-badge'
@@ -34,7 +33,6 @@ interface LoginLayoutProps {
  * - Desktop (lg+): left info panel + right form panel side-by-side.
  */
 export function LoginLayout({ panel, children }: LoginLayoutProps) {
-  const { t } = useTranslation()
   const {
     accentColor,
     hero,
@@ -42,7 +40,7 @@ export function LoginLayout({ panel, children }: LoginLayoutProps) {
     title,
     description,
     features,
-    securityNote = t('web.default_security_note'),
+    securityNote = null,
   } = panel
 
   return (

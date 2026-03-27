@@ -21,7 +21,7 @@ export function LoginMobilePage() {
 
   function handleSendOtp(e: React.FormEvent) {
     e.preventDefault()
-    sendOtp.mutate(`+86${mobile}`, {
+    sendOtp.mutate(mobile, {
       onSuccess: (data) => {
         handleLoginFlowResponse(data, navigate, {
           onVerifyOtp: () => {
@@ -66,7 +66,7 @@ export function LoginMobilePage() {
         eyebrow: '米游社',
         title: '手机验证码登录',
         description: '使用已注册米游社的中国大陆手机号登录，系统将通过短信发送验证码验证您的身份。',
-        features: ['短信验证', '仅限米游社', '无需密码'],
+        features: ['无需密码'],
         securityNote: '您的手机号仅用于向米游社服务器请求验证码，不会被存储或共享。',
       }}
     >
@@ -92,25 +92,25 @@ export function LoginMobilePage() {
 
         {!otpSent ? (
           <form onSubmit={handleSendOtp} className="flex flex-col gap-4">
-              <div className="flex flex-col gap-1.5">
-                <Label htmlFor="mobile" className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-                  手机号
-                </Label>
-                <div className="flex h-10 items-stretch rounded-md border border-input bg-transparent shadow-xs transition-[color,box-shadow] focus-within:ring-[3px] focus-within:ring-ring/50 focus-within:border-ring">
-                  <span className="flex items-center px-3 text-sm font-medium text-muted-foreground border-r border-input select-none bg-muted/40 rounded-l-md">
-                    +86
-                  </span>
-                  <Input
-                    id="mobile"
-                    type="tel"
-                    placeholder="1xx xxxx xxxx"
-                    value={mobile}
-                    onChange={(e) => setMobile(e.target.value)}
-                    required
-                    className="h-full border-0 shadow-none focus-visible:ring-0 focus-visible:ring-offset-0 rounded-l-none flex-1"
-                  />
-                </div>
+            <div className="flex flex-col gap-1.5">
+              <Label htmlFor="mobile" className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
+                手机号
+              </Label>
+              <div className="flex h-10 items-stretch rounded-md border border-input bg-transparent shadow-xs transition-[color,box-shadow] focus-within:ring-[3px] focus-within:ring-ring/50 focus-within:border-ring">
+                <span className="flex items-center px-3 text-sm font-medium text-muted-foreground border-r border-input select-none bg-muted/40 rounded-l-md">
+                  +86
+                </span>
+                <Input
+                  id="mobile"
+                  type="tel"
+                  placeholder="1xx xxxx xxxx"
+                  value={mobile}
+                  onChange={(e) => setMobile(e.target.value)}
+                  required
+                  className="h-full border-0 shadow-none focus-visible:ring-0 focus-visible:ring-offset-0 rounded-l-none flex-1"
+                />
               </div>
+            </div>
 
             <div className="flex flex-col gap-2 pt-1">
               <Button

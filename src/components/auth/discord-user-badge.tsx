@@ -43,11 +43,11 @@ export function DiscordUserBadge({ className }: DiscordUserBadgeProps) {
       <button
         onClick={() => doLogout()}
         disabled={isPending}
-        title={t('web.switch_discord_account', 'Switch account')}
+        title={t('switch_discord_account', 'Switch account')}
         className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
       >
         <LogOut size={12} />
-        <span className="hidden sm:inline">{t('web.switch_account', 'Switch')}</span>
+        <span className="hidden sm:inline">{t('switch_account', 'Switch')}</span>
       </button>
     </div>
   )

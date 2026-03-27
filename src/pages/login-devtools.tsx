@@ -25,12 +25,12 @@ const ACCENT_HOYOLAB = 'oklch(0.56 0.17 12)'
 const ACCENT_MIYOUSHE = 'oklch(0.48 0.16 265)'
 
 const STEPS = [
-  { labelKey: 'web.devtools_step1_label', descKey: 'web.devtools_step1_desc' },
-  { labelKey: 'web.devtools_step2_label', descKey: 'web.devtools_step2_desc' },
-  { labelKey: 'web.devtools_step3_label', descKey: 'web.devtools_step3_desc' },
-  { labelKey: 'web.devtools_step4_label', descKey: 'web.devtools_step4_desc' },
-  { labelKey: 'web.devtools_step5_label', descKey: 'web.devtools_step5_desc' },
-  { labelKey: 'web.devtools_step6_label', descKey: 'web.devtools_step6_desc' },
+  { labelKey: 'devtools_step1_label', descKey: 'devtools_step1_desc' },
+  { labelKey: 'devtools_step2_label', descKey: 'devtools_step2_desc' },
+  { labelKey: 'devtools_step3_label', descKey: 'devtools_step3_desc' },
+  { labelKey: 'devtools_step4_label', descKey: 'devtools_step4_desc' },
+  { labelKey: 'devtools_step5_label', descKey: 'devtools_step5_desc' },
+  { labelKey: 'devtools_step6_label', descKey: 'devtools_step6_desc' },
 ] as const
 
 export function LoginDevtoolsPage() {
@@ -57,7 +57,7 @@ export function LoginDevtoolsPage() {
         handleLoginFlowResponse(data, navigate)
       },
       onError: (err) => {
-        toast.error(err instanceof Error ? err.message : t('web.login_failed'))
+        toast.error(err instanceof Error ? err.message : t('login_failed'))
       },
     })
   }
@@ -78,14 +78,12 @@ export function LoginDevtoolsPage() {
           </div>
         ),
         eyebrow: platform === 'miyoushe' ? 'Miyoushe' : 'HoYoLAB',
-        title: t('web.devtools_title'),
-        description: t('web.devtools_panel_desc'),
+        title: t('devtools_title'),
+        description: t('devtools_panel_desc'),
         features: [
-          t('web.feature_no_password'),
-          t('web.feature_browser_based'),
-          t('web.feature_computer_only'),
+          t('feature_no_password'),
+          t('feature_computer_only'),
         ],
-        securityNote: t('web.devtools_security_note'),
       }}
     >
       <div className="flex flex-col gap-6 stagger-children">
@@ -107,10 +105,10 @@ export function LoginDevtoolsPage() {
             className="text-2xl font-semibold tracking-tight text-foreground"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            {t('web.devtools_title')}
+            {t('devtools_title')}
           </h1>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            {t('web.devtools_desc')}
+            {t('devtools_desc')}
           </p>
         </div>
 
@@ -154,7 +152,7 @@ export function LoginDevtoolsPage() {
                       }}
                     >
                       <img src="/images/hoyolab.webp" alt="" className="h-3.5 w-3.5 rounded-sm object-cover" />
-                      {t('web.devtools_step1_hoyolab', 'HoYoLAB (Global)')}
+                      {'HoYoLAB'}
                       <ExternalLink size={10} />
                     </a>
                     <a
@@ -170,7 +168,7 @@ export function LoginDevtoolsPage() {
                       }}
                     >
                       <img src="/images/miyoushe.webp" alt="" className="h-3.5 w-3.5 rounded-sm object-cover" />
-                      {t('web.devtools_step1_miyoushe', 'Miyoushe (China)')}
+                      {'米游社'}
                       <ExternalLink size={10} />
                     </a>
                   </div>
@@ -193,7 +191,7 @@ export function LoginDevtoolsPage() {
           <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/20 transition-colors duration-300">
             <div className="flex items-center gap-1.5 rounded-full bg-black/60 px-3 py-1.5 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <ZoomIn size={13} />
-              {t('web.click_to_enlarge', 'Click to enlarge')}
+              {t('click_to_enlarge', 'Click to enlarge')}
             </div>
           </div>
         </div>
@@ -206,14 +204,14 @@ export function LoginDevtoolsPage() {
             className="w-full h-10 font-semibold"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            {t('web.devtools_enter_cookies', 'Enter Cookies')}
+            {t('devtools_enter_cookies', 'Enter Cookies')}
           </Button>
           <button
             type="button"
             onClick={() => navigate(-1)}
             className="cursor-pointer text-xs text-muted-foreground hover:text-foreground transition-colors duration-150 text-center py-1"
           >
-            {t('web.back')}
+            {t('back')}
           </button>
         </div>
       </div>
@@ -261,10 +259,10 @@ export function LoginDevtoolsPage() {
                     className="text-base font-semibold text-foreground leading-tight"
                     style={{ fontFamily: 'var(--font-display)' }}
                   >
-                    {t('web.devtools_modal_title', 'Enter Cookie Values')}
+                    {t('devtools_modal_title', 'Enter Cookie Values')}
                   </h2>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    {t('web.devtools_modal_desc', 'Copy each value from the DevTools Application → Cookies panel and paste below.')}
+                    {t('devtools_modal_desc', 'Copy each value from the DevTools Application → Cookies panel and paste below.')}
                   </p>
                 </div>
                 <button
@@ -312,7 +310,7 @@ export function LoginDevtoolsPage() {
                       background: ACCENT,
                     }}
                   >
-                    {login.isPending ? t('web.submitting') : t('web.submit_cookies', 'Submit Cookies')}
+                    {login.isPending ? t('submitting') : t('submit_cookies', 'Submit Cookies')}
                   </Button>
                 </div>
               </form>

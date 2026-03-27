@@ -66,19 +66,19 @@ export function GachaLogTable({
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead className="w-12">{t('web.table_header_number')}</TableHead>
+              <TableHead className="w-12">{t('table_header_number')}</TableHead>
               <TableHead className="w-10"></TableHead>
-              <TableHead>{t('web.table_header_name')}</TableHead>
-              <TableHead className="w-24">{t('web.table_header_rarity')}</TableHead>
-              <TableHead className="w-16 text-right">{t('web.table_header_pity')}</TableHead>
-              <TableHead className="w-36 text-right">{t('web.table_header_time')}</TableHead>
+              <TableHead>{t('table_header_name')}</TableHead>
+              <TableHead className="w-24">{t('table_header_rarity')}</TableHead>
+              <TableHead className="w-16 text-right">{t('table_header_pity')}</TableHead>
+              <TableHead className="w-36 text-right">{t('table_header_time')}</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {items.length === 0 ? (
               <TableRow>
                 <TableCell colSpan={6} className="py-12 text-center text-muted-foreground">
-                  {t('web.no_gacha_records')}
+                  {t('no_gacha_records')}
                 </TableCell>
               </TableRow>
             ) : (
@@ -123,7 +123,7 @@ export function GachaLogTable({
       {max_page > 1 && (
         <div className="flex items-center justify-between text-sm text-muted-foreground">
           <span>
-            {t('web.page_of', { page, maxPage: max_page, total: total.toLocaleString() })}
+            {t('page_of', { page, maxPage: max_page, total: total.toLocaleString() })}
           </span>
           <Pagination>
             <PaginationContent>

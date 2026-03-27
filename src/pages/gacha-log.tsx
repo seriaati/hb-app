@@ -66,7 +66,7 @@ export function GachaLogPage() {
   if (!accountId) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-background bg-texture">
-        <p className="text-sm text-muted-foreground">{t('web.missing_account_id')}</p>
+        <p className="text-sm text-muted-foreground">{t('missing_account_id')}</p>
       </div>
     )
   }
@@ -91,7 +91,7 @@ export function GachaLogPage() {
             className="text-2xl font-semibold tracking-tight text-foreground"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            {t('web.gacha_history')}
+            {t('gacha_history')}
           </h1>
         </div>
 

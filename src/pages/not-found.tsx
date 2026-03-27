@@ -66,11 +66,11 @@ export function NotFoundPage() {
             className="text-2xl font-semibold tracking-tight text-foreground"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            {t('web.not_found_title', 'Page Not Found')}
+            {t('not_found_title', 'Page Not Found')}
           </h1>
           <p className="text-sm text-muted-foreground leading-relaxed">
             {t(
-              'web.not_found_desc',
+              'not_found_desc',
               "This page doesn't exist or may have been moved. Head back home to get started.",
             )}
           </p>
@@ -89,7 +89,7 @@ export function NotFoundPage() {
           className="px-6"
           style={{ fontFamily: 'var(--font-display)' }}
         >
-          {t('web.go_home', 'Go Home')}
+          {t('go_home', 'Go Home')}
         </Button>
       </div>
     </div>

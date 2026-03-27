@@ -43,7 +43,7 @@ export function FinishPage() {
           handleLoginFlowResponse(result, navigate)
         },
         onError: (err) => {
-          toast.error(err instanceof Error ? err.message : t('web.failed_to_save_accounts'))
+          toast.error(err instanceof Error ? err.message : t('failed_to_save_accounts'))
         },
       },
     )
@@ -63,10 +63,10 @@ export function FinishPage() {
               border: '1px solid color-mix(in oklch, var(--destructive) 25%, transparent)',
             }}
           >
-            {error instanceof Error ? error.message : t('web.failed_to_load_accounts')}
+            {error instanceof Error ? error.message : t('failed_to_load_accounts')}
           </div>
           <Button onClick={() => navigate('/')} variant="outline">
-            {t('web.go_home')}
+            {t('go_home')}
           </Button>
         </div>
       </PageContainer>
@@ -84,10 +84,10 @@ export function FinishPage() {
             className="text-2xl font-semibold tracking-tight text-foreground"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            {t('web.select_accounts_title')}
+            {t('select_accounts_title')}
           </h1>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            {t('web.select_accounts_desc')}
+            {t('select_accounts_desc')}
           </p>
         </div>
 
@@ -100,7 +100,7 @@ export function FinishPage() {
             >
               🎮
             </div>
-            <p className="text-sm text-muted-foreground">{t('web.no_accounts_found')}</p>
+            <p className="text-sm text-muted-foreground">{t('no_accounts_found')}</p>
           </div>
         ) : (
           <div className="flex flex-col gap-2">
@@ -125,17 +125,17 @@ export function FinishPage() {
               onClick={() => setSelected(new Set(accounts.map((a) => `${a.game}_${a.uid}`)))}
               className="cursor-pointer text-xs text-muted-foreground hover:text-foreground transition-colors duration-150"
             >
-              {t('web.select_all')}
+              {t('select_all')}
             </button>
             <span className="text-border">·</span>
             <button
               onClick={() => setSelected(new Set())}
               className="cursor-pointer text-xs text-muted-foreground hover:text-foreground transition-colors duration-150"
             >
-              {t('web.deselect_all')}
+              {t('deselect_all')}
             </button>
             <span className="ml-auto text-xs text-muted-foreground">
-              {t('web.selected_count', {
+              {t('selected_count', {
                 selected: selected.size,
                 total: accounts.length,
               })}
@@ -151,10 +151,10 @@ export function FinishPage() {
           style={{ fontFamily: 'var(--font-display)' }}
         >
           {submitAccounts.isPending
-            ? t('web.saving')
+            ? t('saving')
             : selected.size === 1
-              ? t('web.add_accounts_button', { count: selected.size })
-              : t('web.add_accounts_button_plural', { count: selected.size })}
+              ? t('add_accounts_button', { count: selected.size })
+              : t('add_accounts_button_plural', { count: selected.size })}
         </Button>
       </div>
     </PageContainer>
