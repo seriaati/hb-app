@@ -1,5 +1,5 @@
 import { apiClient } from './client'
-import type { GachaLogResponse, GachaIconsResponse, GachaNamesResponse, GachaParams } from './types'
+import type { GachaLogResponse, GachaBannerTypesResponse, GachaParams, GachaStatsResponse } from './types'
 
 export async function getGachaLogs(params: GachaParams): Promise<GachaLogResponse> {
   const searchParams: Record<string, string | number> = {
@@ -9,24 +9,26 @@ export async function getGachaLogs(params: GachaParams): Promise<GachaLogRespons
   if (params.locale) searchParams.locale = params.locale
   if (params.rarities?.length) searchParams.rarities = params.rarities.join(',')
   if (params.size !== undefined) searchParams.size = params.size
-  if (params.page !== undefined) searchParams.page = params.page
+  if (params.cursor) searchParams.cursor = params.cursor
   if (params.name_contains) searchParams.name_contains = params.name_contains
 
   return apiClient.get('api/gacha/logs', { searchParams }).json<GachaLogResponse>()
 }
 
-export async function getGachaIcons(): Promise<GachaIconsResponse> {
-  return apiClient.get('api/gacha/icons').json<GachaIconsResponse>()
+export async function getGachaStats(
+  accountId: string,
+  bannerType?: number,
+): Promise<GachaStatsResponse> {
+  const searchParams: Record<string, string | number> = { account_id: accountId }
+  if (bannerType !== undefined) searchParams.banner_type = bannerType
+  return apiClient.get('api/gacha/stats', { searchParams }).json<GachaStatsResponse>()
 }
 
-export async function getGachaNames(
-  locale: string,
+export async function getBannerTypes(
   game: string,
-  itemIds: string[],
-): Promise<GachaNamesResponse> {
+  locale: string,
+): Promise<GachaBannerTypesResponse> {
   return apiClient
-    .get('api/gacha/names', {
-      searchParams: { locale, game, item_ids: itemIds.join(',') },
-    })
-    .json<GachaNamesResponse>()
+    .get('api/gacha/banner-types', { searchParams: { game, locale } })
+    .json<GachaBannerTypesResponse>()
 }

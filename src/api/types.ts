@@ -119,6 +119,20 @@ export interface AccountSubmitRequest {
   selected_accounts: string[]
 }
 
+// Gacha stats type
+export interface GachaStatsResponse {
+  total_pulls: number
+  five_star_pity: number
+  four_star_pity: number
+  total_five_stars: number
+  total_four_stars: number
+  avg_pulls_per_five_star: number
+  avg_pulls_per_four_star: number
+  fifty_fifty_wins: number
+  fifty_fifty_total: number
+  fifty_fifty_win_rate: number
+}
+
 // Gacha types
 export interface GachaItem {
   id: number
@@ -129,21 +143,24 @@ export interface GachaItem {
   wish_id: string
   time: string
   banner_type: number
+  icon: string | null
+  name: string | null
 }
 
 export interface GachaLogResponse {
   items: GachaItem[]
   total: number
-  page: number
-  max_page: number
+  next_cursor: string | null
+  game: string
 }
 
-export interface GachaIconsResponse {
-  icons: Record<string, string> // item_id -> icon URL
+export interface GachaBannerType {
+  id: number
+  name: string
 }
 
-export interface GachaNamesResponse {
-  names: Record<string, string> // item_id -> display name
+export interface GachaBannerTypesResponse {
+  banner_types: GachaBannerType[]
 }
 
 export interface GachaParams {
@@ -152,7 +169,7 @@ export interface GachaParams {
   locale?: string
   rarities?: number[]
   size?: number
-  page?: number
+  cursor?: string
   name_contains?: string
 }
 

@@ -1,67 +1,137 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { useGachaLogs, useGachaIcons, useGachaNames } from '@/hooks/use-gacha'
-import { GachaBannerTabs } from '@/components/gacha/gacha-banner-tabs'
+import { useGachaLogs, useGachaBannerTypes, useGachaStats } from '@/hooks/use-gacha'
 import { GachaFilters } from '@/components/gacha/gacha-filters'
-import { GachaLogTable } from '@/components/gacha/gacha-log-table'
+import { GachaGrid } from '@/components/gacha/gacha-grid'
 import { GachaStats } from '@/components/gacha/gacha-stats'
-import { LoadingSpinner } from '@/components/layout/loading-spinner'
-import { ThemeToggle } from '@/components/ui/theme-toggle'
+import { GAME_ICONS, GAME_ACCENT_COLORS } from '@/lib/constants'
 
 export function GachaLogPage() {
-  const [searchParams] = useSearchParams()
+  const [searchParams, setSearchParams] = useSearchParams()
   const { t } = useTranslation()
 
   const accountId = searchParams.get('account_id') ?? ''
   const locale = searchParams.get('locale') ?? 'en-US'
-  const initialBannerType = Number(searchParams.get('banner_type') ?? '2')
+  const initialBannerType = Number(searchParams.get('banner_type') ?? '0')
   const initialRarities = searchParams
     .get('rarities')
     ?.split(',')
     .map(Number)
     .filter(Boolean) ?? [3, 4, 5]
 
+  const game = searchParams.get('game') ?? ''
+
   const [bannerType, setBannerType] = useState(initialBannerType)
   const [rarities, setRarities] = useState<number[]>(initialRarities)
   const [nameSearch, setNameSearch] = useState('')
-  const [page, setPage] = useState(1)
+  // cursorStack holds the cursors for pages we've visited so we can go back.
+  // cursorStack[0] is always undefined (first page), cursorStack[n] is the
+  // next_cursor returned by page n-1.
+  const [cursorStack, setCursorStack] = useState<(string | undefined)[]>([undefined])
+  const [stackIndex, setStackIndex] = useState(0)
+
+  const currentCursor = cursorStack[stackIndex]
 
   const gachaParams = {
     account_id: accountId,
-    banner_type: bannerType,
+    banner_type: bannerType || undefined,
     locale,
     rarities,
-    size: 20,
-    page,
+    size: 100,
+    cursor: currentCursor,
     name_contains: nameSearch || undefined,
   }
 
   const { data: logsData, isLoading: logsLoading } = useGachaLogs(gachaParams)
-  const { data: iconsData } = useGachaIcons()
 
-  const itemIds = logsData?.items.map((i) => String(i.item_id)) ?? []
-  const game = searchParams.get('game') ?? ''
+  const { data: statsData, isLoading: statsLoading } = useGachaStats(
+    accountId,
+    bannerType || undefined,
+  )
 
-  const { data: namesData } = useGachaNames(locale, game, itemIds)
+  // Prefer the `game` URL param; fall back to the value returned by the logs endpoint
+  const resolvedGame = game || logsData?.game || ''
 
-  const icons = iconsData?.icons ?? {}
-  const names = namesData?.names ?? {}
+  const { data: bannerTypesData, isLoading: bannerTypesLoading } = useGachaBannerTypes(
+    resolvedGame,
+    locale,
+  )
+  const bannerTypes = bannerTypesData?.banner_types ?? []
 
-  const handleBannerTypeChange = useCallback((bt: number) => {
-    setBannerType(bt)
-    setPage(1)
+  // Once banner types load, default to the first one if no valid type was in the URL
+  useEffect(() => {
+    if (bannerTypes.length > 0 && bannerType === 0) {
+      setBannerType(bannerTypes[0].id)
+    }
+  }, [bannerTypes, bannerType])
+
+  const accentColor = GAME_ACCENT_COLORS[resolvedGame] ?? 'oklch(0.72 0.14 68)'
+  const gameIconSrc = GAME_ICONS[resolvedGame]
+
+  const resetCursor = useCallback(() => {
+    setCursorStack([undefined])
+    setStackIndex(0)
   }, [])
 
-  const handleRaritiesChange = useCallback((r: number[]) => {
-    setRarities(r)
-    setPage(1)
-  }, [])
+  const handleBannerTypeChange = useCallback(
+    (bt: number) => {
+      setBannerType(bt)
+      resetCursor()
+      setSearchParams((prev) => {
+        const next = new URLSearchParams(prev)
+        next.set('banner_type', String(bt))
+        return next
+      })
+    },
+    [resetCursor, setSearchParams],
+  )
 
-  const handleNameSearchChange = useCallback((s: string) => {
-    setNameSearch(s)
-    setPage(1)
-  }, [])
+  const handleRaritiesChange = useCallback(
+    (r: number[]) => {
+      setRarities(r)
+      resetCursor()
+      setSearchParams((prev) => {
+        const next = new URLSearchParams(prev)
+        next.set('rarities', r.join(','))
+        return next
+      })
+    },
+    [resetCursor, setSearchParams],
+  )
+
+  const handleNameSearchChange = useCallback(
+    (s: string) => {
+      setNameSearch(s)
+      resetCursor()
+      setSearchParams((prev) => {
+        const next = new URLSearchParams(prev)
+        if (s) {
+          next.set('name_search', s)
+        } else {
+          next.delete('name_search')
+        }
+        return next
+      })
+    },
+    [resetCursor, setSearchParams],
+  )
+
+  const handleNext = useCallback(() => {
+    if (!logsData?.next_cursor) return
+    const nextCursor = logsData.next_cursor
+    setCursorStack((prev) => {
+      const next = prev.slice(0, stackIndex + 1)
+      next.push(nextCursor)
+      return next
+    })
+    setStackIndex((i) => i + 1)
+  }, [logsData?.next_cursor, stackIndex])
+
+  const handlePrev = useCallback(() => {
+    if (stackIndex === 0) return
+    setStackIndex((i) => i - 1)
+  }, [stackIndex])
 
   if (!accountId) {
     return (
@@ -72,70 +142,96 @@ export function GachaLogPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background bg-texture text-foreground">
-      {/* Theme toggle */}
-      <div className="fixed top-4 right-4 z-50">
-        <ThemeToggle />
-      </div>
+    <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
+      {/* bg-texture overlay */}
+      <div className="pointer-events-none absolute inset-0 bg-texture opacity-60" />
 
-      <div className="mx-auto max-w-5xl px-4 py-8">
+      {/* Decorative blobs */}
+      <div
+        className="pointer-events-none absolute -top-40 -left-40 h-[480px] w-[480px] rounded-full opacity-15 blur-3xl"
+        style={{ background: accentColor }}
+      />
+      <div
+        className="pointer-events-none absolute top-1/3 -right-32 h-72 w-72 rounded-full opacity-10 blur-3xl"
+        style={{ background: accentColor }}
+      />
+      <div
+        className="pointer-events-none absolute bottom-0 left-1/4 h-64 w-64 rounded-full opacity-8 blur-3xl"
+        style={{ background: accentColor }}
+      />
+
+      <div className="relative mx-auto max-w-6xl px-4 py-8">
         {/* Header */}
         <div className="mb-8 page-enter">
-          <div className="flex items-center gap-3 mb-1">
-            <img src="/images/logo.png" alt="Hoyo Buddy" className="h-7 w-7 rounded-lg object-cover" />
-            <span className="text-xs font-medium tracking-widest uppercase text-muted-foreground">
+          {/* Logo row */}
+          <div className="flex items-center gap-2.5 mb-3">
+            <img
+              src="/images/logo.png"
+              alt="Hoyo Buddy"
+              className="h-7 w-7 rounded-lg object-cover"
+            />
+            <span
+              className="text-xs font-semibold tracking-widest uppercase"
+              style={{ color: 'var(--muted-foreground)', fontFamily: 'var(--font-display)' }}
+            >
               Hoyo Buddy
             </span>
           </div>
-          <h1
-            className="text-2xl font-semibold tracking-tight text-foreground"
-            style={{ fontFamily: 'var(--font-display)' }}
-          >
-            {t('gacha_history')}
-          </h1>
+
+          {/* Title row with game icon */}
+          <div className="flex items-center gap-3">
+            {gameIconSrc && (
+              <img
+                src={gameIconSrc}
+                alt={resolvedGame}
+                className="h-9 w-9 rounded-xl object-cover shadow-sm"
+                style={{
+                  filter: `drop-shadow(0 4px 12px color-mix(in oklch, ${accentColor} 40%, transparent))`,
+                }}
+              />
+            )}
+            <div>
+              <h1
+                className="text-2xl font-bold tracking-tight text-foreground"
+                style={{ fontFamily: 'var(--font-display)' }}
+              >
+                {t('gacha_history')}
+              </h1>
+              {/* Accent underline */}
+              <div
+                className="mt-1 h-0.5 w-12 rounded-full"
+                style={{ background: accentColor }}
+              />
+            </div>
+          </div>
         </div>
 
         <div className="flex flex-col gap-5 page-enter">
-          {/* Banner type tabs */}
-          {game && (
-            <GachaBannerTabs
-              bannerTypes={[bannerType]}
-              currentBannerType={bannerType}
-              onBannerTypeChange={handleBannerTypeChange}
-              game={game}
-            />
-          )}
-
           {/* Stats */}
-          {logsData && (
-            <GachaStats items={logsData.items} total={logsData.total} />
-          )}
+          <GachaStats stats={statsData} isLoading={statsLoading} />
 
-          {/* Filters */}
+          {/* Filters (includes banner type select) */}
           <GachaFilters
+            bannerTypes={bannerTypes}
+            bannerTypesLoading={bannerTypesLoading}
+            selectedBannerType={bannerType}
+            onBannerTypeChange={handleBannerTypeChange}
             selectedRarities={rarities}
             onRaritiesChange={handleRaritiesChange}
             nameSearch={nameSearch}
             onNameSearchChange={handleNameSearchChange}
           />
 
-          {/* Table */}
-          {logsLoading && !logsData ? (
-            <div className="flex items-center justify-center py-16">
-              <LoadingSpinner size={28} />
-            </div>
-          ) : (
-            <GachaLogTable
-              items={logsData?.items ?? []}
-              total={logsData?.total ?? 0}
-              page={logsData?.page ?? 1}
-              max_page={logsData?.max_page ?? 1}
-              isLoading={logsLoading}
-              icons={icons}
-              names={names}
-              onPageChange={setPage}
-            />
-          )}
+          {/* Grid */}
+          <GachaGrid
+            items={logsData?.items ?? []}
+            total={logsData?.total ?? 0}
+            hasPrev={stackIndex > 0}
+            nextCursor={logsData?.next_cursor ?? null}
+            isLoading={logsLoading}
+            onNext={handleNext}
+            onPrev={handlePrev}
+          />
         </div>
       </div>
     </div>

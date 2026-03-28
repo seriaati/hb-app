@@ -172,3 +172,21 @@ export const RARITY_ROW_COLORS: Record<number, string> = {
   3: 'bg-blue-500/10',
   2: 'bg-green-500/10',
 }
+
+/** Grid cell background colors keyed by rarity number */
+export const RARITY_GRID_BG: Record<number, string> = {
+  5: 'oklch(0.47 0.10 55)',
+  4: 'oklch(0.32 0.09 300)',
+  3: 'oklch(0.31 0.05 240)',
+  2: 'oklch(0.34 0.05 150)',
+  1: 'oklch(0.30 0.02 240)',
+}
+
+/** Accent colors per game for the gacha log page header */
+export const GAME_ACCENT_COLORS: Record<string, string> = {
+  genshin: 'oklch(0.72 0.14 68)',
+  hkrpg: 'oklch(0.55 0.18 295)',
+  nap: 'oklch(0.60 0.14 190)',
+  honkai3rd: 'oklch(0.55 0.16 265)',
+  tot: 'oklch(0.60 0.17 350)',
+}

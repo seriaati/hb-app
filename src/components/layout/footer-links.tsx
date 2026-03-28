@@ -25,7 +25,7 @@ export function FooterLinks({ className }: FooterLinksProps) {
         {t('privacy_policy', 'Privacy Policy')}
       </a>
       <span className="text-xs text-muted-foreground/50 mx-1.5">
-        {t('footer_links_separator', '·')}
+        {'·'}
       </span>
       <a
         href={accountSecurityUrl}

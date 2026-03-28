@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { getGachaLogs, getGachaIcons, getGachaNames } from '@/api/gacha'
+import { getGachaLogs, getBannerTypes, getGachaStats } from '@/api/gacha'
 import type { GachaParams } from '@/api/types'
 
 export function useGachaLogs(params: GachaParams) {
@@ -11,19 +11,20 @@ export function useGachaLogs(params: GachaParams) {
   })
 }
 
-export function useGachaIcons() {
+export function useGachaStats(accountId: string, bannerType?: number) {
   return useQuery({
-    queryKey: ['gacha', 'icons'],
-    queryFn: getGachaIcons,
-    staleTime: 60 * 60 * 1000, // 1 hour — icons rarely change
+    queryKey: ['gacha', 'stats', accountId, bannerType],
+    queryFn: () => getGachaStats(accountId, bannerType),
+    enabled: !!accountId,
+    placeholderData: (prev) => prev,
   })
 }
 
-export function useGachaNames(locale: string, game: string, itemIds: string[]) {
+export function useGachaBannerTypes(game: string, locale: string) {
   return useQuery({
-    queryKey: ['gacha', 'names', locale, game, itemIds],
-    queryFn: () => getGachaNames(locale, game, itemIds),
-    enabled: itemIds.length > 0 && !!game,
-    staleTime: 60 * 60 * 1000,
+    queryKey: ['gacha', 'banner-types', game, locale],
+    queryFn: () => getBannerTypes(game, locale),
+    enabled: !!game,
+    staleTime: 60 * 60 * 1000, // 1 hour — banner types rarely change
   })
 }

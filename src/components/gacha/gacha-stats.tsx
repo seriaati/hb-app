@@ -1,36 +1,76 @@
 import { useTranslation } from 'react-i18next'
-import type { GachaItem } from '@/api/types'
+import { Skeleton } from '@/components/ui/skeleton'
+import type { GachaStatsResponse } from '@/api/types'
 
 interface GachaStatsProps {
-  items: GachaItem[]
-  total: number
+  stats: GachaStatsResponse | undefined
+  isLoading: boolean
 }
 
-export function GachaStats({ items, total }: GachaStatsProps) {
+export function GachaStats({ stats, isLoading }: GachaStatsProps) {
   const { t } = useTranslation()
 
-  const fiveStarItems = items.filter((i) => i.rarity === 5)
-  const fourStarItems = items.filter((i) => i.rarity === 4)
+  const fiveStarPityHighlight = (stats?.five_star_pity ?? 0) >= 70
 
-  const lastFiveStarIndex = items.findIndex((i) => i.rarity === 5)
-  const currentPity = lastFiveStarIndex === -1 ? items.length : lastFiveStarIndex
-
-  const avgPer5Star =
-    fiveStarItems.length > 0
-      ? Math.round(total / fiveStarItems.length)
-      : null
-
-  const stats = [
-    { label: t('stat_total_pulls'), value: total.toLocaleString(), highlight: false },
-    { label: t('stat_pity'), value: currentPity.toString(), highlight: currentPity >= 70 },
-    { label: '5★', value: fiveStarItems.length.toString(), highlight: false },
-    { label: '4★', value: fourStarItems.length.toString(), highlight: false },
-    { label: t('stat_avg_per_5star'), value: avgPer5Star !== null ? `${avgPer5Star}` : '—', highlight: false },
+  const statItems = [
+    {
+      label: t('stat_total_pulls'),
+      value: stats ? stats.total_pulls.toLocaleString() : '—',
+      highlight: false,
+    },
+    {
+      label: t('stat_5star_pity'),
+      value: stats ? stats.five_star_pity.toString() : '—',
+      highlight: fiveStarPityHighlight,
+    },
+    {
+      label: t('stat_4star_pity'),
+      value: stats ? stats.four_star_pity.toString() : '—',
+      highlight: false,
+    },
+    {
+      label: '5★',
+      value: stats ? stats.total_five_stars.toLocaleString() : '—',
+      highlight: false,
+    },
+    {
+      label: '4★',
+      value: stats ? stats.total_four_stars.toLocaleString() : '—',
+      highlight: false,
+    },
+    {
+      label: t('stat_avg_per_5star'),
+      value: stats ? stats.avg_pulls_per_five_star.toFixed(1) : '—',
+      highlight: false,
+    },
+    {
+      label: t('stat_avg_per_4star'),
+      value: stats ? stats.avg_pulls_per_four_star.toFixed(1) : '—',
+      highlight: false,
+    },
+    {
+      label: t('stat_5050_win_rate'),
+      value:
+        stats && stats.fifty_fifty_total > 0
+          ? `${(stats.fifty_fifty_win_rate * 100).toFixed(0)}%`
+          : '—',
+      highlight: false,
+    },
   ]
 
+  if (isLoading) {
+    return (
+      <div className="grid grid-cols-4 gap-2 sm:grid-cols-8">
+        {Array.from({ length: 8 }).map((_, i) => (
+          <Skeleton key={i} className="h-[62px] rounded-xl" />
+        ))}
+      </div>
+    )
+  }
+
   return (
-    <div className="grid grid-cols-5 gap-2">
-      {stats.map(({ label, value, highlight }) => (
+    <div className="grid grid-cols-4 gap-2 sm:grid-cols-8">
+      {statItems.map(({ label, value, highlight }) => (
         <div
           key={label}
           className="flex flex-col items-center justify-center rounded-xl border py-3 px-2 text-center"
