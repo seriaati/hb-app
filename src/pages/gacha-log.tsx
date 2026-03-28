@@ -148,7 +148,7 @@ export function GachaLogPage() {
 
       {/* Decorative blobs */}
       <div
-        className="pointer-events-none absolute -top-40 -left-40 h-[480px] w-[480px] rounded-full opacity-15 blur-3xl"
+        className="pointer-events-none absolute -top-40 -left-40 h-120 w-120 rounded-full opacity-15 blur-3xl"
         style={{ background: accentColor }}
       />
       <div

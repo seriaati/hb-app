@@ -62,7 +62,7 @@ export function GachaStats({ stats, isLoading }: GachaStatsProps) {
     return (
       <div className="grid grid-cols-4 gap-2 sm:grid-cols-8">
         {Array.from({ length: 8 }).map((_, i) => (
-          <Skeleton key={i} className="h-[62px] rounded-xl" />
+          <Skeleton key={i} className="h-15.5 rounded-xl" />
         ))}
       </div>
     )
