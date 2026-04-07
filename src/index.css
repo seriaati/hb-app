@@ -192,17 +192,23 @@
     }
 }
 
+/* ─── Easing tokens (outside @layer to avoid CSS parse warning) ─────────── */
+:root {
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
 /* ─── Utility Classes ─────────────────────────────────────────────────────── */
 @layer utilities {
-    /* Page entrance animation */
+    /* ── Page entrance animation ── */
     .page-enter {
-        animation: pageEnter 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+        animation: pageEnter 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
     }
 
     @keyframes pageEnter {
         from {
             opacity: 0;
-            transform: translateY(12px);
+            transform: translateY(14px);
         }
         to {
             opacity: 1;
@@ -210,20 +216,105 @@
         }
     }
 
-    /* Staggered children */
+    /* ── Fade-in only (no translate) ── */
+    .fade-in {
+        animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+
+    /* ── Slide-up from further down (panel hero) ── */
+    .slide-up {
+        animation: slideUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(24px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* ── Scale-in (for icons, badges) ── */
+    .scale-in {
+        animation: scaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    @keyframes scaleIn {
+        from {
+            opacity: 0;
+            transform: scale(0.82);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    /* ── Staggered children ── */
     .stagger-children > * {
+        animation: pageEnter 0.38s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .stagger-children > *:nth-child(1)  { animation-delay: 0ms; }
+    .stagger-children > *:nth-child(2)  { animation-delay: 55ms; }
+    .stagger-children > *:nth-child(3)  { animation-delay: 110ms; }
+    .stagger-children > *:nth-child(4)  { animation-delay: 165ms; }
+    .stagger-children > *:nth-child(5)  { animation-delay: 220ms; }
+    .stagger-children > *:nth-child(6)  { animation-delay: 275ms; }
+    .stagger-children > *:nth-child(7)  { animation-delay: 330ms; }
+    .stagger-children > *:nth-child(8)  { animation-delay: 385ms; }
+    .stagger-children > *:nth-child(9)  { animation-delay: 440ms; }
+    .stagger-children > *:nth-child(10) { animation-delay: 495ms; }
+    .stagger-children > *:nth-child(11) { animation-delay: 550ms; }
+    .stagger-children > *:nth-child(12) { animation-delay: 605ms; }
+
+    /* ── Panel stagger (left panel content, longer delays) ── */
+    .panel-stagger > * {
+        animation: slideUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .panel-stagger > *:nth-child(1) { animation-delay: 80ms; }
+    .panel-stagger > *:nth-child(2) { animation-delay: 160ms; }
+    .panel-stagger > *:nth-child(3) { animation-delay: 240ms; }
+    .panel-stagger > *:nth-child(4) { animation-delay: 320ms; }
+    .panel-stagger > *:nth-child(5) { animation-delay: 400ms; }
+
+    /* ── Grid item stagger (gacha grid) ── */
+    .grid-stagger > * {
+        animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    /* Groups of 10 with base offset per group */
+    .grid-stagger > *:nth-child(10n+1)  { animation-delay: calc(0   * 18ms); }
+    .grid-stagger > *:nth-child(10n+2)  { animation-delay: calc(1   * 18ms); }
+    .grid-stagger > *:nth-child(10n+3)  { animation-delay: calc(2   * 18ms); }
+    .grid-stagger > *:nth-child(10n+4)  { animation-delay: calc(3   * 18ms); }
+    .grid-stagger > *:nth-child(10n+5)  { animation-delay: calc(4   * 18ms); }
+    .grid-stagger > *:nth-child(10n+6)  { animation-delay: calc(5   * 18ms); }
+    .grid-stagger > *:nth-child(10n+7)  { animation-delay: calc(6   * 18ms); }
+    .grid-stagger > *:nth-child(10n+8)  { animation-delay: calc(7   * 18ms); }
+    .grid-stagger > *:nth-child(10n+9)  { animation-delay: calc(8   * 18ms); }
+    .grid-stagger > *:nth-child(10n+10) { animation-delay: calc(9   * 18ms); }
+
+    /* ── Stat card stagger ── */
+    .stat-stagger > * {
         animation: pageEnter 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
     }
-    .stagger-children > *:nth-child(1) { animation-delay: 0ms; }
-    .stagger-children > *:nth-child(2) { animation-delay: 50ms; }
-    .stagger-children > *:nth-child(3) { animation-delay: 100ms; }
-    .stagger-children > *:nth-child(4) { animation-delay: 150ms; }
-    .stagger-children > *:nth-child(5) { animation-delay: 200ms; }
-    .stagger-children > *:nth-child(6) { animation-delay: 250ms; }
-    .stagger-children > *:nth-child(7) { animation-delay: 300ms; }
-    .stagger-children > *:nth-child(8) { animation-delay: 350ms; }
+    .stat-stagger > *:nth-child(1) { animation-delay: 0ms; }
+    .stat-stagger > *:nth-child(2) { animation-delay: 40ms; }
+    .stat-stagger > *:nth-child(3) { animation-delay: 80ms; }
+    .stat-stagger > *:nth-child(4) { animation-delay: 120ms; }
+    .stat-stagger > *:nth-child(5) { animation-delay: 160ms; }
+    .stat-stagger > *:nth-child(6) { animation-delay: 200ms; }
+    .stat-stagger > *:nth-child(7) { animation-delay: 240ms; }
+    .stat-stagger > *:nth-child(8) { animation-delay: 280ms; }
 
-    /* Accent line decoration */
+    /* ── Accent line decoration ── */
     .accent-line {
         position: relative;
     }
@@ -239,7 +330,7 @@
         border-radius: 2px;
     }
 
-    /* Subtle texture overlay for backgrounds */
+    /* ── Subtle texture overlay for backgrounds ── */
     .bg-texture {
         background-image:
             radial-gradient(
@@ -268,39 +359,86 @@
             );
     }
 
-    /* Interactive row hover */
+    /* ── Interactive row hover ── */
     .row-interactive {
         cursor: pointer;
-        transition: background-color 0.15s ease, transform 0.15s ease;
+        transition: background-color 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
     }
     .row-interactive:hover {
         background-color: color-mix(in oklch, var(--accent) 8%, transparent);
     }
     .row-interactive:active {
-        transform: scale(0.995);
+        transform: scale(0.993);
     }
 
-    /* Method card hover */
+    /* ── Method card hover ── */
     .method-card {
         cursor: pointer;
-        transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .method-card:hover {
         border-color: var(--accent);
         box-shadow: 0 0 0 1px var(--accent), 0 4px 16px oklch(0.72 0.14 68 / 0.12);
-        transform: translateY(-1px);
+        transform: translateY(-2px);
     }
     .method-card:active {
-        transform: translateY(0) scale(0.99);
+        transform: translateY(0) scale(0.985);
+        transition-duration: 0.1s;
     }
 
-    /* Spin animation for loading */
+    /* ── Checkbox pop (account card selection) ── */
+    @keyframes checkPop {
+        0%   { transform: scale(1); }
+        40%  { transform: scale(1.22); }
+        70%  { transform: scale(0.93); }
+        100% { transform: scale(1); }
+    }
+
+    .check-pop {
+        animation: checkPop 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    /* ── Input focus glow ── */
+    [data-slot="input"]:focus-visible,
+    input:focus-visible {
+        box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring) 20%, transparent);
+        transition: box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.18s ease;
+    }
+
+    /* ── Button press feedback ── */
+    [data-slot="button"]:not(:disabled):active {
+        transform: scale(0.96) translateY(1px);
+        transition-duration: 0.08s !important;
+    }
+
+    [data-slot="button"] {
+        transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease,
+                    box-shadow 0.15s ease, transform 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+                    opacity 0.15s ease;
+    }
+
+    /* ── Blob float animation (left panel decorative blobs) ── */
+    @keyframes blobFloat {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        33%       { transform: translate(12px, -16px) scale(1.04); }
+        66%       { transform: translate(-8px, 10px) scale(0.97); }
+    }
+
+    .blob-float {
+        animation: blobFloat 12s ease-in-out infinite;
+    }
+
+    .blob-float-slow {
+        animation: blobFloat 18s ease-in-out infinite reverse;
+    }
+
+    /* ── Spin animation for loading ── */
     @keyframes spin-smooth {
         from { transform: rotate(0deg); }
         to { transform: rotate(360deg); }
     }
 
-    /* Pulse dot */
+    /* ── Pulse dot ── */
     @keyframes pulse-dot {
         0%, 100% { opacity: 1; transform: scale(1); }
         50% { opacity: 0.5; transform: scale(0.85); }
@@ -310,10 +448,43 @@
         animation: pulse-dot 1.4s ease-in-out infinite;
     }
 
-    /* Theme transition */
+    /* ── Theme transition ── */
     .theme-transition,
     .theme-transition * {
         transition: background-color 0.25s ease, border-color 0.25s ease, color 0.2s ease !important;
+    }
+
+    /* ── Reduced motion overrides ── */
+    @media (prefers-reduced-motion: reduce) {
+        .page-enter,
+        .fade-in,
+        .slide-up,
+        .scale-in,
+        .stagger-children > *,
+        .panel-stagger > *,
+        .grid-stagger > *,
+        .stat-stagger > *,
+        .blob-float,
+        .blob-float-slow,
+        .check-pop,
+        .pulse-dot {
+            animation: none !important;
+            opacity: 1 !important;
+            transform: none !important;
+        }
+
+        [data-slot="button"]:not(:disabled):active,
+        .method-card:hover,
+        .method-card:active,
+        .row-interactive:active {
+            transform: none !important;
+        }
+
+        [data-slot="input"]:focus-visible,
+        input:focus-visible {
+            box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring) 20%, transparent);
+            transition: none !important;
+        }
     }
 }
 

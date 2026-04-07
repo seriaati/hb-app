@@ -1,4 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import { toast } from 'sonner'
 import { getDiscordAuthUrl, getMe, logout } from '@/api/auth'
 import type { HTTPError } from 'ky'
 
@@ -32,6 +33,9 @@ export function useLogout() {
         .catch(() => {
           window.location.reload()
         })
+    },
+    onError: (error) => {
+      toast.error(error instanceof Error ? error.message : 'Logout failed')
     },
   })
 }

@@ -31,6 +31,7 @@ export interface GeetestMMTData {
 export interface LoginFlowResponse {
   next_step: LoginFlowNextStep
   gt_version: number | null
+  api_server: string | null
   mmt: GeetestMMTData | null
   message: string | null
 }

@@ -51,9 +51,10 @@ export function LoginQRCodePage() {
             setStatus('scanned')
           }
         },
-        onError: () => {
+        onError: (err) => {
           stopPolling()
           setStatus('expired')
+          toast.error(err instanceof Error ? err.message : '验证失败，请重新生成二维码。')
         },
       })
     }, 3000)

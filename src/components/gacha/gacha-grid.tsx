@@ -73,9 +73,10 @@ export function GachaGrid({
 
   return (
     <div className="flex flex-col gap-4">
-      {/* Grid */}
+      {/* Grid — key on first item id forces re-mount (and re-animation) on page change */}
       <div
-        className="grid gap-1.5 page-enter"
+        key={items[0]?.id ?? 'empty'}
+        className="grid gap-1.5 grid-stagger"
         style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(72px, 1fr))' }}
       >
         {items.map((item) => (

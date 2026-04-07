@@ -43,7 +43,7 @@ export function GachaLogPage() {
     name_contains: nameSearch || undefined,
   }
 
-  const { data: logsData, isLoading: logsLoading } = useGachaLogs(gachaParams)
+  const { data: logsData, isLoading: logsLoading, error: logsError } = useGachaLogs(gachaParams)
 
   const { data: statsData, isLoading: statsLoading } = useGachaStats(
     accountId,
@@ -137,6 +137,31 @@ export function GachaLogPage() {
     return (
       <div className="flex min-h-screen items-center justify-center bg-background bg-texture">
         <p className="text-sm text-muted-foreground">{t('missing_account_id')}</p>
+      </div>
+    )
+  }
+
+  if (logsError) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-background bg-texture">
+        <div className="flex flex-col items-center gap-4 text-center max-w-sm px-4">
+          <div
+            className="rounded-xl px-4 py-3 text-sm w-full"
+            style={{
+              background: 'color-mix(in oklch, var(--destructive) 10%, transparent)',
+              color: 'var(--destructive)',
+              border: '1px solid color-mix(in oklch, var(--destructive) 25%, transparent)',
+            }}
+          >
+            {logsError instanceof Error ? logsError.message : t('failed_to_load_accounts')}
+          </div>
+          <button
+            onClick={() => window.location.reload()}
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-150 underline underline-offset-4"
+          >
+            {t('retry', 'Retry')}
+          </button>
+        </div>
       </div>
     )
   }

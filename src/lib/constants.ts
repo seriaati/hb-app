@@ -120,9 +120,9 @@ export function resolveLocale(browserLocale: string): string {
   return 'en-US'
 }
 
-export const GEETEST_SERVERS: Record<string, string> = {
-  hoyolab: 'https://gs.hoyoverse.com',
-  miyoushe: 'https://gs.mihoyo.com',
+export const GEETEST_SDK_URLS: Record<number, string> = {
+  3: 'https://static.geetest.com/static/js/gt.0.5.0.js',
+  4: 'https://static.geetest.com/v4/gt4.js',
 }
 
 export const BANNER_TYPE_NAMES: Record<string, string> = {

@@ -17,6 +17,7 @@ export function handleLoginFlowResponse(
       navigate('/geetest', {
         state: {
           gt_version: data.gt_version,
+          api_server: data.api_server,
           mmt: data.mmt,
           purpose: options?.geetestPurpose ?? 'login',
         },

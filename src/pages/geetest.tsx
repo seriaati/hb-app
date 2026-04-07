@@ -6,6 +6,7 @@ import { Mail } from 'lucide-react'
 import { useGeetestCallback } from '@/hooks/use-login'
 import { handleLoginFlowResponse } from '@/lib/login-flow'
 import type { GeetestPurpose } from '@/lib/login-flow'
+import { GEETEST_SDK_URLS } from '@/lib/constants'
 import { LoadingSpinner } from '@/components/layout/loading-spinner'
 import { PageContainer } from '@/components/layout/page-container'
 import { Button } from '@/components/ui/button'
@@ -57,6 +58,7 @@ type CaptchaState = 'loading' | 'ready' | 'verifying' | 'error' | 'closed'
 
 type RouterState = {
   gt_version?: number
+  api_server?: string
   mmt?: GeetestMMTData
   purpose?: GeetestPurpose
 } | null
@@ -76,6 +78,7 @@ export function GeetestPage() {
 
   const state = location.state as RouterState
   const gtVersion: number | null = state?.gt_version ?? null
+  const apiServer: string | null = state?.api_server ?? null
   const mmt: GeetestMMTData | null = state?.mmt ?? null
   const purpose: GeetestPurpose = state?.purpose ?? 'login'
   const isEmailVerifyGeetest = purpose === 'email_verify'
@@ -165,7 +168,7 @@ export function GeetestPage() {
         challenge: mmtData.challenge,
         offline: !mmtData.success,
         new_captcha: mmtData.new_captcha,
-        api_server: 'api-na.geetest.com',
+        api_server: apiServer ?? 'api-na.geetest.com',
         product: 'bind',
         lang: 'en',
         https: /^https/i.test(window.location.protocol),
@@ -207,6 +210,7 @@ export function GeetestPage() {
         captchaId: mmtData.gt,
         riskType: mmtData.risk_type,
         userInfo: mmtData.session_id ? JSON.stringify({ mmt_key: mmtData.session_id }) : undefined,
+        api_server: apiServer ?? 'gcaptcha4.captchami.com',
         product: 'bind',
         language: 'en',
       },
@@ -257,10 +261,7 @@ export function GeetestPage() {
     console.log('Geetest GT version:', gtVersion)
     console.log('Geetest MMT data:', mmt)
 
-    const sdkUrl =
-      gtVersion === 3
-        ? 'https://static.geetest.com/static/js/gt.0.5.0.js'
-        : 'https://static.geetest.com/v4/gt4.js'
+    const sdkUrl = GEETEST_SDK_URLS[gtVersion]
 
     loadScript(sdkUrl)
       .then(() => {

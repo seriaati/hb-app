@@ -68,18 +68,18 @@ export function LoginLayout({ panel, children }: LoginLayoutProps) {
               var(--background) 100%)`,
           }}
         >
-          {/* Decorative blobs */}
+          {/* Decorative blobs — animated float */}
           <div
-            className="pointer-events-none absolute -top-32 -left-32 h-96 w-96 rounded-full opacity-20 blur-3xl"
+            className="pointer-events-none absolute -top-32 -left-32 h-96 w-96 rounded-full opacity-20 blur-3xl blob-float"
             style={{ background: accentColor }}
           />
           <div
-            className="pointer-events-none absolute bottom-0 right-0 h-64 w-64 rounded-full opacity-10 blur-3xl"
+            className="pointer-events-none absolute bottom-0 right-0 h-64 w-64 rounded-full opacity-10 blur-3xl blob-float-slow"
             style={{ background: accentColor }}
           />
 
           {/* Top: app logo */}
-          <div className="relative flex items-center gap-3">
+          <div className="relative flex items-center gap-3 fade-in" style={{ animationDelay: '50ms' }}>
             <img
               src="/images/logo.png"
               alt="Hoyo Buddy"
@@ -94,12 +94,15 @@ export function LoginLayout({ panel, children }: LoginLayoutProps) {
           </div>
 
           {/* Center: hero content */}
-          <div className="relative flex flex-col gap-6">
+          <div className="relative flex flex-col gap-6 panel-stagger">
             {/* Hero icon/image */}
             <div className="flex items-center gap-4">
               <div
-                className="shrink-0"
-                style={{ filter: `drop-shadow(0 8px 24px color-mix(in oklch, ${accentColor} 35%, transparent))` }}
+                className="shrink-0 scale-in"
+                style={{
+                  filter: `drop-shadow(0 8px 24px color-mix(in oklch, ${accentColor} 35%, transparent))`,
+                  animationDelay: '120ms',
+                }}
               >
                 {hero}
               </div>
@@ -126,14 +129,15 @@ export function LoginLayout({ panel, children }: LoginLayoutProps) {
             {/* Feature pills */}
             {features && features.length > 0 && (
               <div className="flex flex-wrap gap-2">
-                {features.map((feat) => (
+                {features.map((feat, i) => (
                   <span
                     key={feat}
-                    className="rounded-full px-3 py-1 text-xs font-medium"
+                    className="rounded-full px-3 py-1 text-xs font-medium scale-in"
                     style={{
                       background: `color-mix(in oklch, ${accentColor} 12%, transparent)`,
                       color: accentColor,
                       border: `1px solid color-mix(in oklch, ${accentColor} 25%, transparent)`,
+                      animationDelay: `${320 + i * 60}ms`,
                     }}
                   >
                     {feat}
@@ -144,7 +148,7 @@ export function LoginLayout({ panel, children }: LoginLayoutProps) {
           </div>
 
           {/* Bottom: security note + footer links */}
-          <div className="relative flex flex-col gap-3">
+          <div className="relative flex flex-col gap-3 fade-in" style={{ animationDelay: '500ms' }}>
             {securityNote && (
               <div className="flex items-start gap-3 rounded-xl border border-border/60 bg-card/40 p-4 backdrop-blur-sm">
                 <ShieldCheck size={16} className="mt-0.5 shrink-0 text-muted-foreground" />

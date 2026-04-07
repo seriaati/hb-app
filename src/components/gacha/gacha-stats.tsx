@@ -69,11 +69,11 @@ export function GachaStats({ stats, isLoading }: GachaStatsProps) {
   }
 
   return (
-    <div className="grid grid-cols-4 gap-2 sm:grid-cols-8">
+    <div className="grid grid-cols-4 gap-2 sm:grid-cols-8 stat-stagger">
       {statItems.map(({ label, value, highlight }) => (
         <div
           key={label}
-          className="flex flex-col items-center justify-center rounded-xl border py-3 px-2 text-center"
+          className="flex flex-col items-center justify-center rounded-xl border py-3 px-2 text-center transition-shadow duration-200 hover:shadow-sm"
           style={{
             borderColor: highlight
               ? 'color-mix(in oklch, var(--destructive) 30%, var(--border))'
@@ -84,7 +84,7 @@ export function GachaStats({ stats, isLoading }: GachaStatsProps) {
           }}
         >
           <p
-            className="text-lg font-bold leading-none"
+            className="text-lg font-bold leading-none tabular-nums"
             style={{
               fontFamily: 'var(--font-display)',
               color: highlight ? 'var(--destructive)' : 'var(--foreground)',
