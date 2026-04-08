@@ -97,5 +97,14 @@
   "detail_pull_date": "Pulldatum",
   "detail_pity_count": "Pity-teller",
   "not_found_title": "Pagina niet gevonden",
-  "not_found_desc": "Deze pagina bestaat niet of is mogelijk verplaatst. Ga terug naar huis om te beginnen."
+  "not_found_desc": "Deze pagina bestaat niet of is mogelijk verplaatst. Ga terug naar huis om te beginnen.",
+  "geetest_command_title": "Verificatie voltooien",
+  "geetest_command_desc": "Voltooi de beveiligingscontrole om door te gaan.",
+  "geetest_command_success": "Verificatie voltooid!",
+  "geetest_command_success_desc": "U kunt nu terugkeren naar Discord.",
+  "return_to_discord": "Terug naar Discord",
+  "open_discord_browser": "Discord openen in browser",
+  "geetest_command_error": "Verificatie mislukt. Probeer het opnieuw.",
+  "geetest_command_missing_params": "Vereiste parameters ontbreken.",
+  "retry": "Opnieuw proberen"
 }

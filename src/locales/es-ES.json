@@ -97,5 +97,14 @@
   "detail_pull_date": "Fecha de tirada",
   "detail_pity_count": "Contador de misericordia",
   "not_found_title": "Página no encontrada",
-  "not_found_desc": "Esta página no existe o puede haber sido movida. Vuelve al inicio para comenzar."
+  "not_found_desc": "Esta página no existe o puede haber sido movida. Vuelve al inicio para comenzar.",
+  "geetest_command_title": "Completar verificación",
+  "geetest_command_desc": "Por favor, completa la verificación de seguridad para continuar.",
+  "geetest_command_success": "¡Verificación completada!",
+  "geetest_command_success_desc": "Ahora puedes volver a Discord.",
+  "return_to_discord": "Volver a Discord",
+  "open_discord_browser": "Abrir Discord en el navegador",
+  "geetest_command_error": "Verificación fallida. Por favor, inténtalo de nuevo.",
+  "geetest_command_missing_params": "Faltan parámetros requeridos.",
+  "retry": "Reintentar"
 }

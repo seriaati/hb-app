@@ -128,5 +128,14 @@
   "detail_pity_count": "保底计数",
   "detail_rarity": "稀有度",
   "not_found_title": "找不到页面",
-  "not_found_desc": "此页面不存在或已被移动。请返回首页开始使用。"
+  "not_found_desc": "此页面不存在或已被移动。请返回首页开始使用。",
+  "geetest_command_title": "完成验证",
+  "geetest_command_desc": "请完成安全检查以继续。",
+  "geetest_command_success": "验证完成！",
+  "geetest_command_success_desc": "您现在可以返回 Discord。",
+  "return_to_discord": "返回 Discord",
+  "open_discord_browser": "在浏览器中打开 Discord",
+  "geetest_command_error": "验证失败，请重试。",
+  "geetest_command_missing_params": "缺少必要参数。",
+  "retry": "重试"
 }

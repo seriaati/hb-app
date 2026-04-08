@@ -97,5 +97,14 @@
   "detail_pull_date": "Pull Date",
   "detail_pity_count": "Pity Count",
   "not_found_title": "Page Not Found",
-  "not_found_desc": "This page doesn't exist or may have been moved. Head back home to get started."
+  "not_found_desc": "This page doesn't exist or may have been moved. Head back home to get started.",
+  "geetest_command_title": "Complete Verification",
+  "geetest_command_desc": "Please complete the security check to continue.",
+  "geetest_command_success": "Verification completed!",
+  "geetest_command_success_desc": "You can now return to Discord.",
+  "return_to_discord": "Return to Discord",
+  "open_discord_browser": "Open Discord in browser",
+  "geetest_command_error": "Verification failed. Please try again.",
+  "geetest_command_missing_params": "Missing required parameters.",
+  "retry": "Retry"
 }

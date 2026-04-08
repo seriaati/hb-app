@@ -97,5 +97,14 @@
   "detail_pull_date": "Ngày Quay",
   "detail_pity_count": "Số Pity",
   "not_found_title": "Không Tìm Thấy Trang",
-  "not_found_desc": "Trang này không tồn tại hoặc có thể đã bị di chuyển. Quay về trang chủ để bắt đầu."
+  "not_found_desc": "Trang này không tồn tại hoặc có thể đã bị di chuyển. Quay về trang chủ để bắt đầu.",
+  "geetest_command_title": "Hoàn Tất Xác Minh",
+  "geetest_command_desc": "Vui lòng hoàn thành kiểm tra bảo mật để tiếp tục.",
+  "geetest_command_success": "Xác minh hoàn tất!",
+  "geetest_command_success_desc": "Bạn có thể quay lại Discord ngay bây giờ.",
+  "return_to_discord": "Quay Lại Discord",
+  "open_discord_browser": "Mở Discord trong trình duyệt",
+  "geetest_command_error": "Xác minh thất bại. Vui lòng thử lại.",
+  "geetest_command_missing_params": "Thiếu các tham số bắt buộc.",
+  "retry": "Thử Lại"
 }

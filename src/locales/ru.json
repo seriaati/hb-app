@@ -97,5 +97,14 @@
   "detail_pull_date": "Дата прокрутки",
   "detail_pity_count": "Счётчик Pity",
   "not_found_title": "Страница не найдена",
-  "not_found_desc": "Эта страница не существует или была перемещена. Вернитесь на главную, чтобы начать."
+  "not_found_desc": "Эта страница не существует или была перемещена. Вернитесь на главную, чтобы начать.",
+  "geetest_command_title": "Завершить верификацию",
+  "geetest_command_desc": "Пожалуйста, пройдите проверку безопасности для продолжения.",
+  "geetest_command_success": "Верификация завершена!",
+  "geetest_command_success_desc": "Теперь вы можете вернуться в Discord.",
+  "return_to_discord": "Вернуться в Discord",
+  "open_discord_browser": "Открыть Discord в браузере",
+  "geetest_command_error": "Верификация не удалась. Пожалуйста, попробуйте снова.",
+  "geetest_command_missing_params": "Отсутствуют обязательные параметры.",
+  "retry": "Повторить"
 }

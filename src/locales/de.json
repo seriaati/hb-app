@@ -97,5 +97,14 @@
   "detail_pull_date": "Pull-Datum",
   "detail_pity_count": "Pity-Zähler",
   "not_found_title": "Seite nicht gefunden",
-  "not_found_desc": "Diese Seite existiert nicht oder wurde möglicherweise verschoben. Gehe zurück zur Startseite, um zu beginnen."
+  "not_found_desc": "Diese Seite existiert nicht oder wurde möglicherweise verschoben. Gehe zurück zur Startseite, um zu beginnen.",
+  "geetest_command_title": "Verifizierung abschließen",
+  "geetest_command_desc": "Bitte schließe die Sicherheitsprüfung ab, um fortzufahren.",
+  "geetest_command_success": "Verifizierung abgeschlossen!",
+  "geetest_command_success_desc": "Du kannst jetzt zu Discord zurückkehren.",
+  "return_to_discord": "Zu Discord zurückkehren",
+  "open_discord_browser": "Discord im Browser öffnen",
+  "geetest_command_error": "Verifizierung fehlgeschlagen. Bitte versuche es erneut.",
+  "geetest_command_missing_params": "Erforderliche Parameter fehlen.",
+  "retry": "Erneut versuchen"
 }

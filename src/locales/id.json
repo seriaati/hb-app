@@ -97,5 +97,14 @@
   "detail_pull_date": "Tanggal Gacha",
   "detail_pity_count": "Hitungan Pity",
   "not_found_title": "Halaman Tidak Ditemukan",
-  "not_found_desc": "Halaman ini tidak ada atau mungkin telah dipindahkan. Kembali ke beranda untuk memulai."
+  "not_found_desc": "Halaman ini tidak ada atau mungkin telah dipindahkan. Kembali ke beranda untuk memulai.",
+  "geetest_command_title": "Selesaikan Verifikasi",
+  "geetest_command_desc": "Harap selesaikan pemeriksaan keamanan untuk melanjutkan.",
+  "geetest_command_success": "Verifikasi selesai!",
+  "geetest_command_success_desc": "Anda sekarang dapat kembali ke Discord.",
+  "return_to_discord": "Kembali ke Discord",
+  "open_discord_browser": "Buka Discord di browser",
+  "geetest_command_error": "Verifikasi gagal. Silakan coba lagi.",
+  "geetest_command_missing_params": "Parameter yang diperlukan tidak ada.",
+  "retry": "Coba Lagi"
 }

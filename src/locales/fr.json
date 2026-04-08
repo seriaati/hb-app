@@ -97,5 +97,14 @@
   "detail_pull_date": "Date d'invocation",
   "detail_pity_count": "Compteur Pity",
   "not_found_title": "Page introuvable",
-  "not_found_desc": "Cette page n'existe pas ou a peut-être été déplacée. Retournez à l'accueil pour commencer."
+  "not_found_desc": "Cette page n'existe pas ou a peut-être été déplacée. Retournez à l'accueil pour commencer.",
+  "geetest_command_title": "Compléter la vérification",
+  "geetest_command_desc": "Veuillez compléter la vérification de sécurité pour continuer.",
+  "geetest_command_success": "Vérification terminée !",
+  "geetest_command_success_desc": "Vous pouvez maintenant retourner sur Discord.",
+  "return_to_discord": "Retourner sur Discord",
+  "open_discord_browser": "Ouvrir Discord dans le navigateur",
+  "geetest_command_error": "Vérification échouée. Veuillez réessayer.",
+  "geetest_command_missing_params": "Paramètres requis manquants.",
+  "retry": "Réessayer"
 }

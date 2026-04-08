@@ -97,5 +97,14 @@
   "detail_pull_date": "ガチャ日時",
   "detail_pity_count": "天井カウント",
   "not_found_title": "ページが見つかりません",
-  "not_found_desc": "このページは存在しないか、移動した可能性があります。ホームに戻って始めましょう。"
+  "not_found_desc": "このページは存在しないか、移動した可能性があります。ホームに戻って始めましょう。",
+  "geetest_command_title": "認証を完了する",
+  "geetest_command_desc": "続行するにはセキュリティチェックを完了してください。",
+  "geetest_command_success": "認証が完了しました！",
+  "geetest_command_success_desc": "Discordに戻ることができます。",
+  "return_to_discord": "Discordに戻る",
+  "open_discord_browser": "ブラウザでDiscordを開く",
+  "geetest_command_error": "認証に失敗しました。もう一度お試しください。",
+  "geetest_command_missing_params": "必要なパラメータが不足しています。",
+  "retry": "再試行"
 }

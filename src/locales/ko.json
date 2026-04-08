@@ -97,5 +97,14 @@
   "detail_pull_date": "뽑기 날짜",
   "detail_pity_count": "Pity 카운트",
   "not_found_title": "페이지를 찾을 수 없음",
-  "not_found_desc": "이 페이지는 존재하지 않거나 이동되었을 수 있습니다. 홈으로 돌아가서 시작하세요."
+  "not_found_desc": "이 페이지는 존재하지 않거나 이동되었을 수 있습니다. 홈으로 돌아가서 시작하세요.",
+  "geetest_command_title": "인증 완료",
+  "geetest_command_desc": "계속하려면 보안 검사를 완료해 주세요.",
+  "geetest_command_success": "인증이 완료되었습니다!",
+  "geetest_command_success_desc": "이제 Discord로 돌아갈 수 있습니다.",
+  "return_to_discord": "Discord로 돌아가기",
+  "open_discord_browser": "브라우저에서 Discord 열기",
+  "geetest_command_error": "인증에 실패했습니다. 다시 시도해 주세요.",
+  "geetest_command_missing_params": "필수 파라미터가 없습니다.",
+  "retry": "다시 시도"
 }

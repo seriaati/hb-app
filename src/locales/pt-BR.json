@@ -97,5 +97,14 @@
   "detail_pull_date": "Data do Pull",
   "detail_pity_count": "Contagem de Pity",
   "not_found_title": "Página Não Encontrada",
-  "not_found_desc": "Esta página não existe ou pode ter sido movida. Volte ao início para começar."
+  "not_found_desc": "Esta página não existe ou pode ter sido movida. Volte ao início para começar.",
+  "geetest_command_title": "Concluir Verificação",
+  "geetest_command_desc": "Por favor, conclua a verificação de segurança para continuar.",
+  "geetest_command_success": "Verificação concluída!",
+  "geetest_command_success_desc": "Agora você pode retornar ao Discord.",
+  "return_to_discord": "Retornar ao Discord",
+  "open_discord_browser": "Abrir Discord no navegador",
+  "geetest_command_error": "Verificação falhou. Por favor, tente novamente.",
+  "geetest_command_missing_params": "Parâmetros obrigatórios ausentes.",
+  "retry": "Tentar novamente"
 }

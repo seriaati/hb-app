@@ -128,5 +128,14 @@
   "detail_pity_count": "保底計數",
   "detail_rarity": "稀有度",
   "not_found_title": "找不到頁面",
-  "not_found_desc": "此頁面不存在或已被移動。請返回首頁開始使用。"
+  "not_found_desc": "此頁面不存在或已被移動。請返回首頁開始使用。",
+  "geetest_command_title": "完成驗證",
+  "geetest_command_desc": "請完成安全檢查以繼續。",
+  "geetest_command_success": "驗證完成！",
+  "geetest_command_success_desc": "您現在可以返回 Discord。",
+  "return_to_discord": "返回 Discord",
+  "open_discord_browser": "在瀏覽器中開啟 Discord",
+  "geetest_command_error": "驗證失敗，請重試。",
+  "geetest_command_missing_params": "缺少必要參數。",
+  "retry": "重試"
 }
