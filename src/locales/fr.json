@@ -63,7 +63,7 @@
   "email_verify_desc": "Entrez le code de vérification à 6 chiffres envoyé à votre adresse email",
   "email_login_security_note": "Votre email et mot de passe ne sont jamais stockés sur nos serveurs.",
   "verification_code": "Code de vérification",
-  "code_expires_note": "Vérifiez votre boîte de réception — le code expire dans quelques minutes",
+  "code_expires_note": "Vérifiez votre boîte de réception - le code expire dans quelques minutes",
   "verify_code": "Vérifier le code",
   "processing_verification": "Traitement de la vérification…",
   "select_accounts_title": "Sélectionner les comptes",
@@ -106,5 +106,7 @@
   "open_discord_browser": "Ouvrir Discord dans le navigateur",
   "geetest_command_error": "Vérification échouée. Veuillez réessayer.",
   "geetest_command_missing_params": "Paramètres requis manquants.",
-  "retry": "Réessayer"
+  "retry": "Réessayer",
+  "complete_title": "Comptes ajoutés !",
+  "complete_desc": "Vos comptes ont été ajoutés à Hoyo Buddy. Vous pouvez maintenant retourner sur Discord."
 }

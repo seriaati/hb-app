@@ -76,7 +76,7 @@
   "email_verify_desc": "请输入发送到你邮箱的 6 位数验证码",
   "email_login_security_note": "你的邮箱与密码绝不会存储在我们的服务器上。",
   "verification_code": "验证码",
-  "code_expires_note": "请检查你的收件箱 —— 验证码将在几分钟后过期",
+  "code_expires_note": "请检查你的收件箱 - 验证码将在几分钟后过期",
   "verify_code": "验证验证码",
   "processing_verification": "正在处理验证…",
   "select_accounts_title": "选择账号",
@@ -137,5 +137,7 @@
   "open_discord_browser": "在浏览器中打开 Discord",
   "geetest_command_error": "验证失败，请重试。",
   "geetest_command_missing_params": "缺少必要参数。",
-  "retry": "重试"
+  "retry": "重试",
+  "complete_title": "账号已添加！",
+  "complete_desc": "您的账号已添加至 Hoyo Buddy。您现在可以返回 Discord。"
 }

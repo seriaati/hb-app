@@ -63,7 +63,7 @@
   "email_verify_desc": "Введите 6-значный код подтверждения, отправленный на ваш email",
   "email_login_security_note": "Ваш email и пароль никогда не хранятся на наших серверах.",
   "verification_code": "Код подтверждения",
-  "code_expires_note": "Проверьте входящие — код истекает через несколько минут",
+  "code_expires_note": "Проверьте входящие - код истекает через несколько минут",
   "verify_code": "Подтвердить код",
   "processing_verification": "Обработка верификации…",
   "select_accounts_title": "Выбор аккаунтов",
@@ -106,5 +106,7 @@
   "open_discord_browser": "Открыть Discord в браузере",
   "geetest_command_error": "Верификация не удалась. Пожалуйста, попробуйте снова.",
   "geetest_command_missing_params": "Отсутствуют обязательные параметры.",
-  "retry": "Повторить"
+  "retry": "Повторить",
+  "complete_title": "Аккаунты добавлены!",
+  "complete_desc": "Ваши аккаунты добавлены в Hoyo Buddy. Теперь вы можете вернуться в Discord."
 }

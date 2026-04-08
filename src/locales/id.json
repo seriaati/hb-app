@@ -63,7 +63,7 @@
   "email_verify_desc": "Masukkan kode verifikasi 6 digit yang dikirim ke alamat email Anda",
   "email_login_security_note": "Email dan kata sandi Anda tidak pernah disimpan di server kami.",
   "verification_code": "Kode Verifikasi",
-  "code_expires_note": "Periksa kotak masuk Anda — kode akan kedaluwarsa dalam beberapa menit",
+  "code_expires_note": "Periksa kotak masuk Anda - kode akan kedaluwarsa dalam beberapa menit",
   "verify_code": "Verifikasi Kode",
   "processing_verification": "Memproses verifikasi…",
   "select_accounts_title": "Pilih Akun",
@@ -106,5 +106,7 @@
   "open_discord_browser": "Buka Discord di browser",
   "geetest_command_error": "Verifikasi gagal. Silakan coba lagi.",
   "geetest_command_missing_params": "Parameter yang diperlukan tidak ada.",
-  "retry": "Coba Lagi"
+  "retry": "Coba Lagi",
+  "complete_title": "Akun Ditambahkan!",
+  "complete_desc": "Akun Anda telah ditambahkan ke Hoyo Buddy. Anda sekarang dapat kembali ke Discord."
 }

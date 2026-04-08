@@ -63,7 +63,7 @@
   "email_verify_desc": "이메일 주소로 전송된 6자리 인증 코드를 입력하세요",
   "email_login_security_note": "이메일과 비밀번호는 서버에 저장되지 않습니다.",
   "verification_code": "인증 코드",
-  "code_expires_note": "받은 편지함을 확인하세요 — 코드는 몇 분 후 만료됩니다",
+  "code_expires_note": "받은 편지함을 확인하세요 - 코드는 몇 분 후 만료됩니다",
   "verify_code": "코드 확인",
   "processing_verification": "인증 처리 중…",
   "select_accounts_title": "계정 선택",
@@ -106,5 +106,7 @@
   "open_discord_browser": "브라우저에서 Discord 열기",
   "geetest_command_error": "인증에 실패했습니다. 다시 시도해 주세요.",
   "geetest_command_missing_params": "필수 파라미터가 없습니다.",
-  "retry": "다시 시도"
+  "retry": "다시 시도",
+  "complete_title": "계정이 추가되었습니다!",
+  "complete_desc": "계정이 Hoyo Buddy에 추가되었습니다. 이제 Discord로 돌아갈 수 있습니다."
 }

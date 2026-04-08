@@ -63,7 +63,7 @@
   "email_verify_desc": "Introduce el código de verificación de 6 dígitos enviado a tu dirección de correo",
   "email_login_security_note": "Tu correo y contraseña nunca se almacenan en nuestros servidores.",
   "verification_code": "Código de verificación",
-  "code_expires_note": "Revisa tu bandeja de entrada — el código expira en unos minutos",
+  "code_expires_note": "Revisa tu bandeja de entrada - el código expira en unos minutos",
   "verify_code": "Verificar código",
   "processing_verification": "Procesando verificación…",
   "select_accounts_title": "Seleccionar cuentas",
@@ -106,5 +106,7 @@
   "open_discord_browser": "Abrir Discord en el navegador",
   "geetest_command_error": "Verificación fallida. Por favor, inténtalo de nuevo.",
   "geetest_command_missing_params": "Faltan parámetros requeridos.",
-  "retry": "Reintentar"
+  "retry": "Reintentar",
+  "complete_title": "¡Cuentas añadidas!",
+  "complete_desc": "Tus cuentas han sido añadidas a Hoyo Buddy. Ahora puedes volver a Discord."
 }

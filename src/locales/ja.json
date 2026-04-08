@@ -63,7 +63,7 @@
   "email_verify_desc": "メールアドレスに送信された6桁の認証コードを入力してください",
   "email_login_security_note": "メールとパスワードはサーバーに保存されません。",
   "verification_code": "認証コード",
-  "code_expires_note": "受信トレイを確認してください — コードは数分で期限切れになります",
+  "code_expires_note": "受信トレイを確認してください - コードは数分で期限切れになります",
   "verify_code": "コードを確認",
   "processing_verification": "認証処理中…",
   "select_accounts_title": "アカウントを選択",
@@ -106,5 +106,7 @@
   "open_discord_browser": "ブラウザでDiscordを開く",
   "geetest_command_error": "認証に失敗しました。もう一度お試しください。",
   "geetest_command_missing_params": "必要なパラメータが不足しています。",
-  "retry": "再試行"
+  "retry": "再試行",
+  "complete_title": "アカウントが追加されました！",
+  "complete_desc": "アカウントがHoyo Buddyに追加されました。Discordに戻ることができます。"
 }

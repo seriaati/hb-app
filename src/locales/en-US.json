@@ -63,7 +63,7 @@
   "email_verify_desc": "Enter the 6-digit verification code sent to your email address",
   "email_login_security_note": "Your email and password are never stored on our servers.",
   "verification_code": "Verification Code",
-  "code_expires_note": "Check your inbox — the code expires in a few minutes",
+  "code_expires_note": "Check your inbox - the code expires in a few minutes",
   "verify_code": "Verify Code",
   "processing_verification": "Processing verification…",
   "select_accounts_title": "Select Accounts",

@@ -63,7 +63,7 @@
   "email_verify_desc": "Nhập mã xác minh 6 chữ số được gửi đến địa chỉ email của bạn",
   "email_login_security_note": "Email và mật khẩu của bạn không bao giờ được lưu trên máy chủ của chúng tôi.",
   "verification_code": "Mã Xác Minh",
-  "code_expires_note": "Kiểm tra hộp thư — mã sẽ hết hạn sau vài phút",
+  "code_expires_note": "Kiểm tra hộp thư - mã sẽ hết hạn sau vài phút",
   "verify_code": "Xác Minh Mã",
   "processing_verification": "Đang xử lý xác minh…",
   "select_accounts_title": "Chọn Tài Khoản",
@@ -106,5 +106,7 @@
   "open_discord_browser": "Mở Discord trong trình duyệt",
   "geetest_command_error": "Xác minh thất bại. Vui lòng thử lại.",
   "geetest_command_missing_params": "Thiếu các tham số bắt buộc.",
-  "retry": "Thử Lại"
+  "retry": "Thử Lại",
+  "complete_title": "Tài Khoản Đã Được Thêm!",
+  "complete_desc": "Tài khoản của bạn đã được thêm vào Hoyo Buddy. Bạn có thể quay lại Discord ngay bây giờ."
 }

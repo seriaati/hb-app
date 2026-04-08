@@ -63,7 +63,7 @@
   "email_verify_desc": "Voer de 6-cijferige verificatiecode in die naar uw e-mailadres is verzonden",
   "email_login_security_note": "Uw e-mail en wachtwoord worden nooit opgeslagen op onze servers.",
   "verification_code": "Verificatiecode",
-  "code_expires_note": "Controleer uw inbox — de code verloopt over een paar minuten",
+  "code_expires_note": "Controleer uw inbox - de code verloopt over een paar minuten",
   "verify_code": "Code verifiëren",
   "processing_verification": "Verificatie verwerken…",
   "select_accounts_title": "Accounts selecteren",
@@ -106,5 +106,7 @@
   "open_discord_browser": "Discord openen in browser",
   "geetest_command_error": "Verificatie mislukt. Probeer het opnieuw.",
   "geetest_command_missing_params": "Vereiste parameters ontbreken.",
-  "retry": "Opnieuw proberen"
+  "retry": "Opnieuw proberen",
+  "complete_title": "Accounts toegevoegd!",
+  "complete_desc": "Uw accounts zijn toegevoegd aan Hoyo Buddy. U kunt nu terugkeren naar Discord."
 }
