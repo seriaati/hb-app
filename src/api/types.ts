@@ -26,6 +26,7 @@ export interface GeetestMMTData {
   session_id?: string
   check_id?: string
   risk_type?: string
+  captcha_id?: string
 }
 
 export interface LoginFlowResponse {
@@ -47,11 +48,11 @@ export interface SessionMMTResult {
 // Payload for POST /login/geetest-callback (v4) — SessionMMTv4Result
 export interface SessionMMTv4Result {
   session_id: string
-  check_id?: string
+  captcha_id: string
   lot_number: string
-  captcha_output: string
   pass_token: string
   gen_time: string
+  captcha_output: string
 }
 
 export type GeetestCallbackRequest = SessionMMTResult | SessionMMTv4Result

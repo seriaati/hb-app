@@ -10,7 +10,9 @@ export function CompletePage() {
   const channelId = useLoginStore((s) => s.channelId)
   const guildId = useLoginStore((s) => s.guildId)
 
-  const discordUrls = channelId ? buildDiscordUrls(channelId, guildId) : null
+  const discordUrls = channelId
+    ? buildDiscordUrls(channelId, guildId)
+    : { deepLink: 'discord://', webUrl: 'https://discord.com' }
 
   return (
     <PageContainer narrow>
@@ -29,22 +31,20 @@ export function CompletePage() {
             )}
           </p>
         </div>
-        {discordUrls && (
-          <div className="flex flex-col items-center gap-2">
-            <a href={discordUrls.deepLink} className={buttonVariants({ variant: 'default' })}>
-              {t('return_to_discord', 'Return to Discord')}
-            </a>
-            <a
-              href={discordUrls.webUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground transition-colors duration-150"
-            >
-              <ExternalLink className="h-3 w-3" />
-              {t('open_discord_browser', 'Open Discord in browser')}
-            </a>
-          </div>
-        )}
+        <div className="flex flex-col items-center gap-2">
+          <a href={discordUrls.deepLink} className={buttonVariants({ variant: 'default' })}>
+            {t('return_to_discord', 'Return to Discord')}
+          </a>
+          <a
+            href={discordUrls.webUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground transition-colors duration-150"
+          >
+            <ExternalLink className="h-3 w-3" />
+            {t('open_discord_browser', 'Open Discord in browser')}
+          </a>
+        </div>
       </div>
     </PageContainer>
   )

@@ -83,10 +83,11 @@ export function GeetestCommandPage() {
 
   function handleV4Success(validate: GeetestV4Validate) {
     submitResult({
+      captcha_id: validate.captcha_id,
       lot_number: validate.lot_number,
-      captcha_output: validate.captcha_output,
       pass_token: validate.pass_token,
       gen_time: validate.gen_time,
+      captcha_output: validate.captcha_output,
     })
   }
 

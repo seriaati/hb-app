@@ -28,6 +28,7 @@ export interface GeetestV4Captcha {
     captcha_output: string
     pass_token: string
     gen_time: string
+    captcha_id: string
   }
 }
 
@@ -57,6 +58,7 @@ export interface GeetestV4Validate {
   captcha_output: string
   pass_token: string
   gen_time: string
+  captcha_id: string
 }
 
 interface UseGeetestOptions {
@@ -160,10 +162,12 @@ export function useGeetest(options: UseGeetestOptions): UseGeetestReturn {
 
     window.initGeetest4(
       {
-        captchaId: mmtData.gt,
+        captchaId: mmtData.captcha_id ?? mmtData.gt,
         riskType: mmtData.risk_type,
-        userInfo: mmtData.session_id ? JSON.stringify({ mmt_key: mmtData.session_id }) : undefined,
-        api_server: apiServer ?? 'gcaptcha4.captchami.com',
+        userInfo: mmtData.session_id
+          ? JSON.stringify({ session_id: mmtData.session_id })
+          : undefined,
+        apiServers: [apiServer ?? 'gcaptcha4.captchami.com'],
         product: 'bind',
         language: 'en',
       },

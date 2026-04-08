@@ -67,11 +67,11 @@ export function GeetestPage() {
     geetestCallbackMutation.mutate(
       {
         session_id: mmt?.session_id ?? '',
-        ...(mmt?.check_id && { check_id: mmt.check_id }),
+        captcha_id: validate.captcha_id,
         lot_number: validate.lot_number,
-        captcha_output: validate.captcha_output,
         pass_token: validate.pass_token,
         gen_time: validate.gen_time,
+        captcha_output: validate.captcha_output,
       },
       {
         onSuccess: (data) =>
