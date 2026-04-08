@@ -11,6 +11,7 @@ import type {
   QRCodeResponse,
   QRCodeStatusResponse,
   GeetestCallbackRequest,
+  GeetestCommandRequest,
 } from './types'
 
 export async function emailPasswordLogin(
@@ -59,4 +60,8 @@ export async function checkQRCode(): Promise<QRCodeStatusResponse> {
 
 export async function submitDeviceInfo(body: DeviceInfoRequest): Promise<LoginFlowResponse> {
   return apiClient.post('api/login/device-info', { json: body }).json<LoginFlowResponse>()
+}
+
+export async function geetestCommand(body: GeetestCommandRequest): Promise<void> {
+  await apiClient.post('api/geetest/command', { json: body })
 }

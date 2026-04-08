@@ -174,6 +174,13 @@ export interface GachaParams {
   name_contains?: string
 }
 
+// Geetest command types
+export interface GeetestCommandRequest {
+  account_id: number
+  gt_type: string
+  mmt_result: Record<string, string>
+}
+
 // Error type
 export interface ErrorResponse {
   detail: string

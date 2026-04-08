@@ -10,6 +10,7 @@ import {
   createQRCode,
   checkQRCode,
   submitDeviceInfo,
+  geetestCommand,
 } from '@/api/login'
 import type {
   EmailPasswordRequest,
@@ -17,6 +18,7 @@ import type {
   ModAppRequest,
   DeviceInfoRequest,
   GeetestCallbackRequest,
+  GeetestCommandRequest,
 } from '@/api/types'
 
 export function useEmailPasswordLogin(platform: string) {
@@ -76,5 +78,11 @@ export function useCheckQRCode() {
 export function useSubmitDeviceInfo() {
   return useMutation({
     mutationFn: (body: DeviceInfoRequest) => submitDeviceInfo(body),
+  })
+}
+
+export function useGeetestCommand() {
+  return useMutation({
+    mutationFn: (body: GeetestCommandRequest) => geetestCommand(body),
   })
 }
