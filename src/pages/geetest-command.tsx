@@ -4,22 +4,12 @@ import { toast } from 'sonner'
 import { CheckCircle, ExternalLink } from 'lucide-react'
 import { useGeetest } from '@/hooks/use-geetest'
 import { useGeetestCommand } from '@/hooks/use-login'
+import { buildDiscordUrls } from '@/lib/discord'
 import { LoadingSpinner } from '@/components/layout/loading-spinner'
 import { PageContainer } from '@/components/layout/page-container'
 import { Button, buttonVariants } from '@/components/ui/button'
 import type { GeetestMMTData } from '@/api/types'
 import type { GeetestV3Validate, GeetestV4Validate } from '@/hooks/use-geetest'
-
-function buildDiscordUrls(guildId: string | null, channelId: string): {
-  deepLink: string
-  webUrl: string
-} {
-  const target = guildId ?? '@me'
-  return {
-    deepLink: `discord://discord.com/channels/${target}/${channelId}`,
-    webUrl: `https://discord.com/channels/${target}/${channelId}`,
-  }
-}
 
 export function GeetestCommandPage() {
   const { t } = useTranslation()
@@ -110,7 +100,7 @@ export function GeetestCommandPage() {
     onClose: () => {},
   })
 
-  const discordUrls = channelId ? buildDiscordUrls(guildId, channelId) : null
+  const discordUrls = channelId ? buildDiscordUrls(channelId, guildId) : null
 
   function ReturnToDiscord() {
     if (!discordUrls) return null

@@ -32,8 +32,8 @@ export function handleLoginFlowResponse(
     case 'finish':
       navigate('/finish')
       break
-    case 'redirect':
-      if (data.message) window.location.href = data.message
+    case 'done':
+      navigate('/complete')
       break
     default:
       options?.onUnknown?.()

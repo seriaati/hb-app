@@ -15,7 +15,7 @@ export interface AuthCallbackRequest {
 }
 
 // Login flow types
-export type LoginFlowNextStep = 'geetest' | 'email_verify' | 'verify_otp' | 'finish' | 'redirect'
+export type LoginFlowNextStep = 'geetest' | 'email_verify' | 'verify_otp' | 'finish' | 'done'
 
 // MMT data embedded in LoginFlowResponse when next_step === 'geetest'
 export interface GeetestMMTData {
@@ -33,7 +33,6 @@ export interface LoginFlowResponse {
   gt_version: number | null
   api_server: string | null
   mmt: GeetestMMTData | null
-  message: string | null
 }
 
 // Payload for POST /login/geetest-callback (v3) — SessionMMTResult

@@ -106,5 +106,7 @@
   "open_discord_browser": "Open Discord in browser",
   "geetest_command_error": "Verification failed. Please try again.",
   "geetest_command_missing_params": "Missing required parameters.",
-  "retry": "Retry"
+  "retry": "Retry",
+  "complete_title": "Accounts Added!",
+  "complete_desc": "Your accounts have been added to Hoyo Buddy. You can now return to Discord."
 }

@@ -13,6 +13,7 @@ import { GeetestPage } from '@/pages/geetest'
 import { EmailVerifyPage } from '@/pages/email-verify'
 import { DeviceInfoPage } from '@/pages/device-info'
 import { FinishPage } from '@/pages/finish'
+import { CompletePage } from '@/pages/complete'
 import { GachaLogPage } from '@/pages/gacha-log'
 import { GeetestCommandPage } from '@/pages/geetest-command'
 import { NotFoundPage } from '@/pages/not-found'
@@ -107,6 +108,14 @@ export const router = createBrowserRouter([
     element: (
       <AuthGuard>
         <FinishPage />
+      </AuthGuard>
+    ),
+  },
+  {
+    path: '/complete',
+    element: (
+      <AuthGuard>
+        <CompletePage />
       </AuthGuard>
     ),
   },
