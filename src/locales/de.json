@@ -32,7 +32,7 @@
   "login_method": {
     "email": {
       "label": "E-Mail & Passwort",
-      "desc": "Mit E-Mail und Passwort anmelden"
+      "desc": "Mit E-Mail oder Benutzername und Passwort anmelden"
     },
     "devtools": {
       "label": "DevTools",
@@ -40,12 +40,13 @@
     }
   },
   "email_login_title": "E-Mail & Passwort",
-  "email_login_desc": "Mit deinen HoYoverse-Kontodaten anmelden",
-  "email_login_panel_desc": "Sicher mit der E-Mail und dem Passwort deines HoYoverse-Kontos anmelden.",
+  "email_login_desc": "Mit deiner HoYoverse-E-Mail oder deinem Benutzername und Passwort anmelden",
+  "email_login_panel_desc": "Sicher mit deinem HoYoverse-Konto anmelden. Du kannst entweder deine E-Mail-Adresse oder deinen Benutzernamen verwenden.",
   "email_login_how_it_works": "Wie funktioniert das?",
   "email_login_console": "Ich bin ein Konsolenspieler",
   "email_login_no_account": "Ich habe kein HoYoverse-Konto (Anmeldung mit Google, Facebook)",
-  "email_address": "E-Mail-Adresse",
+  "email_or_username": "E-Mail oder Benutzername",
+  "email_or_username_placeholder": "E-Mail oder Benutzername",
   "password": "Passwort",
   "signing_in": "Anmeldung läuft…",
   "sign_in": "Anmelden",

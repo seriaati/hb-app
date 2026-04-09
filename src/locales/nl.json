@@ -32,7 +32,7 @@
   "login_method": {
     "email": {
       "label": "E-mail & Wachtwoord",
-      "desc": "Inloggen met uw e-mail en wachtwoord"
+      "desc": "Inloggen met uw e-mail of gebruikersnaam en wachtwoord"
     },
     "devtools": {
       "label": "DevTools",
@@ -40,12 +40,13 @@
     }
   },
   "email_login_title": "E-mail & Wachtwoord",
-  "email_login_desc": "Inloggen met uw HoYoverse-accountgegevens",
-  "email_login_panel_desc": "Veilig inloggen met het e-mailadres en wachtwoord van uw HoYoverse-account.",
+  "email_login_desc": "Inloggen met uw HoYoverse e-mail of gebruikersnaam en wachtwoord",
+  "email_login_panel_desc": "Veilig inloggen met uw HoYoverse-account. U kunt uw e-mailadres of gebruikersnaam gebruiken.",
   "email_login_how_it_works": "Hoe werkt dit?",
   "email_login_console": "Ik ben een consolespeler",
   "email_login_no_account": "Ik heb geen HoYoverse-account (inloggen met Google, Facebook)",
-  "email_address": "E-mailadres",
+  "email_or_username": "E-mail of gebruikersnaam",
+  "email_or_username_placeholder": "E-mail of gebruikersnaam",
   "password": "Wachtwoord",
   "signing_in": "Inloggen…",
   "sign_in": "Inloggen",

@@ -32,7 +32,7 @@
   "login_method": {
     "email": {
       "label": "Email & Kata Sandi",
-      "desc": "Masuk dengan email dan kata sandi Anda"
+      "desc": "Masuk dengan email atau nama pengguna dan kata sandi Anda"
     },
     "devtools": {
       "label": "DevTools",
@@ -40,12 +40,13 @@
     }
   },
   "email_login_title": "Email & Kata Sandi",
-  "email_login_desc": "Masuk dengan kredensial akun HoYoverse Anda",
-  "email_login_panel_desc": "Masuk dengan aman menggunakan email dan kata sandi akun HoYoverse Anda.",
+  "email_login_desc": "Masuk dengan email atau nama pengguna HoYoverse dan kata sandi Anda",
+  "email_login_panel_desc": "Masuk dengan aman menggunakan akun HoYoverse Anda. Anda dapat menggunakan email atau nama pengguna Anda.",
   "email_login_how_it_works": "Bagaimana cara kerjanya?",
   "email_login_console": "Saya pemain konsol",
   "email_login_no_account": "Saya tidak memiliki akun HoYoverse (login dengan Google, Facebook)",
-  "email_address": "Alamat email",
+  "email_or_username": "Email atau nama pengguna",
+  "email_or_username_placeholder": "Email atau nama pengguna",
   "password": "Kata sandi",
   "signing_in": "Sedang masuk…",
   "sign_in": "Masuk",

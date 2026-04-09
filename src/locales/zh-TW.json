@@ -32,7 +32,7 @@
   "login_method": {
     "email": {
       "label": "信箱與密碼",
-      "desc": "使用您的信箱與密碼登入"
+      "desc": "使用您的信箱或使用者名稱與密碼登入"
     },
     "devtools": {
       "label": "開發者工具",
@@ -40,12 +40,13 @@
     }
   },
   "email_login_title": "信箱與密碼",
-  "email_login_desc": "使用您的 HoYoverse 帳號憑證登入",
-  "email_login_panel_desc": "透過安全加密連線，使用 HoYoverse 帳號信箱與密碼登入。",
+  "email_login_desc": "使用您的 HoYoverse 信箱或使用者名稱與密碼登入",
+  "email_login_panel_desc": "透過安全加密連線，使用 HoYoverse 帳號登入。您可以使用信箱地址或使用者名稱。",
   "email_login_how_it_works": "這是如何運作的？",
   "email_login_console": "我是主機平台玩家 (PlayStation/Xbox)",
   "email_login_no_account": "我沒有 HoYoverse 帳號 (使用 Google、Facebook 登入者)",
-  "email_address": "電子信箱",
+  "email_or_username": "信箱或使用者名稱",
+  "email_or_username_placeholder": "信箱或使用者名稱",
   "password": "密碼",
   "signing_in": "正在登入…",
   "sign_in": "登入",

@@ -32,7 +32,7 @@
   "login_method": {
     "email": {
       "label": "이메일 & 비밀번호",
-      "desc": "이메일과 비밀번호로 로그인"
+      "desc": "이메일 또는 사용자명과 비밀번호로 로그인"
     },
     "devtools": {
       "label": "DevTools",
@@ -40,12 +40,13 @@
     }
   },
   "email_login_title": "이메일 & 비밀번호",
-  "email_login_desc": "HoYoverse 계정 자격 증명으로 로그인",
-  "email_login_panel_desc": "HoYoverse 계정 이메일과 비밀번호로 안전하게 로그인.",
+  "email_login_desc": "HoYoverse 계정 이메일 또는 사용자명과 비밀번호로 로그인",
+  "email_login_panel_desc": "HoYoverse 계정으로 안전하게 로그인하세요. 이메일 주소 또는 사용자명을 사용할 수 있습니다.",
   "email_login_how_it_works": "어떻게 작동하나요?",
   "email_login_console": "콘솔 플레이어입니다",
   "email_login_no_account": "HoYoverse 계정이 없습니다 (Google, Facebook으로 로그인)",
-  "email_address": "이메일 주소",
+  "email_or_username": "이메일 또는 사용자명",
+  "email_or_username_placeholder": "이메일 또는 사용자명",
   "password": "비밀번호",
   "signing_in": "로그인 중…",
   "sign_in": "로그인",

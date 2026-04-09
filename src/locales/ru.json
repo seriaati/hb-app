@@ -32,7 +32,7 @@
   "login_method": {
     "email": {
       "label": "Email и пароль",
-      "desc": "Войти с помощью email и пароля"
+      "desc": "Войти с помощью email или имени пользователя и пароля"
     },
     "devtools": {
       "label": "DevTools",
@@ -40,12 +40,13 @@
     }
   },
   "email_login_title": "Email и пароль",
-  "email_login_desc": "Войти с учётными данными аккаунта HoYoverse",
-  "email_login_panel_desc": "Безопасный вход с помощью email и пароля аккаунта HoYoverse.",
+  "email_login_desc": "Войти с помощью email или имени пользователя HoYoverse и пароля",
+  "email_login_panel_desc": "Безопасный вход с помощью аккаунта HoYoverse. Вы можете использовать email или имя пользователя.",
   "email_login_how_it_works": "Как это работает?",
   "email_login_console": "Я консольный игрок",
   "email_login_no_account": "У меня нет аккаунта HoYoverse (вход через Google, Facebook)",
-  "email_address": "Адрес электронной почты",
+  "email_or_username": "Email или имя пользователя",
+  "email_or_username_placeholder": "Email или имя пользователя",
   "password": "Пароль",
   "signing_in": "Вход…",
   "sign_in": "Войти",

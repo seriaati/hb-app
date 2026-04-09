@@ -32,7 +32,7 @@
   "login_method": {
     "email": {
       "label": "Email & Mật Khẩu",
-      "desc": "Đăng nhập bằng email và mật khẩu"
+      "desc": "Đăng nhập bằng email hoặc tên người dùng và mật khẩu"
     },
     "devtools": {
       "label": "DevTools",
@@ -40,12 +40,13 @@
     }
   },
   "email_login_title": "Email & Mật Khẩu",
-  "email_login_desc": "Đăng nhập bằng thông tin tài khoản HoYoverse của bạn",
-  "email_login_panel_desc": "Đăng nhập an toàn bằng email và mật khẩu tài khoản HoYoverse.",
+  "email_login_desc": "Đăng nhập bằng email hoặc tên người dùng HoYoverse và mật khẩu",
+  "email_login_panel_desc": "Đăng nhập an toàn bằng tài khoản HoYoverse của bạn. Bạn có thể sử dụng email hoặc tên người dùng.",
   "email_login_how_it_works": "Cách thức hoạt động?",
   "email_login_console": "Tôi là người chơi console",
   "email_login_no_account": "Tôi không có tài khoản HoYoverse (đăng nhập bằng Google, Facebook)",
-  "email_address": "Địa chỉ email",
+  "email_or_username": "Email hoặc tên người dùng",
+  "email_or_username_placeholder": "Email hoặc tên người dùng",
   "password": "Mật khẩu",
   "signing_in": "Đang đăng nhập…",
   "sign_in": "Đăng Nhập",

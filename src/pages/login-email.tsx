@@ -18,7 +18,7 @@ export function LoginEmailPage() {
   const docsUrl = getEmailLoginDocsUrl(i18n.language)
   const beforeStartUrl = getBeforeStartUrl(i18n.language)
   const consoleUrl = getConsolePlayerUrl(i18n.language)
-  const [email, setEmail] = useState('')
+  const [emailOrUsername, setEmailOrUsername] = useState('')
   const [password, setPassword] = useState('')
   const login = useEmailPasswordLogin(platform ?? '')
 
@@ -29,7 +29,7 @@ export function LoginEmailPage() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     login.mutate(
-      { email, password },
+      { email: emailOrUsername, password },
       {
         onSuccess: (data) => {
           handleLoginFlowResponse(data, navigate)
@@ -94,16 +94,16 @@ export function LoginEmailPage() {
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
           <div className="flex flex-col gap-2">
             <Label htmlFor="email" className="text-sm font-medium">
-              {t('email_address')}
+              {t('email_or_username')}
             </Label>
             <Input
               id="email"
-              type="email"
-              placeholder="your@email.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              type="text"
+              placeholder={t('email_or_username_placeholder')}
+              value={emailOrUsername}
+              onChange={(e) => setEmailOrUsername(e.target.value)}
               required
-              autoComplete="email"
+              autoComplete="username"
               className="h-10"
             />
           </div>

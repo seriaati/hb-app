@@ -32,7 +32,7 @@
   "login_method": {
     "email": {
       "label": "メール & パスワード",
-      "desc": "メールとパスワードでサインイン"
+      "desc": "メールまたはユーザー名とパスワードでサインイン"
     },
     "devtools": {
       "label": "DevTools",
@@ -40,12 +40,13 @@
     }
   },
   "email_login_title": "メール & パスワード",
-  "email_login_desc": "HoYoverseアカウントの認証情報でサインイン",
-  "email_login_panel_desc": "HoYoverseアカウントのメールとパスワードで安全にサインイン。",
+  "email_login_desc": "HoYoverseアカウントのメールまたはユーザー名とパスワードでサインイン",
+  "email_login_panel_desc": "HoYoverseアカウントで安全にサインイン。メールアドレスまたはユーザー名を使用できます。",
   "email_login_how_it_works": "どのように機能しますか？",
   "email_login_console": "コンソールプレイヤーです",
   "email_login_no_account": "HoYoverseアカウントがありません（Google、Facebookでログイン）",
-  "email_address": "メールアドレス",
+  "email_or_username": "メールまたはユーザー名",
+  "email_or_username_placeholder": "メールまたはユーザー名",
   "password": "パスワード",
   "signing_in": "サインイン中…",
   "sign_in": "サインイン",
