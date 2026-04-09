@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import i18n from '@/lib/i18n'
 import { useGachaLogs, useGachaBannerTypes, useGachaStats } from '@/hooks/use-gacha'
+import { useGridPageSize } from '@/hooks/use-grid-page-size'
 import { GachaFilters } from '@/components/gacha/gacha-filters'
 import { GachaGrid } from '@/components/gacha/gacha-grid'
 import { GachaStats } from '@/components/gacha/gacha-stats'
@@ -27,6 +28,8 @@ export function GachaLogPage() {
     i18n.changeLanguage(locale)
   }, [locale])
 
+  const { containerRef, pageSize } = useGridPageSize()
+
   const [bannerType, setBannerType] = useState(initialBannerType)
   const [rarities, setRarities] = useState<number[]>(initialRarities)
   const [nameSearch, setNameSearch] = useState('')
@@ -43,7 +46,7 @@ export function GachaLogPage() {
     banner_type: bannerType || undefined,
     locale,
     rarities,
-    size: 100,
+    size: pageSize,
     cursor: currentCursor,
     name_contains: nameSearch || undefined,
   }
@@ -254,6 +257,7 @@ export function GachaLogPage() {
 
           {/* Grid */}
           <GachaGrid
+            containerRef={containerRef}
             items={logsData?.items ?? []}
             total={logsData?.total ?? 0}
             hasPrev={stackIndex > 0}

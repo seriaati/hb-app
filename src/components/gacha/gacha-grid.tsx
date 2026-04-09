@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from 'react'
+import { useEffect, useCallback, type RefObject } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
   Pagination,
@@ -12,6 +12,7 @@ import { GachaGridItem } from '@/components/gacha/gacha-grid-item'
 import type { GachaItem } from '@/api/types'
 
 interface GachaGridProps {
+  containerRef: RefObject<HTMLDivElement | null>
   items: GachaItem[]
   total: number
   hasPrev: boolean
@@ -22,6 +23,7 @@ interface GachaGridProps {
 }
 
 export function GachaGrid({
+  containerRef,
   items,
   total,
   hasPrev,
@@ -51,6 +53,7 @@ export function GachaGrid({
   if (isLoading) {
     return (
       <div
+        ref={containerRef}
         className="grid gap-1.5"
         style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(72px, 1fr))' }}
       >
@@ -63,7 +66,7 @@ export function GachaGrid({
 
   if (items.length === 0) {
     return (
-      <div className="flex items-center justify-center py-20 text-sm text-muted-foreground">
+      <div ref={containerRef} className="flex items-center justify-center py-20 text-sm text-muted-foreground">
         {t('no_gacha_records', 'No gacha records found.')}
       </div>
     )
@@ -72,7 +75,7 @@ export function GachaGrid({
   const showPagination = hasPrev || hasNext
 
   return (
-    <div className="flex flex-col gap-4">
+    <div ref={containerRef} className="flex flex-col gap-4">
       {/* Grid — key on first item id forces re-mount (and re-animation) on page change */}
       <div
         key={items[0]?.id ?? 'empty'}
