@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { ChevronRight, ShieldCheck } from 'lucide-react'
 import { useLoginStore } from '@/stores/login-store'
 import { LoginLayout } from '@/components/layout/login-layout'
-import { getAccountSecurityUrl } from '@/lib/constants'
+import { getAccountSecurityUrl, resolveLocale } from '@/lib/constants'
 
 export function PlatformsPage() {
   const navigate = useNavigate()
@@ -20,13 +20,17 @@ export function PlatformsPage() {
     const channelId = searchParams.get('channel_id')
     const guildId = searchParams.get('guild_id')
 
+    const resolvedLocale = locale ? resolveLocale(locale) : 'en-US'
+
     setParams({
       userId: userId ? Number(userId) : null,
-      locale: locale ?? 'en-US',
+      locale: resolvedLocale,
       channelId: channelId ? Number(channelId) : null,
       guildId: guildId ? Number(guildId) : null,
     })
-  }, [searchParams, setParams])
+
+    i18n.changeLanguage(resolvedLocale)
+  }, [searchParams, setParams, i18n])
 
   function handleSelect(platformId: string) {
     setPlatform(platformId)
