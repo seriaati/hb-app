@@ -25,6 +25,6 @@ export function useGachaBannerTypes(game: string, locale: string) {
     queryKey: ['gacha', 'banner-types', game, locale],
     queryFn: () => getBannerTypes(game, locale),
     enabled: !!game,
-    staleTime: 60 * 60 * 1000, // 1 hour — banner types rarely change
+    staleTime: 60 * 60 * 1000,
   })
 }
