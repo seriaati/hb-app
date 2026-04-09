@@ -19,10 +19,6 @@ export function FinishPage() {
   useEffect(() => {
     if (data?.status === 'device_info_required') {
       navigate('/device-info', { replace: true })
-      return
-    }
-    if (data?.accounts) {
-      setSelected(new Set(data.accounts.map((a) => `${a.game}_${a.uid}`)))
     }
   }, [data, navigate])
 
