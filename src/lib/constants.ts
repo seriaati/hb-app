@@ -31,6 +31,17 @@ export function getAccountSecurityUrl(locale: string): string {
 export const SUPPORTED_LOCALES: { value: string; label: string; nativeLabel: string }[] = [
   { value: 'en-US', label: 'English', nativeLabel: 'English' },
   { value: 'zh-TW', label: 'Chinese (Traditional)', nativeLabel: '中文（繁體）' },
+  { value: 'zh-CN', label: 'Chinese (Simplified)', nativeLabel: '中文（简体）' },
+  { value: 'ja', label: 'Japanese', nativeLabel: '日本語' },
+  { value: 'ko', label: 'Korean', nativeLabel: '한국어' },
+  { value: 'fr', label: 'French', nativeLabel: 'Français' },
+  { value: 'de', label: 'German', nativeLabel: 'Deutsch' },
+  { value: 'es-ES', label: 'Spanish', nativeLabel: 'Español' },
+  { value: 'pt-BR', label: 'Portuguese (Brazil)', nativeLabel: 'Português (Brasil)' },
+  { value: 'ru', label: 'Russian', nativeLabel: 'Русский' },
+  { value: 'vi', label: 'Vietnamese', nativeLabel: 'Tiếng Việt' },
+  { value: 'id', label: 'Indonesian', nativeLabel: 'Bahasa Indonesia' },
+  { value: 'nl', label: 'Dutch', nativeLabel: 'Nederlands' },
 ]
 
 /**

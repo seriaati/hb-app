@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import i18n from '@/lib/i18n'
 import { useGachaLogs, useGachaBannerTypes, useGachaStats } from '@/hooks/use-gacha'
 import { GachaFilters } from '@/components/gacha/gacha-filters'
 import { GachaGrid } from '@/components/gacha/gacha-grid'
@@ -21,6 +22,10 @@ export function GachaLogPage() {
     .filter(Boolean) ?? [3, 4, 5]
 
   const game = searchParams.get('game') ?? ''
+
+  useEffect(() => {
+    i18n.changeLanguage(locale)
+  }, [locale])
 
   const [bannerType, setBannerType] = useState(initialBannerType)
   const [rarities, setRarities] = useState<number[]>(initialRarities)
