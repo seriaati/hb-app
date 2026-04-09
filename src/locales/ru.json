@@ -91,6 +91,8 @@
   "add_accounts_button_plural": "Добавить {{count}} аккаунта(-ов) в Hoyo Buddy",
   "failed_to_load_accounts": "Не удалось загрузить аккаунты",
   "failed_to_save_accounts": "Не удалось сохранить аккаунты",
+  "discord_support": "Сервер Discord",
+  "need_help": "Нужна помощь?",
   "privacy_policy": "Политика конфиденциальности",
   "account_security_docs": "Безопасность аккаунта",
   "switch_account": "Сменить",

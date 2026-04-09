@@ -91,6 +91,8 @@
   "add_accounts_button_plural": "Tambah {{count}} Akun ke Hoyo Buddy",
   "failed_to_load_accounts": "Gagal memuat akun",
   "failed_to_save_accounts": "Gagal menyimpan akun",
+  "discord_support": "Server Discord",
+  "need_help": "Butuh bantuan?",
   "privacy_policy": "Kebijakan Privasi",
   "account_security_docs": "Keamanan Akun",
   "switch_account": "Ganti",

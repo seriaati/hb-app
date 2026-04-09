@@ -91,6 +91,8 @@
   "add_accounts_button_plural": "{{count}} accounts toevoegen aan Hoyo Buddy",
   "failed_to_load_accounts": "Accounts laden mislukt",
   "failed_to_save_accounts": "Accounts opslaan mislukt",
+  "discord_support": "Discord-server",
+  "need_help": "Hulp nodig?",
   "privacy_policy": "Privacybeleid",
   "account_security_docs": "Accountbeveiliging",
   "switch_account": "Wisselen",

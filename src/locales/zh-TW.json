@@ -91,6 +91,8 @@
   "add_accounts_button_plural": "新增 {{count}} 個帳號至 Hoyo Buddy",
   "failed_to_load_accounts": "載入帳號失敗",
   "failed_to_save_accounts": "儲存帳號失敗",
+  "discord_support": "Discord 伺服器",
+  "need_help": "需要幫助？",
   "privacy_policy": "隱私權政策",
   "account_security_docs": "帳號安全",
   "switch_account": "切換",

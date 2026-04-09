@@ -91,6 +91,8 @@
   "add_accounts_button_plural": "Thêm {{count}} Tài Khoản vào Hoyo Buddy",
   "failed_to_load_accounts": "Không thể tải tài khoản",
   "failed_to_save_accounts": "Không thể lưu tài khoản",
+  "discord_support": "Máy Chủ Discord",
+  "need_help": "Cần Giúp Đỡ?",
   "privacy_policy": "Chính Sách Bảo Mật",
   "account_security_docs": "Bảo Mật Tài Khoản",
   "switch_account": "Chuyển",

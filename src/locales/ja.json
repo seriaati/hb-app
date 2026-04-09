@@ -91,6 +91,8 @@
   "add_accounts_button_plural": "{{count}}件のアカウントをHoyo Buddyに追加",
   "failed_to_load_accounts": "アカウントの読み込みに失敗しました",
   "failed_to_save_accounts": "アカウントの保存に失敗しました",
+  "discord_support": "Discordサーバー",
+  "need_help": "ヘルプが必要ですか？",
   "privacy_policy": "プライバシーポリシー",
   "account_security_docs": "アカウントセキュリティ",
   "switch_account": "切り替え",

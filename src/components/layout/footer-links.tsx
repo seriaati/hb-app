@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { PRIVACY_POLICY_URL, getAccountSecurityUrl } from '@/lib/constants'
+import { PRIVACY_POLICY_URL, DISCORD_SERVER_URL, getAccountSecurityUrl } from '@/lib/constants'
 
 interface FooterLinksProps {
   className?: string
@@ -16,6 +16,17 @@ export function FooterLinks({ className }: FooterLinksProps) {
 
   return (
     <div className={className}>
+      <a
+        href={DISCORD_SERVER_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-xs text-muted-foreground hover:text-foreground transition-colors underline-offset-2 hover:underline"
+      >
+        {t('discord_support', 'Discord Support')}
+      </a>
+      <span className="text-xs text-muted-foreground/50 mx-1.5">
+        {'·'}
+      </span>
       <a
         href={PRIVACY_POLICY_URL}
         target="_blank"

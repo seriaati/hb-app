@@ -2,7 +2,9 @@ import { LanguageSelector } from '@/components/ui/language-selector'
 import { PageContainer } from '@/components/layout/page-container'
 import { DiscordUserBadge } from '@/components/auth/discord-user-badge'
 import { FooterLinks } from '@/components/layout/footer-links'
-import { ShieldCheck } from 'lucide-react'
+import { ShieldCheck, HelpCircle } from 'lucide-react'
+import { DISCORD_SERVER_URL } from '@/lib/constants'
+import { useTranslation } from 'react-i18next'
 
 export interface LoginLayoutPanel {
   /** Accent color in oklch or any CSS color string */
@@ -33,6 +35,7 @@ interface LoginLayoutProps {
  * - Desktop (lg+): left info panel + right form panel side-by-side.
  */
 export function LoginLayout({ panel, children }: LoginLayoutProps) {
+  const { t } = useTranslation()
   const {
     accentColor,
     hero,
@@ -54,6 +57,16 @@ export function LoginLayout({ panel, children }: LoginLayoutProps) {
       <div className="hidden lg:flex min-h-screen bg-background bg-texture text-foreground">
         {/* Controls */}
         <div className="fixed top-4 right-4 z-50 flex items-center gap-2">
+          <a
+            href={DISCORD_SERVER_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-muted hover:bg-muted/80 text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
+            title="Join our Discord server for support"
+          >
+            <HelpCircle size={16} />
+            <span>{t('need_help', 'Need help?')}</span>
+          </a>
           <DiscordUserBadge />
           <LanguageSelector />
         </div>

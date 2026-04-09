@@ -91,6 +91,8 @@
   "add_accounts_button_plural": "Add {{count}} Accounts to Hoyo Buddy",
   "failed_to_load_accounts": "Failed to load accounts",
   "failed_to_save_accounts": "Failed to save accounts",
+  "discord_support": "Discord Server",
+  "need_help": "Need help?",
   "privacy_policy": "Privacy Policy",
   "account_security_docs": "Account Security",
   "switch_account": "Switch",

@@ -1,6 +1,7 @@
 export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL as string ?? 'http://localhost:8000'
 
 export const PRIVACY_POLICY_URL = 'https://github.com/seriaati/hoyo-buddy/blob/main/PRIVACY.md'
+export const DISCORD_SERVER_URL = 'https://link.seria.moe/hb-dc'
 
 /**
  * Maps site locales to the language prefix used in the documentation URLs.

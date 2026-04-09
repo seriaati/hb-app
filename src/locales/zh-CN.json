@@ -91,6 +91,8 @@
   "add_accounts_button_plural": "添加 {{count}} 个账号至 Hoyo Buddy",
   "failed_to_load_accounts": "加载账号失败",
   "failed_to_save_accounts": "保存账号失败",
+  "discord_support": "Discord 服务器",
+  "need_help": "需要帮助？",
   "privacy_policy": "隐私政策",
   "account_security_docs": "账号安全",
   "switch_account": "切换",

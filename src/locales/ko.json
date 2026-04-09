@@ -91,6 +91,8 @@
   "add_accounts_button_plural": "Hoyo Buddy에 {{count}}개 계정 추가",
   "failed_to_load_accounts": "계정 불러오기 실패",
   "failed_to_save_accounts": "계정 저장 실패",
+  "discord_support": "Discord 서버",
+  "need_help": "도움이 필요하신가요?",
   "privacy_policy": "개인정보 처리방침",
   "account_security_docs": "계정 보안",
   "switch_account": "전환",
