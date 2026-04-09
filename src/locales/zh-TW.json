@@ -119,6 +119,8 @@
   "table_header_time": "時間",
   "no_gacha_records": "未找到抽卡紀錄。",
   "total_records": "共 {{total}} 筆紀錄",
+  "previous": "上一頁",
+  "next": "下一頁",
   "stat_total_pulls": "總抽取數",
   "stat_pity": "目前保底計數",
   "stat_5star_pity": "5★ 保底計數",

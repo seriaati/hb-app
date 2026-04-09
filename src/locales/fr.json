@@ -119,6 +119,8 @@
   "table_header_time": "Heure",
   "no_gacha_records": "Aucun enregistrement gacha trouvé.",
   "total_records": "{{total}} enregistrements au total",
+  "previous": "Précédent",
+  "next": "Suivant",
   "stat_total_pulls": "Total des invocations",
   "stat_pity": "Pity actuel",
   "stat_5star_pity": "Pity 5★",

@@ -92,6 +92,7 @@ export function GachaGrid({
             <PaginationContent>
               <PaginationItem>
                 <PaginationPrevious
+                  text={t('previous', 'Previous')}
                   onClick={onPrev}
                   aria-disabled={!hasPrev}
                   className={!hasPrev ? 'pointer-events-none opacity-50' : 'cursor-pointer'}
@@ -99,6 +100,7 @@ export function GachaGrid({
               </PaginationItem>
               <PaginationItem>
                 <PaginationNext
+                  text={t('next', 'Next')}
                   onClick={onNext}
                   aria-disabled={!hasNext}
                   className={!hasNext ? 'pointer-events-none opacity-50' : 'cursor-pointer'}

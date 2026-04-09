@@ -119,6 +119,8 @@
   "table_header_time": "Thời Gian",
   "no_gacha_records": "Không tìm thấy bản ghi gacha.",
   "total_records": "Tổng {{total}} bản ghi",
+  "previous": "Trước",
+  "next": "Tiếp Theo",
   "stat_total_pulls": "Tổng Lần Quay",
   "stat_pity": "Pity Hiện Tại",
   "stat_5star_pity": "Pity 5★",

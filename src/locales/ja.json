@@ -119,6 +119,8 @@
   "table_header_time": "時間",
   "no_gacha_records": "ガチャ記録が見つかりません。",
   "total_records": "合計{{total}}件",
+  "previous": "前へ",
+  "next": "次へ",
   "stat_total_pulls": "総ガチャ数",
   "stat_pity": "現在の天井",
   "stat_5star_pity": "5★天井",

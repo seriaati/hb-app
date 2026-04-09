@@ -119,6 +119,8 @@
   "table_header_time": "Время",
   "no_gacha_records": "Записи гачи не найдены.",
   "total_records": "Всего {{total}} записей",
+  "previous": "Назад",
+  "next": "Далее",
   "stat_total_pulls": "Всего прокруток",
   "stat_pity": "Текущий Pity",
   "stat_5star_pity": "Pity 5★",

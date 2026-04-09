@@ -119,6 +119,8 @@
   "table_header_time": "Waktu",
   "no_gacha_records": "Tidak ada catatan gacha yang ditemukan.",
   "total_records": "Total {{total}} catatan",
+  "previous": "Sebelumnya",
+  "next": "Berikutnya",
   "stat_total_pulls": "Total Gacha",
   "stat_pity": "Pity Saat Ini",
   "stat_5star_pity": "Pity 5★",

@@ -119,6 +119,8 @@
   "table_header_time": "Tiempo",
   "no_gacha_records": "No se encontraron registros de gacha.",
   "total_records": "{{total}} registros en total",
+  "previous": "Anterior",
+  "next": "Siguiente",
   "stat_total_pulls": "Total de tiradas",
   "stat_pity": "Misericordia actual",
   "stat_5star_pity": "Misericordia 5★",

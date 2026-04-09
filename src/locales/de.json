@@ -119,6 +119,8 @@
   "table_header_time": "Zeit",
   "no_gacha_records": "Keine Gacha-Einträge gefunden.",
   "total_records": "{{total}} Einträge insgesamt",
+  "previous": "Zurück",
+  "next": "Weiter",
   "stat_total_pulls": "Gesamte Pulls",
   "stat_pity": "Aktuelles Pity",
   "stat_5star_pity": "5★ Pity",

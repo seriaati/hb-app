@@ -119,6 +119,8 @@
   "table_header_time": "Tijd",
   "no_gacha_records": "Geen gacha-records gevonden.",
   "total_records": "{{total}} records in totaal",
+  "previous": "Vorige",
+  "next": "Volgende",
   "stat_total_pulls": "Totaal aantal pulls",
   "stat_pity": "Huidig Pity",
   "stat_5star_pity": "5★ Pity",
