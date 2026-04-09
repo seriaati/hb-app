@@ -111,6 +111,7 @@
   "gacha_banner_exclusive": "한정",
   "gacha_banner_w_engine": "W-엔진",
   "gacha_banner_bangboo": "방부",
+  "banner_type_label": "배너:",
   "rarity_label": "등급:",
   "search_by_name": "이름으로 검색…",
   "table_header_name": "이름",

@@ -111,6 +111,7 @@
   "gacha_banner_exclusive": "独家",
   "gacha_banner_w_engine": "音擎",
   "gacha_banner_bangboo": "邦布",
+  "banner_type_label": "卡池：",
   "rarity_label": "稀有度：",
   "search_by_name": "按名称搜索…",
   "table_header_name": "名称",

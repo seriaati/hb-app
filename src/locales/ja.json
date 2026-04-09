@@ -111,6 +111,7 @@
   "gacha_banner_exclusive": "限定",
   "gacha_banner_w_engine": "Wエンジン",
   "gacha_banner_bangboo": "バンブー",
+  "banner_type_label": "バナー：",
   "rarity_label": "レアリティ：",
   "search_by_name": "名前で検索…",
   "table_header_name": "名前",
