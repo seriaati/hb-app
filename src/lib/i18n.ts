@@ -1,7 +1,6 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import { resolveLocale } from '@/lib/constants'
-import de from '@/locales/de.json'
 import enUS from '@/locales/en-US.json'
 import esES from '@/locales/es-ES.json'
 import fr from '@/locales/fr.json'
@@ -27,7 +26,6 @@ i18n.use(initReactI18next).init({
     'ja': { translation: ja },
     'ko': { translation: ko },
     'fr': { translation: fr },
-    'de': { translation: de },
     'es-ES': { translation: esES },
     'pt-BR': { translation: ptBR },
     'ru': { translation: ru },

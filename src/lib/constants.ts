@@ -36,7 +36,6 @@ export const SUPPORTED_LOCALES: { value: string; label: string; nativeLabel: str
   { value: 'ja', label: 'Japanese', nativeLabel: '日本語' },
   { value: 'ko', label: 'Korean', nativeLabel: '한국어' },
   { value: 'fr', label: 'French', nativeLabel: 'Français' },
-  { value: 'de', label: 'German', nativeLabel: 'Deutsch' },
   { value: 'es-ES', label: 'Spanish', nativeLabel: 'Español' },
   { value: 'pt-BR', label: 'Portuguese (Brazil)', nativeLabel: 'Português (Brasil)' },
   { value: 'ru', label: 'Russian', nativeLabel: 'Русский' },

@@ -24,7 +24,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const LOCALES_DIR = join(__dirname, "src/locales");
 const TX_DIR = join(__dirname, "tx");
-const LOCALES = ["de", "en-US", "es-ES", "fr", "id", "ja", "ko", "nl", "pt-BR", "ru", "vi", "zh-CN", "zh-TW"];
+const LOCALES = ["en-US", "es-ES", "fr", "id", "ja", "ko", "nl", "pt-BR", "ru", "vi", "zh-CN", "zh-TW"];
 
 // ── Flatten: { a: { b: "v" } } → { "a.b": { string: "v" } } ─────────────────
 
