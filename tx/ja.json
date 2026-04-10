@@ -1,0 +1,425 @@
+{
+    "back": {
+        "string": "← 戻る"
+    },
+    "submitting": {
+        "string": "送信中…"
+    },
+    "verifying": {
+        "string": "確認中…"
+    },
+    "go_home": {
+        "string": "ホームへ"
+    },
+    "login_failed": {
+        "string": "ログイン失敗"
+    },
+    "verification_failed": {
+        "string": "認証失敗"
+    },
+    "geetest_failed": {
+        "string": "Geetest認証失敗"
+    },
+    "geetest_email_verify_title": {
+        "string": "もう一度認証"
+    },
+    "geetest_email_verify_desc": {
+        "string": "認証コードを送信する前に、このセキュリティチェックを完了してください。"
+    },
+    "loading_captcha": {
+        "string": "キャプチャ読み込み中…"
+    },
+    "launch_captcha": {
+        "string": "キャプチャを起動"
+    },
+    "captcha_closed": {
+        "string": "キャプチャが閉じられました。"
+    },
+    "home_tagline": {
+        "string": "HoYoverseの体験を向上させましょう。"
+    },
+    "home_open_via_discord": {
+        "string": "Discordから開いて始めましょう"
+    },
+    "completing_sign_in": {
+        "string": "サインイン完了中…"
+    },
+    "missing_oauth_params": {
+        "string": "OAuthパラメータが不足しています。もう一度お試しください。"
+    },
+    "auth_failed": {
+        "string": "認証失敗"
+    },
+    "select_platform": {
+        "string": "プラットフォームを選択"
+    },
+    "select_platform_desc": {
+        "string": "アカウントを追加するプラットフォームを選択してください"
+    },
+    "add_account_title": {
+        "string": "アカウントを追加"
+    },
+    "add_account_desc": {
+        "string": "ゲームアカウントを連携して、HoYoverseの体験を向上させましょう。"
+    },
+    "feature_code_redeem": {
+        "string": "コード自動交換"
+    },
+    "feature_daily_checkin": {
+        "string": "デイリー自動チェックイン"
+    },
+    "feature_build_card": {
+        "string": "ビルドカード生成"
+    },
+    "feature_multi_account": {
+        "string": "マルチアカウント"
+    },
+    "select_platform_security_note": {
+        "string": "アカウントのセキュリティを真剣に考えています。"
+    },
+    "login_method_faq_note": {
+        "string": "どの方法を使えばいいかわからない？"
+    },
+    "select_login_method": {
+        "string": "ログイン方法を選択"
+    },
+    "select_login_method_desc": {
+        "string": "認証方法を選択してください"
+    },
+    "back_to_platforms": {
+        "string": "← プラットフォームに戻る"
+    },
+    "login_method.email.label": {
+        "string": "メール & パスワード"
+    },
+    "login_method.email.desc": {
+        "string": "メールまたはユーザー名とパスワードでサインイン"
+    },
+    "login_method.devtools.label": {
+        "string": "DevTools"
+    },
+    "login_method.devtools.desc": {
+        "string": "ブラウザの開発者ツールからCookieを抽出"
+    },
+    "email_login_title": {
+        "string": "メール & パスワード"
+    },
+    "email_login_desc": {
+        "string": "HoYoverseアカウントのメールまたはユーザー名とパスワードでサインイン"
+    },
+    "email_login_panel_desc": {
+        "string": "HoYoverseアカウントで安全にサインイン。メールアドレスまたはユーザー名を使用できます。"
+    },
+    "email_login_how_it_works": {
+        "string": "どのように機能しますか？"
+    },
+    "email_login_console": {
+        "string": "コンソールプレイヤーです"
+    },
+    "email_login_no_account": {
+        "string": "HoYoverseアカウントがありません（Google、Facebookでログイン）"
+    },
+    "email_or_username": {
+        "string": "メールまたはユーザー名"
+    },
+    "email_or_username_placeholder": {
+        "string": "メールまたはユーザー名"
+    },
+    "password": {
+        "string": "パスワード"
+    },
+    "signing_in": {
+        "string": "サインイン中…"
+    },
+    "sign_in": {
+        "string": "サインイン"
+    },
+    "devtools_title": {
+        "string": "DevTools"
+    },
+    "devtools_desc": {
+        "string": "以下の手順に従って、ブラウザの開発者ツールからセッションCookieを抽出してください。"
+    },
+    "devtools_panel_desc": {
+        "string": "ブラウザの開発者ツールから直接セッションCookieを抽出。"
+    },
+    "devtools_step1_label": {
+        "string": "HoYoLABまたは米遊社に移動"
+    },
+    "devtools_step1_desc": {
+        "string": "ブラウザを開き、以下のいずれかのプラットフォームに移動してください："
+    },
+    "devtools_step2_label": {
+        "string": "開発者ツールを開く"
+    },
+    "devtools_step2_desc": {
+        "string": "F12またはCtrl+Shift+Iを押して、ブラウザの開発者ツールを開きます。"
+    },
+    "devtools_step3_label": {
+        "string": "Applicationタブに切り替え"
+    },
+    "devtools_step3_desc": {
+        "string": "開発者ツールパネルの「Application」タブをクリックします。"
+    },
+    "devtools_step4_label": {
+        "string": "Cookiesを開く"
+    },
+    "devtools_step4_desc": {
+        "string": "左側のパネルで「Cookies」をクリックし、現在のウェブサイト（例：www.hoyolab.com）をクリックします。"
+    },
+    "devtools_step5_label": {
+        "string": "「v2」でフィルタリング"
+    },
+    "devtools_step5_desc": {
+        "string": "検索ボックスを使用して「v2」でフィルタリングし、関連するCookieを絞り込みます。"
+    },
+    "devtools_step6_label": {
+        "string": "値をコピーして貼り付け"
+    },
+    "devtools_step6_desc": {
+        "string": "各Cookieの値をコピーして、下の対応するフィールドに貼り付けます。"
+    },
+    "devtools_enter_cookies": {
+        "string": "Cookieを入力"
+    },
+    "devtools_modal_title": {
+        "string": "Cookie値を入力"
+    },
+    "devtools_modal_desc": {
+        "string": "DevToolsのApplication → Cookiesパネルから各値をコピーして貼り付けてください。"
+    },
+    "submit_cookies": {
+        "string": "Cookieを送信"
+    },
+    "click_to_enlarge": {
+        "string": "クリックして拡大"
+    },
+    "feature_no_password": {
+        "string": "パスワード不要"
+    },
+    "feature_computer_only": {
+        "string": "PC専用"
+    },
+    "feature_all_platforms": {
+        "string": "全プラットフォーム対応"
+    },
+    "email_verify_title": {
+        "string": "メール認証"
+    },
+    "email_verify_desc": {
+        "string": "メールアドレスに送信された6桁の認証コードを入力してください"
+    },
+    "email_login_security_note": {
+        "string": "メールとパスワードはサーバーに保存されません。"
+    },
+    "verification_code": {
+        "string": "認証コード"
+    },
+    "code_expires_note": {
+        "string": "受信トレイを確認してください - コードは数分で期限切れになります"
+    },
+    "verify_code": {
+        "string": "コードを確認"
+    },
+    "processing_verification": {
+        "string": "認証処理中…"
+    },
+    "select_accounts_title": {
+        "string": "アカウントを選択"
+    },
+    "select_accounts_desc": {
+        "string": "Hoyo Buddyに追加するゲームアカウントを選択してください。デフォルトで全アカウントが選択されています。"
+    },
+    "no_accounts_found": {
+        "string": "アカウントが見つかりません。"
+    },
+    "select_all": {
+        "string": "全て選択"
+    },
+    "deselect_all": {
+        "string": "全て解除"
+    },
+    "selected_count": {
+        "string": "{{total}}件中{{selected}}件選択中"
+    },
+    "saving": {
+        "string": "保存中…"
+    },
+    "add_accounts_button": {
+        "string": "{{count}}件のアカウントをHoyo Buddyに追加"
+    },
+    "add_accounts_button_plural": {
+        "string": "{{count}}件のアカウントをHoyo Buddyに追加"
+    },
+    "failed_to_load_accounts": {
+        "string": "アカウントの読み込みに失敗しました"
+    },
+    "failed_to_save_accounts": {
+        "string": "アカウントの保存に失敗しました"
+    },
+    "discord_support": {
+        "string": "Discordサーバー"
+    },
+    "need_help": {
+        "string": "ヘルプが必要ですか？"
+    },
+    "privacy_policy": {
+        "string": "プライバシーポリシー"
+    },
+    "account_security_docs": {
+        "string": "アカウントセキュリティ"
+    },
+    "switch_account": {
+        "string": "切り替え"
+    },
+    "switch_discord_account": {
+        "string": "Discordアカウントを切り替え"
+    },
+    "gacha_history": {
+        "string": "ガチャ履歴"
+    },
+    "missing_account_id": {
+        "string": "account_idパラメータがありません。"
+    },
+    "gacha_banner_fallback": {
+        "string": "ガチャ/祈願/チューン {{type}}"
+    },
+    "gacha_banner_permanent": {
+        "string": "常設"
+    },
+    "gacha_banner_character": {
+        "string": "キャラクター"
+    },
+    "gacha_banner_weapon": {
+        "string": "武器"
+    },
+    "gacha_banner_chronicled": {
+        "string": "クロニクル"
+    },
+    "gacha_banner_stellar": {
+        "string": "星"
+    },
+    "gacha_banner_light_cone": {
+        "string": "光円錐"
+    },
+    "gacha_banner_departure": {
+        "string": "出発"
+    },
+    "gacha_banner_standard": {
+        "string": "スタンダード"
+    },
+    "gacha_banner_exclusive": {
+        "string": "限定"
+    },
+    "gacha_banner_w_engine": {
+        "string": "Wエンジン"
+    },
+    "gacha_banner_bangboo": {
+        "string": "バンブー"
+    },
+    "banner_type_label": {
+        "string": "バナー："
+    },
+    "rarity_label": {
+        "string": "レアリティ："
+    },
+    "search_by_name": {
+        "string": "名前で検索…"
+    },
+    "table_header_name": {
+        "string": "名前"
+    },
+    "table_header_rarity": {
+        "string": "レアリティ"
+    },
+    "table_header_pity": {
+        "string": "天井"
+    },
+    "table_header_time": {
+        "string": "時間"
+    },
+    "no_gacha_records": {
+        "string": "ガチャ記録が見つかりません。"
+    },
+    "total_records": {
+        "string": "合計{{total}}件"
+    },
+    "previous": {
+        "string": "前へ"
+    },
+    "next": {
+        "string": "次へ"
+    },
+    "stat_total_pulls": {
+        "string": "総ガチャ数"
+    },
+    "stat_pity": {
+        "string": "現在の天井"
+    },
+    "stat_5star_pity": {
+        "string": "5★天井"
+    },
+    "stat_4star_pity": {
+        "string": "4★天井"
+    },
+    "stat_avg_per_5star": {
+        "string": "平均 / 5★"
+    },
+    "stat_avg_per_4star": {
+        "string": "平均 / 4★"
+    },
+    "stat_5050_win_rate": {
+        "string": "50/50勝率"
+    },
+    "detail_item_id": {
+        "string": "アイテムID"
+    },
+    "detail_pull_date": {
+        "string": "ガチャ日時"
+    },
+    "detail_pity_count": {
+        "string": "天井カウント"
+    },
+    "detail_rarity": {
+        "string": "レアリティ"
+    },
+    "not_found_title": {
+        "string": "ページが見つかりません"
+    },
+    "not_found_desc": {
+        "string": "このページは存在しないか、移動した可能性があります。ホームに戻って始めましょう。"
+    },
+    "geetest_command_title": {
+        "string": "認証を完了する"
+    },
+    "geetest_command_desc": {
+        "string": "続行するにはセキュリティチェックを完了してください。"
+    },
+    "geetest_command_success": {
+        "string": "認証が完了しました！"
+    },
+    "geetest_command_success_desc": {
+        "string": "Discordに戻ることができます。"
+    },
+    "return_to_discord": {
+        "string": "Discordに戻る"
+    },
+    "open_discord_browser": {
+        "string": "ブラウザでDiscordを開く"
+    },
+    "geetest_command_error": {
+        "string": "認証に失敗しました。もう一度お試しください。"
+    },
+    "geetest_command_missing_params": {
+        "string": "必要なパラメータが不足しています。"
+    },
+    "retry": {
+        "string": "再試行"
+    },
+    "complete_title": {
+        "string": "アカウントが追加されました！"
+    },
+    "complete_desc": {
+        "string": "アカウントがHoyo Buddyに追加されました。Discordに戻ることができます。"
+    }
+}

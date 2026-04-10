@@ -1,0 +1,425 @@
+{
+    "back": {
+        "string": "← 返回"
+    },
+    "submitting": {
+        "string": "正在提交…"
+    },
+    "verifying": {
+        "string": "正在驗證…"
+    },
+    "go_home": {
+        "string": "回首頁"
+    },
+    "login_failed": {
+        "string": "登入失敗"
+    },
+    "verification_failed": {
+        "string": "驗證失敗"
+    },
+    "geetest_failed": {
+        "string": "Geetest 驗證失敗"
+    },
+    "geetest_email_verify_title": {
+        "string": "最後一步驗證"
+    },
+    "geetest_email_verify_desc": {
+        "string": "在發送驗證碼前，請先完成此安全檢查。"
+    },
+    "loading_captcha": {
+        "string": "正在載入驗證碼…"
+    },
+    "launch_captcha": {
+        "string": "開啟驗證碼"
+    },
+    "captcha_closed": {
+        "string": "驗證碼視窗已關閉。"
+    },
+    "home_tagline": {
+        "string": "提升您的 HoYoverse 遊戲體驗。"
+    },
+    "home_open_via_discord": {
+        "string": "透過 Discord 開啟以開始使用"
+    },
+    "completing_sign_in": {
+        "string": "正在完成登入…"
+    },
+    "missing_oauth_params": {
+        "string": "缺少 OAuth 參數，請再試一次。"
+    },
+    "auth_failed": {
+        "string": "身分驗證失敗"
+    },
+    "select_platform": {
+        "string": "選擇平台"
+    },
+    "select_platform_desc": {
+        "string": "選擇您想要新增帳號的平台"
+    },
+    "add_account_title": {
+        "string": "新增帳號"
+    },
+    "add_account_desc": {
+        "string": "連結您的遊戲帳號，開始享受進階的 HoYoverse 體驗。"
+    },
+    "feature_code_redeem": {
+        "string": "自動兌換序號"
+    },
+    "feature_daily_checkin": {
+        "string": "自動每日簽到"
+    },
+    "feature_build_card": {
+        "string": "角色面板卡片生成"
+    },
+    "feature_multi_account": {
+        "string": "多帳號支援"
+    },
+    "select_platform_security_note": {
+        "string": "我們非常重視您的帳號安全。"
+    },
+    "login_method_faq_note": {
+        "string": "不確定該使用哪種方式？"
+    },
+    "select_login_method": {
+        "string": "選擇登入方式"
+    },
+    "select_login_method_desc": {
+        "string": "選擇您想要進行驗證的方式"
+    },
+    "back_to_platforms": {
+        "string": "← 返回平台選擇"
+    },
+    "login_method.email.label": {
+        "string": "信箱與密碼"
+    },
+    "login_method.email.desc": {
+        "string": "使用您的信箱或使用者名稱與密碼登入"
+    },
+    "login_method.devtools.label": {
+        "string": "開發者工具"
+    },
+    "login_method.devtools.desc": {
+        "string": "從瀏覽器開發者工具提取 Cookie"
+    },
+    "email_login_title": {
+        "string": "信箱與密碼"
+    },
+    "email_login_desc": {
+        "string": "使用您的 HoYoverse 信箱或使用者名稱與密碼登入"
+    },
+    "email_login_panel_desc": {
+        "string": "透過安全加密連線，使用 HoYoverse 帳號登入。您可以使用信箱地址或使用者名稱。"
+    },
+    "email_login_how_it_works": {
+        "string": "這是如何運作的？"
+    },
+    "email_login_console": {
+        "string": "我是主機平台玩家 (PlayStation/Xbox)"
+    },
+    "email_login_no_account": {
+        "string": "我沒有 HoYoverse 帳號 (使用 Google、Facebook 登入者)"
+    },
+    "email_or_username": {
+        "string": "信箱或使用者名稱"
+    },
+    "email_or_username_placeholder": {
+        "string": "信箱或使用者名稱"
+    },
+    "password": {
+        "string": "密碼"
+    },
+    "signing_in": {
+        "string": "正在登入…"
+    },
+    "sign_in": {
+        "string": "登入"
+    },
+    "devtools_title": {
+        "string": "開發者工具"
+    },
+    "devtools_desc": {
+        "string": "請按照以下步驟從瀏覽器的開發者工具中提取工作階段 Cookie。"
+    },
+    "devtools_panel_desc": {
+        "string": "直接從瀏覽器的開發者工具中提取您的 Cookie。"
+    },
+    "devtools_step1_label": {
+        "string": "前往 HoYoLAB 或 米遊社"
+    },
+    "devtools_step1_desc": {
+        "string": "開啟瀏覽器並導覽至以下其中一個平台："
+    },
+    "devtools_step2_label": {
+        "string": "開啟開發者工具"
+    },
+    "devtools_step2_desc": {
+        "string": "按下 F12 或 Ctrl+Shift+I 開啟瀏覽器開發者工具。"
+    },
+    "devtools_step3_label": {
+        "string": "切換至 Application 分頁"
+    },
+    "devtools_step3_desc": {
+        "string": "點擊開發者工具面板中的「Application」(應用程式) 分頁。"
+    },
+    "devtools_step4_label": {
+        "string": "開啟 Cookies"
+    },
+    "devtools_step4_desc": {
+        "string": "在左側面板點擊「Cookies」，然後點擊目前的網站 (例如 www.hoyolab.com)。"
+    },
+    "devtools_step5_label": {
+        "string": "以「v2」過濾"
+    },
+    "devtools_step5_desc": {
+        "string": "使用搜尋框過濾「v2」以縮小相關 Cookie 的範圍。"
+    },
+    "devtools_step6_label": {
+        "string": "複製並貼上數值"
+    },
+    "devtools_step6_desc": {
+        "string": "複製各項 Cookie 的值並貼到下方的對應欄位中。"
+    },
+    "devtools_enter_cookies": {
+        "string": "輸入 Cookie"
+    },
+    "devtools_modal_title": {
+        "string": "輸入 Cookie 數值"
+    },
+    "devtools_modal_desc": {
+        "string": "從開發者工具的 Application → Cookies 面板複製每個數值並貼在下方。"
+    },
+    "submit_cookies": {
+        "string": "提交 Cookie"
+    },
+    "click_to_enlarge": {
+        "string": "點擊放大圖片"
+    },
+    "feature_no_password": {
+        "string": "無需密碼"
+    },
+    "feature_computer_only": {
+        "string": "僅限電腦使用"
+    },
+    "feature_all_platforms": {
+        "string": "支援所有平台"
+    },
+    "email_verify_title": {
+        "string": "信箱驗證"
+    },
+    "email_verify_desc": {
+        "string": "請輸入發送到您信箱的 6 位數驗證碼"
+    },
+    "email_login_security_note": {
+        "string": "您的信箱與密碼絕不會儲存在我們的伺服器上。"
+    },
+    "verification_code": {
+        "string": "驗證碼"
+    },
+    "code_expires_note": {
+        "string": "請檢查您的收件箱 - 驗證碼將在幾分鐘後過期"
+    },
+    "verify_code": {
+        "string": "驗證驗證碼"
+    },
+    "processing_verification": {
+        "string": "正在處理驗證…"
+    },
+    "select_accounts_title": {
+        "string": "選擇帳號"
+    },
+    "select_accounts_desc": {
+        "string": "選擇要新增至 Hoyo Buddy 的遊戲帳號。預設已選取所有帳號。"
+    },
+    "no_accounts_found": {
+        "string": "未找到帳號。"
+    },
+    "select_all": {
+        "string": "全選"
+    },
+    "deselect_all": {
+        "string": "取消全選"
+    },
+    "selected_count": {
+        "string": "已選取 {{selected}} / {{total}}"
+    },
+    "saving": {
+        "string": "正在儲存…"
+    },
+    "add_accounts_button": {
+        "string": "新增 {{count}} 個帳號至 Hoyo Buddy"
+    },
+    "add_accounts_button_plural": {
+        "string": "新增 {{count}} 個帳號至 Hoyo Buddy"
+    },
+    "failed_to_load_accounts": {
+        "string": "載入帳號失敗"
+    },
+    "failed_to_save_accounts": {
+        "string": "儲存帳號失敗"
+    },
+    "discord_support": {
+        "string": "Discord 伺服器"
+    },
+    "need_help": {
+        "string": "需要幫助？"
+    },
+    "privacy_policy": {
+        "string": "隱私權政策"
+    },
+    "account_security_docs": {
+        "string": "帳號安全"
+    },
+    "switch_account": {
+        "string": "切換"
+    },
+    "switch_discord_account": {
+        "string": "切換 Discord 帳號"
+    },
+    "gacha_history": {
+        "string": "抽卡紀錄"
+    },
+    "missing_account_id": {
+        "string": "缺少 account_id 參數。"
+    },
+    "gacha_banner_fallback": {
+        "string": "躍遷/祈願/調頻 {{type}}"
+    },
+    "gacha_banner_permanent": {
+        "string": "常駐"
+    },
+    "gacha_banner_character": {
+        "string": "角色"
+    },
+    "gacha_banner_weapon": {
+        "string": "武器"
+    },
+    "gacha_banner_chronicled": {
+        "string": "集錄"
+    },
+    "gacha_banner_stellar": {
+        "string": "群星"
+    },
+    "gacha_banner_light_cone": {
+        "string": "光錐"
+    },
+    "gacha_banner_departure": {
+        "string": "始發"
+    },
+    "gacha_banner_standard": {
+        "string": "標準"
+    },
+    "gacha_banner_exclusive": {
+        "string": "獨家"
+    },
+    "gacha_banner_w_engine": {
+        "string": "音擎"
+    },
+    "gacha_banner_bangboo": {
+        "string": "邦布"
+    },
+    "banner_type_label": {
+        "string": "卡池："
+    },
+    "rarity_label": {
+        "string": "稀有度："
+    },
+    "search_by_name": {
+        "string": "按名稱搜尋…"
+    },
+    "table_header_name": {
+        "string": "名稱"
+    },
+    "table_header_rarity": {
+        "string": "稀有度"
+    },
+    "table_header_pity": {
+        "string": "墊抽/保底計數"
+    },
+    "table_header_time": {
+        "string": "時間"
+    },
+    "no_gacha_records": {
+        "string": "未找到抽卡紀錄。"
+    },
+    "total_records": {
+        "string": "共 {{total}} 筆紀錄"
+    },
+    "previous": {
+        "string": "上一頁"
+    },
+    "next": {
+        "string": "下一頁"
+    },
+    "stat_total_pulls": {
+        "string": "總抽取數"
+    },
+    "stat_pity": {
+        "string": "目前保底計數"
+    },
+    "stat_5star_pity": {
+        "string": "5★ 保底計數"
+    },
+    "stat_4star_pity": {
+        "string": "4★ 保底計數"
+    },
+    "stat_avg_per_5star": {
+        "string": "平均出 5★ 抽數"
+    },
+    "stat_avg_per_4star": {
+        "string": "平均出 4★ 抽數"
+    },
+    "stat_5050_win_rate": {
+        "string": "50/50 勝率"
+    },
+    "detail_item_id": {
+        "string": "物品 ID"
+    },
+    "detail_pull_date": {
+        "string": "抽取日期"
+    },
+    "detail_pity_count": {
+        "string": "保底計數"
+    },
+    "detail_rarity": {
+        "string": "稀有度"
+    },
+    "not_found_title": {
+        "string": "找不到頁面"
+    },
+    "not_found_desc": {
+        "string": "此頁面不存在或已被移動。請返回首頁開始使用。"
+    },
+    "geetest_command_title": {
+        "string": "完成驗證"
+    },
+    "geetest_command_desc": {
+        "string": "請完成安全檢查以繼續。"
+    },
+    "geetest_command_success": {
+        "string": "驗證完成！"
+    },
+    "geetest_command_success_desc": {
+        "string": "您現在可以返回 Discord。"
+    },
+    "return_to_discord": {
+        "string": "返回 Discord"
+    },
+    "open_discord_browser": {
+        "string": "在瀏覽器中開啟 Discord"
+    },
+    "geetest_command_error": {
+        "string": "驗證失敗，請重試。"
+    },
+    "geetest_command_missing_params": {
+        "string": "缺少必要參數。"
+    },
+    "retry": {
+        "string": "重試"
+    },
+    "complete_title": {
+        "string": "帳號已新增！"
+    },
+    "complete_desc": {
+        "string": "您的帳號已新增至 Hoyo Buddy。您現在可以返回 Discord。"
+    }
+}

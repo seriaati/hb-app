@@ -1,0 +1,425 @@
+{
+    "back": {
+        "string": "← Terug"
+    },
+    "submitting": {
+        "string": "Verzenden…"
+    },
+    "verifying": {
+        "string": "Verifiëren…"
+    },
+    "go_home": {
+        "string": "Naar huis"
+    },
+    "login_failed": {
+        "string": "Inloggen mislukt"
+    },
+    "verification_failed": {
+        "string": "Verificatie mislukt"
+    },
+    "geetest_failed": {
+        "string": "Geetest-verificatie mislukt"
+    },
+    "geetest_email_verify_title": {
+        "string": "Nog een verificatie"
+    },
+    "geetest_email_verify_desc": {
+        "string": "Voltooi deze beveiligingscontrole voordat we de verificatiecode verzenden."
+    },
+    "loading_captcha": {
+        "string": "Captcha laden…"
+    },
+    "launch_captcha": {
+        "string": "Captcha starten"
+    },
+    "captcha_closed": {
+        "string": "Captcha is gesloten."
+    },
+    "home_tagline": {
+        "string": "Verbeter uw HoYoverse-ervaring."
+    },
+    "home_open_via_discord": {
+        "string": "Open via Discord om te beginnen"
+    },
+    "completing_sign_in": {
+        "string": "Aanmelden voltooien…"
+    },
+    "missing_oauth_params": {
+        "string": "OAuth-parameters ontbreken. Probeer het opnieuw."
+    },
+    "auth_failed": {
+        "string": "Authenticatie mislukt"
+    },
+    "select_platform": {
+        "string": "Platform selecteren"
+    },
+    "select_platform_desc": {
+        "string": "Kies het platform waarvoor u een account wilt toevoegen"
+    },
+    "add_account_title": {
+        "string": "Account toevoegen"
+    },
+    "add_account_desc": {
+        "string": "Verbind uw game-accounts om te beginnen met een verbeterde HoYoverse-ervaring."
+    },
+    "feature_code_redeem": {
+        "string": "Automatisch codes inwisselen"
+    },
+    "feature_daily_checkin": {
+        "string": "Automatisch dagelijks inchecken"
+    },
+    "feature_build_card": {
+        "string": "Bouwkaart genereren"
+    },
+    "feature_multi_account": {
+        "string": "Meerdere accounts"
+    },
+    "select_platform_security_note": {
+        "string": "Wij nemen de beveiliging van uw account serieus."
+    },
+    "login_method_faq_note": {
+        "string": "Weet u niet welke methode u moet gebruiken?"
+    },
+    "select_login_method": {
+        "string": "Inlogmethode selecteren"
+    },
+    "select_login_method_desc": {
+        "string": "Kies hoe u wilt authenticeren"
+    },
+    "back_to_platforms": {
+        "string": "← Terug naar platforms"
+    },
+    "login_method.email.label": {
+        "string": "E-mail & Wachtwoord"
+    },
+    "login_method.email.desc": {
+        "string": "Inloggen met uw e-mail of gebruikersnaam en wachtwoord"
+    },
+    "login_method.devtools.label": {
+        "string": "DevTools"
+    },
+    "login_method.devtools.desc": {
+        "string": "Cookies extraheren uit de ontwikkelaarstools van de browser"
+    },
+    "email_login_title": {
+        "string": "E-mail & Wachtwoord"
+    },
+    "email_login_desc": {
+        "string": "Inloggen met uw HoYoverse e-mail of gebruikersnaam en wachtwoord"
+    },
+    "email_login_panel_desc": {
+        "string": "Veilig inloggen met uw HoYoverse-account. U kunt uw e-mailadres of gebruikersnaam gebruiken."
+    },
+    "email_login_how_it_works": {
+        "string": "Hoe werkt dit?"
+    },
+    "email_login_console": {
+        "string": "Ik ben een consolespeler"
+    },
+    "email_login_no_account": {
+        "string": "Ik heb geen HoYoverse-account (inloggen met Google, Facebook)"
+    },
+    "email_or_username": {
+        "string": "E-mail of gebruikersnaam"
+    },
+    "email_or_username_placeholder": {
+        "string": "E-mail of gebruikersnaam"
+    },
+    "password": {
+        "string": "Wachtwoord"
+    },
+    "signing_in": {
+        "string": "Inloggen…"
+    },
+    "sign_in": {
+        "string": "Inloggen"
+    },
+    "devtools_title": {
+        "string": "DevTools"
+    },
+    "devtools_desc": {
+        "string": "Volg de onderstaande stappen om uw sessiecookies te extraheren uit de ontwikkelaarstools van uw browser."
+    },
+    "devtools_panel_desc": {
+        "string": "Extraheer uw sessiecookies rechtstreeks uit de ontwikkelaarstools van uw browser."
+    },
+    "devtools_step1_label": {
+        "string": "Ga naar HoYoLAB of Miyoushe"
+    },
+    "devtools_step1_desc": {
+        "string": "Open uw browser en navigeer naar een van de volgende platforms:"
+    },
+    "devtools_step2_label": {
+        "string": "Open de ontwikkelaarstools"
+    },
+    "devtools_step2_desc": {
+        "string": "Druk op F12 of Ctrl+Shift+I om de ontwikkelaarstools van uw browser te openen."
+    },
+    "devtools_step3_label": {
+        "string": "Schakel over naar het Application-tabblad"
+    },
+    "devtools_step3_desc": {
+        "string": "Klik op het \"Application\"-tabblad in het paneel van de ontwikkelaarstools."
+    },
+    "devtools_step4_label": {
+        "string": "Open Cookies"
+    },
+    "devtools_step4_desc": {
+        "string": "Klik op \"Cookies\" in het linker paneel en klik vervolgens op de huidige website (bijv. www.hoyolab.com)."
+    },
+    "devtools_step5_label": {
+        "string": "Filter op \"v2\""
+    },
+    "devtools_step5_desc": {
+        "string": "Gebruik het zoekvak om op \"v2\" te filteren en de relevante cookies in te perken."
+    },
+    "devtools_step6_label": {
+        "string": "Kopieer en plak waarden"
+    },
+    "devtools_step6_desc": {
+        "string": "Kopieer de waarde van elke cookie en plak deze in het bijbehorende veld hieronder."
+    },
+    "devtools_enter_cookies": {
+        "string": "Cookies invoeren"
+    },
+    "devtools_modal_title": {
+        "string": "Cookiewaarden invoeren"
+    },
+    "devtools_modal_desc": {
+        "string": "Kopieer elke waarde uit het DevTools Application → Cookies-paneel en plak ze hieronder."
+    },
+    "submit_cookies": {
+        "string": "Cookies verzenden"
+    },
+    "click_to_enlarge": {
+        "string": "Klik om te vergroten"
+    },
+    "feature_no_password": {
+        "string": "Geen wachtwoord nodig"
+    },
+    "feature_computer_only": {
+        "string": "Alleen computer"
+    },
+    "feature_all_platforms": {
+        "string": "Alle platforms"
+    },
+    "email_verify_title": {
+        "string": "E-mailverificatie"
+    },
+    "email_verify_desc": {
+        "string": "Voer de 6-cijferige verificatiecode in die naar uw e-mailadres is verzonden"
+    },
+    "email_login_security_note": {
+        "string": "Uw e-mail en wachtwoord worden nooit opgeslagen op onze servers."
+    },
+    "verification_code": {
+        "string": "Verificatiecode"
+    },
+    "code_expires_note": {
+        "string": "Controleer uw inbox - de code verloopt over een paar minuten"
+    },
+    "verify_code": {
+        "string": "Code verifiëren"
+    },
+    "processing_verification": {
+        "string": "Verificatie verwerken…"
+    },
+    "select_accounts_title": {
+        "string": "Accounts selecteren"
+    },
+    "select_accounts_desc": {
+        "string": "Kies welke game-accounts u aan Hoyo Buddy wilt toevoegen. Alle accounts zijn standaard geselecteerd."
+    },
+    "no_accounts_found": {
+        "string": "Geen accounts gevonden."
+    },
+    "select_all": {
+        "string": "Alles selecteren"
+    },
+    "deselect_all": {
+        "string": "Alles deselecteren"
+    },
+    "selected_count": {
+        "string": "{{selected}} van {{total}} geselecteerd"
+    },
+    "saving": {
+        "string": "Opslaan…"
+    },
+    "add_accounts_button": {
+        "string": "{{count}} account toevoegen aan Hoyo Buddy"
+    },
+    "add_accounts_button_plural": {
+        "string": "{{count}} accounts toevoegen aan Hoyo Buddy"
+    },
+    "failed_to_load_accounts": {
+        "string": "Accounts laden mislukt"
+    },
+    "failed_to_save_accounts": {
+        "string": "Accounts opslaan mislukt"
+    },
+    "discord_support": {
+        "string": "Discord-server"
+    },
+    "need_help": {
+        "string": "Hulp nodig?"
+    },
+    "privacy_policy": {
+        "string": "Privacybeleid"
+    },
+    "account_security_docs": {
+        "string": "Accountbeveiliging"
+    },
+    "switch_account": {
+        "string": "Wisselen"
+    },
+    "switch_discord_account": {
+        "string": "Discord-account wisselen"
+    },
+    "gacha_history": {
+        "string": "Gacha-geschiedenis"
+    },
+    "missing_account_id": {
+        "string": "Parameter account_id ontbreekt."
+    },
+    "gacha_banner_fallback": {
+        "string": "Warp/Wens/Afstemming {{type}}"
+    },
+    "gacha_banner_permanent": {
+        "string": "Permanent"
+    },
+    "gacha_banner_character": {
+        "string": "Karakter"
+    },
+    "gacha_banner_weapon": {
+        "string": "Wapen"
+    },
+    "gacha_banner_chronicled": {
+        "string": "Kroniek"
+    },
+    "gacha_banner_stellar": {
+        "string": "Stellair"
+    },
+    "gacha_banner_light_cone": {
+        "string": "Lichtkegel"
+    },
+    "gacha_banner_departure": {
+        "string": "Vertrek"
+    },
+    "gacha_banner_standard": {
+        "string": "Standaard"
+    },
+    "gacha_banner_exclusive": {
+        "string": "Exclusief"
+    },
+    "gacha_banner_w_engine": {
+        "string": "W-Motor"
+    },
+    "gacha_banner_bangboo": {
+        "string": "Bangboo"
+    },
+    "banner_type_label": {
+        "string": "Banner:"
+    },
+    "rarity_label": {
+        "string": "Zeldzaamheid:"
+    },
+    "search_by_name": {
+        "string": "Zoeken op naam…"
+    },
+    "table_header_name": {
+        "string": "Naam"
+    },
+    "table_header_rarity": {
+        "string": "Zeldzaamheid"
+    },
+    "table_header_pity": {
+        "string": "Pity"
+    },
+    "table_header_time": {
+        "string": "Tijd"
+    },
+    "no_gacha_records": {
+        "string": "Geen gacha-records gevonden."
+    },
+    "total_records": {
+        "string": "{{total}} records in totaal"
+    },
+    "previous": {
+        "string": "Vorige"
+    },
+    "next": {
+        "string": "Volgende"
+    },
+    "stat_total_pulls": {
+        "string": "Totaal aantal pulls"
+    },
+    "stat_pity": {
+        "string": "Huidig Pity"
+    },
+    "stat_5star_pity": {
+        "string": "5★ Pity"
+    },
+    "stat_4star_pity": {
+        "string": "4★ Pity"
+    },
+    "stat_avg_per_5star": {
+        "string": "Gem. / 5★"
+    },
+    "stat_avg_per_4star": {
+        "string": "Gem. / 4★"
+    },
+    "stat_5050_win_rate": {
+        "string": "50/50 winstpercentage"
+    },
+    "detail_item_id": {
+        "string": "Item-ID"
+    },
+    "detail_pull_date": {
+        "string": "Pulldatum"
+    },
+    "detail_pity_count": {
+        "string": "Pity-teller"
+    },
+    "detail_rarity": {
+        "string": "Zeldzaamheid"
+    },
+    "not_found_title": {
+        "string": "Pagina niet gevonden"
+    },
+    "not_found_desc": {
+        "string": "Deze pagina bestaat niet of is mogelijk verplaatst. Ga terug naar huis om te beginnen."
+    },
+    "geetest_command_title": {
+        "string": "Verificatie voltooien"
+    },
+    "geetest_command_desc": {
+        "string": "Voltooi de beveiligingscontrole om door te gaan."
+    },
+    "geetest_command_success": {
+        "string": "Verificatie voltooid!"
+    },
+    "geetest_command_success_desc": {
+        "string": "U kunt nu terugkeren naar Discord."
+    },
+    "return_to_discord": {
+        "string": "Terug naar Discord"
+    },
+    "open_discord_browser": {
+        "string": "Discord openen in browser"
+    },
+    "geetest_command_error": {
+        "string": "Verificatie mislukt. Probeer het opnieuw."
+    },
+    "geetest_command_missing_params": {
+        "string": "Vereiste parameters ontbreken."
+    },
+    "retry": {
+        "string": "Opnieuw proberen"
+    },
+    "complete_title": {
+        "string": "Accounts toegevoegd!"
+    },
+    "complete_desc": {
+        "string": "Uw accounts zijn toegevoegd aan Hoyo Buddy. U kunt nu terugkeren naar Discord."
+    }
+}

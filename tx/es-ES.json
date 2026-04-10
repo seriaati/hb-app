@@ -1,0 +1,425 @@
+{
+    "back": {
+        "string": "← Atrás"
+    },
+    "submitting": {
+        "string": "Enviando…"
+    },
+    "verifying": {
+        "string": "Verificando…"
+    },
+    "go_home": {
+        "string": "Ir al inicio"
+    },
+    "login_failed": {
+        "string": "Error al iniciar sesión"
+    },
+    "verification_failed": {
+        "string": "Error de verificación"
+    },
+    "geetest_failed": {
+        "string": "Error de verificación Geetest"
+    },
+    "geetest_email_verify_title": {
+        "string": "Una verificación más"
+    },
+    "geetest_email_verify_desc": {
+        "string": "Por favor, completa esta verificación de seguridad antes de que enviemos el código de verificación."
+    },
+    "loading_captcha": {
+        "string": "Cargando captcha…"
+    },
+    "launch_captcha": {
+        "string": "Iniciar Captcha"
+    },
+    "captcha_closed": {
+        "string": "El captcha fue cerrado."
+    },
+    "home_tagline": {
+        "string": "Eleva tu experiencia en HoYoverse."
+    },
+    "home_open_via_discord": {
+        "string": "Abre mediante Discord para comenzar"
+    },
+    "completing_sign_in": {
+        "string": "Completando inicio de sesión…"
+    },
+    "missing_oauth_params": {
+        "string": "Faltan parámetros OAuth. Por favor, inténtalo de nuevo."
+    },
+    "auth_failed": {
+        "string": "Error de autenticación"
+    },
+    "select_platform": {
+        "string": "Seleccionar plataforma"
+    },
+    "select_platform_desc": {
+        "string": "Elige la plataforma para la que quieres añadir una cuenta"
+    },
+    "add_account_title": {
+        "string": "Añadir cuenta"
+    },
+    "add_account_desc": {
+        "string": "Conecta tus cuentas de juego para comenzar a disfrutar de una experiencia HoYoverse mejorada."
+    },
+    "feature_code_redeem": {
+        "string": "Canje automático de códigos"
+    },
+    "feature_daily_checkin": {
+        "string": "Check-in diario automático"
+    },
+    "feature_build_card": {
+        "string": "Generación de tarjeta de build"
+    },
+    "feature_multi_account": {
+        "string": "Multi-cuenta"
+    },
+    "select_platform_security_note": {
+        "string": "Nos tomamos en serio la seguridad de tu cuenta."
+    },
+    "login_method_faq_note": {
+        "string": "¿No sabes qué método usar?"
+    },
+    "select_login_method": {
+        "string": "Seleccionar método de inicio de sesión"
+    },
+    "select_login_method_desc": {
+        "string": "Elige cómo quieres autenticarte"
+    },
+    "back_to_platforms": {
+        "string": "← Volver a plataformas"
+    },
+    "login_method.email.label": {
+        "string": "Correo & Contraseña"
+    },
+    "login_method.email.desc": {
+        "string": "Iniciar sesión con tu correo o nombre de usuario y contraseña"
+    },
+    "login_method.devtools.label": {
+        "string": "DevTools"
+    },
+    "login_method.devtools.desc": {
+        "string": "Extraer cookies de las herramientas de desarrollador del navegador"
+    },
+    "email_login_title": {
+        "string": "Correo & Contraseña"
+    },
+    "email_login_desc": {
+        "string": "Inicia sesión con tu correo o nombre de usuario de HoYoverse y contraseña"
+    },
+    "email_login_panel_desc": {
+        "string": "Inicia sesión de forma segura con tu cuenta HoYoverse. Puedes usar tu correo o nombre de usuario."
+    },
+    "email_login_how_it_works": {
+        "string": "¿Cómo funciona esto?"
+    },
+    "email_login_console": {
+        "string": "Soy jugador de consola"
+    },
+    "email_login_no_account": {
+        "string": "No tengo una cuenta HoYoverse (inicio de sesión con Google, Facebook)"
+    },
+    "email_or_username": {
+        "string": "Correo o nombre de usuario"
+    },
+    "email_or_username_placeholder": {
+        "string": "Correo o nombre de usuario"
+    },
+    "password": {
+        "string": "Contraseña"
+    },
+    "signing_in": {
+        "string": "Iniciando sesión…"
+    },
+    "sign_in": {
+        "string": "Iniciar sesión"
+    },
+    "devtools_title": {
+        "string": "DevTools"
+    },
+    "devtools_desc": {
+        "string": "Sigue los pasos a continuación para extraer tus cookies de sesión de las herramientas de desarrollador de tu navegador."
+    },
+    "devtools_panel_desc": {
+        "string": "Extrae tus cookies de sesión directamente de las herramientas de desarrollador de tu navegador."
+    },
+    "devtools_step1_label": {
+        "string": "Ve a HoYoLAB o Miyoushe"
+    },
+    "devtools_step1_desc": {
+        "string": "Abre tu navegador y navega a una de las siguientes plataformas:"
+    },
+    "devtools_step2_label": {
+        "string": "Abre las herramientas de desarrollador"
+    },
+    "devtools_step2_desc": {
+        "string": "Presiona F12 o Ctrl+Mayús+I para abrir las herramientas de desarrollador de tu navegador."
+    },
+    "devtools_step3_label": {
+        "string": "Cambia a la pestaña Application"
+    },
+    "devtools_step3_desc": {
+        "string": "Haz clic en la pestaña \"Application\" en el panel de herramientas de desarrollador."
+    },
+    "devtools_step4_label": {
+        "string": "Abre Cookies"
+    },
+    "devtools_step4_desc": {
+        "string": "Haz clic en \"Cookies\" en el panel izquierdo y luego en el sitio web actual (p. ej. www.hoyolab.com)."
+    },
+    "devtools_step5_label": {
+        "string": "Filtra por \"v2\""
+    },
+    "devtools_step5_desc": {
+        "string": "Usa el cuadro de búsqueda para filtrar \"v2\" y reducir las cookies relevantes."
+    },
+    "devtools_step6_label": {
+        "string": "Copia y pega valores"
+    },
+    "devtools_step6_desc": {
+        "string": "Copia el valor de cada cookie y pégalo en el campo correspondiente a continuación."
+    },
+    "devtools_enter_cookies": {
+        "string": "Introducir cookies"
+    },
+    "devtools_modal_title": {
+        "string": "Introducir valores de cookies"
+    },
+    "devtools_modal_desc": {
+        "string": "Copia cada valor del panel DevTools Application → Cookies y pégalos a continuación."
+    },
+    "submit_cookies": {
+        "string": "Enviar cookies"
+    },
+    "click_to_enlarge": {
+        "string": "Haz clic para ampliar"
+    },
+    "feature_no_password": {
+        "string": "Sin contraseña necesaria"
+    },
+    "feature_computer_only": {
+        "string": "Solo ordenador"
+    },
+    "feature_all_platforms": {
+        "string": "Todas las plataformas"
+    },
+    "email_verify_title": {
+        "string": "Verificación de correo"
+    },
+    "email_verify_desc": {
+        "string": "Introduce el código de verificación de 6 dígitos enviado a tu dirección de correo"
+    },
+    "email_login_security_note": {
+        "string": "Tu correo y contraseña nunca se almacenan en nuestros servidores."
+    },
+    "verification_code": {
+        "string": "Código de verificación"
+    },
+    "code_expires_note": {
+        "string": "Revisa tu bandeja de entrada - el código expira en unos minutos"
+    },
+    "verify_code": {
+        "string": "Verificar código"
+    },
+    "processing_verification": {
+        "string": "Procesando verificación…"
+    },
+    "select_accounts_title": {
+        "string": "Seleccionar cuentas"
+    },
+    "select_accounts_desc": {
+        "string": "Elige qué cuentas de juego añadir a Hoyo Buddy. Todas las cuentas están seleccionadas por defecto."
+    },
+    "no_accounts_found": {
+        "string": "No se encontraron cuentas."
+    },
+    "select_all": {
+        "string": "Seleccionar todo"
+    },
+    "deselect_all": {
+        "string": "Deseleccionar todo"
+    },
+    "selected_count": {
+        "string": "{{selected}} de {{total}} seleccionado(s)"
+    },
+    "saving": {
+        "string": "Guardando…"
+    },
+    "add_accounts_button": {
+        "string": "Añadir {{count}} cuenta a Hoyo Buddy"
+    },
+    "add_accounts_button_plural": {
+        "string": "Añadir {{count}} cuentas a Hoyo Buddy"
+    },
+    "failed_to_load_accounts": {
+        "string": "Error al cargar cuentas"
+    },
+    "failed_to_save_accounts": {
+        "string": "Error al guardar cuentas"
+    },
+    "discord_support": {
+        "string": "Servidor de Discord"
+    },
+    "need_help": {
+        "string": "¿Necesitas ayuda?"
+    },
+    "privacy_policy": {
+        "string": "Política de privacidad"
+    },
+    "account_security_docs": {
+        "string": "Seguridad de la cuenta"
+    },
+    "switch_account": {
+        "string": "Cambiar"
+    },
+    "switch_discord_account": {
+        "string": "Cambiar cuenta de Discord"
+    },
+    "gacha_history": {
+        "string": "Historial de Gacha"
+    },
+    "missing_account_id": {
+        "string": "Falta el parámetro account_id."
+    },
+    "gacha_banner_fallback": {
+        "string": "Warp/Deseo/Sintonía {{type}}"
+    },
+    "gacha_banner_permanent": {
+        "string": "Permanente"
+    },
+    "gacha_banner_character": {
+        "string": "Personaje"
+    },
+    "gacha_banner_weapon": {
+        "string": "Arma"
+    },
+    "gacha_banner_chronicled": {
+        "string": "Crónica"
+    },
+    "gacha_banner_stellar": {
+        "string": "Estelar"
+    },
+    "gacha_banner_light_cone": {
+        "string": "Cono de luz"
+    },
+    "gacha_banner_departure": {
+        "string": "Salida"
+    },
+    "gacha_banner_standard": {
+        "string": "Estándar"
+    },
+    "gacha_banner_exclusive": {
+        "string": "Exclusivo"
+    },
+    "gacha_banner_w_engine": {
+        "string": "Motor-W"
+    },
+    "gacha_banner_bangboo": {
+        "string": "Bangboo"
+    },
+    "banner_type_label": {
+        "string": "Estandarte:"
+    },
+    "rarity_label": {
+        "string": "Rareza:"
+    },
+    "search_by_name": {
+        "string": "Buscar por nombre…"
+    },
+    "table_header_name": {
+        "string": "Nombre"
+    },
+    "table_header_rarity": {
+        "string": "Rareza"
+    },
+    "table_header_pity": {
+        "string": "Misericordia"
+    },
+    "table_header_time": {
+        "string": "Tiempo"
+    },
+    "no_gacha_records": {
+        "string": "No se encontraron registros de gacha."
+    },
+    "total_records": {
+        "string": "{{total}} registros en total"
+    },
+    "previous": {
+        "string": "Anterior"
+    },
+    "next": {
+        "string": "Siguiente"
+    },
+    "stat_total_pulls": {
+        "string": "Total de tiradas"
+    },
+    "stat_pity": {
+        "string": "Misericordia actual"
+    },
+    "stat_5star_pity": {
+        "string": "Misericordia 5★"
+    },
+    "stat_4star_pity": {
+        "string": "Misericordia 4★"
+    },
+    "stat_avg_per_5star": {
+        "string": "Prom. / 5★"
+    },
+    "stat_avg_per_4star": {
+        "string": "Prom. / 4★"
+    },
+    "stat_5050_win_rate": {
+        "string": "Tasa de victoria 50/50"
+    },
+    "detail_item_id": {
+        "string": "ID del objeto"
+    },
+    "detail_pull_date": {
+        "string": "Fecha de tirada"
+    },
+    "detail_pity_count": {
+        "string": "Contador de misericordia"
+    },
+    "detail_rarity": {
+        "string": "Rareza"
+    },
+    "not_found_title": {
+        "string": "Página no encontrada"
+    },
+    "not_found_desc": {
+        "string": "Esta página no existe o puede haber sido movida. Vuelve al inicio para comenzar."
+    },
+    "geetest_command_title": {
+        "string": "Completar verificación"
+    },
+    "geetest_command_desc": {
+        "string": "Por favor, completa la verificación de seguridad para continuar."
+    },
+    "geetest_command_success": {
+        "string": "¡Verificación completada!"
+    },
+    "geetest_command_success_desc": {
+        "string": "Ahora puedes volver a Discord."
+    },
+    "return_to_discord": {
+        "string": "Volver a Discord"
+    },
+    "open_discord_browser": {
+        "string": "Abrir Discord en el navegador"
+    },
+    "geetest_command_error": {
+        "string": "Verificación fallida. Por favor, inténtalo de nuevo."
+    },
+    "geetest_command_missing_params": {
+        "string": "Faltan parámetros requeridos."
+    },
+    "retry": {
+        "string": "Reintentar"
+    },
+    "complete_title": {
+        "string": "¡Cuentas añadidas!"
+    },
+    "complete_desc": {
+        "string": "Tus cuentas han sido añadidas a Hoyo Buddy. Ahora puedes volver a Discord."
+    }
+}

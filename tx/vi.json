@@ -1,0 +1,425 @@
+{
+    "back": {
+        "string": "← Quay lại"
+    },
+    "submitting": {
+        "string": "Đang gửi…"
+    },
+    "verifying": {
+        "string": "Đang xác minh…"
+    },
+    "go_home": {
+        "string": "Về Trang Chủ"
+    },
+    "login_failed": {
+        "string": "Đăng nhập thất bại"
+    },
+    "verification_failed": {
+        "string": "Xác minh thất bại"
+    },
+    "geetest_failed": {
+        "string": "Xác minh Geetest thất bại"
+    },
+    "geetest_email_verify_title": {
+        "string": "Thêm một bước xác minh"
+    },
+    "geetest_email_verify_desc": {
+        "string": "Vui lòng hoàn thành kiểm tra bảo mật này trước khi chúng tôi gửi mã xác minh."
+    },
+    "loading_captcha": {
+        "string": "Đang tải captcha…"
+    },
+    "launch_captcha": {
+        "string": "Mở Captcha"
+    },
+    "captcha_closed": {
+        "string": "Captcha đã bị đóng."
+    },
+    "home_tagline": {
+        "string": "Nâng cao trải nghiệm HoYoverse của bạn."
+    },
+    "home_open_via_discord": {
+        "string": "Mở qua Discord để bắt đầu"
+    },
+    "completing_sign_in": {
+        "string": "Đang hoàn tất đăng nhập…"
+    },
+    "missing_oauth_params": {
+        "string": "Thiếu tham số OAuth. Vui lòng thử lại."
+    },
+    "auth_failed": {
+        "string": "Xác thực thất bại"
+    },
+    "select_platform": {
+        "string": "Chọn Nền Tảng"
+    },
+    "select_platform_desc": {
+        "string": "Chọn nền tảng bạn muốn thêm tài khoản"
+    },
+    "add_account_title": {
+        "string": "Thêm Tài Khoản"
+    },
+    "add_account_desc": {
+        "string": "Kết nối tài khoản game của bạn để bắt đầu trải nghiệm HoYoverse nâng cao."
+    },
+    "feature_code_redeem": {
+        "string": "Tự Động Đổi Code"
+    },
+    "feature_daily_checkin": {
+        "string": "Tự Động Điểm Danh Hàng Ngày"
+    },
+    "feature_build_card": {
+        "string": "Tạo Thẻ Build"
+    },
+    "feature_multi_account": {
+        "string": "Đa Tài Khoản"
+    },
+    "select_platform_security_note": {
+        "string": "Chúng tôi coi trọng bảo mật tài khoản của bạn."
+    },
+    "login_method_faq_note": {
+        "string": "Không chắc nên dùng phương thức nào?"
+    },
+    "select_login_method": {
+        "string": "Chọn Phương Thức Đăng Nhập"
+    },
+    "select_login_method_desc": {
+        "string": "Chọn cách bạn muốn xác thực"
+    },
+    "back_to_platforms": {
+        "string": "← Quay lại nền tảng"
+    },
+    "login_method.email.label": {
+        "string": "Email & Mật Khẩu"
+    },
+    "login_method.email.desc": {
+        "string": "Đăng nhập bằng email hoặc tên người dùng và mật khẩu"
+    },
+    "login_method.devtools.label": {
+        "string": "DevTools"
+    },
+    "login_method.devtools.desc": {
+        "string": "Trích xuất cookie từ công cụ phát triển trình duyệt"
+    },
+    "email_login_title": {
+        "string": "Email & Mật Khẩu"
+    },
+    "email_login_desc": {
+        "string": "Đăng nhập bằng email hoặc tên người dùng HoYoverse và mật khẩu"
+    },
+    "email_login_panel_desc": {
+        "string": "Đăng nhập an toàn bằng tài khoản HoYoverse của bạn. Bạn có thể sử dụng email hoặc tên người dùng."
+    },
+    "email_login_how_it_works": {
+        "string": "Cách thức hoạt động?"
+    },
+    "email_login_console": {
+        "string": "Tôi là người chơi console"
+    },
+    "email_login_no_account": {
+        "string": "Tôi không có tài khoản HoYoverse (đăng nhập bằng Google, Facebook)"
+    },
+    "email_or_username": {
+        "string": "Email hoặc tên người dùng"
+    },
+    "email_or_username_placeholder": {
+        "string": "Email hoặc tên người dùng"
+    },
+    "password": {
+        "string": "Mật khẩu"
+    },
+    "signing_in": {
+        "string": "Đang đăng nhập…"
+    },
+    "sign_in": {
+        "string": "Đăng Nhập"
+    },
+    "devtools_title": {
+        "string": "DevTools"
+    },
+    "devtools_desc": {
+        "string": "Làm theo các bước bên dưới để trích xuất cookie phiên từ công cụ phát triển trình duyệt."
+    },
+    "devtools_panel_desc": {
+        "string": "Trích xuất cookie phiên trực tiếp từ công cụ phát triển trình duyệt."
+    },
+    "devtools_step1_label": {
+        "string": "Đi tới HoYoLAB hoặc Miyoushe"
+    },
+    "devtools_step1_desc": {
+        "string": "Mở trình duyệt của bạn và điều hướng đến một trong các nền tảng sau:"
+    },
+    "devtools_step2_label": {
+        "string": "Mở Công Cụ Phát Triển"
+    },
+    "devtools_step2_desc": {
+        "string": "Nhấn F12 hoặc Ctrl+Shift+I để mở công cụ phát triển trình duyệt."
+    },
+    "devtools_step3_label": {
+        "string": "Chuyển sang tab Application"
+    },
+    "devtools_step3_desc": {
+        "string": "Nhấp vào tab \"Application\" trong bảng điều khiển công cụ phát triển."
+    },
+    "devtools_step4_label": {
+        "string": "Mở Cookies"
+    },
+    "devtools_step4_desc": {
+        "string": "Nhấp vào \"Cookies\" trong bảng điều khiển bên trái, sau đó nhấp vào trang web hiện tại (ví dụ: www.hoyolab.com)."
+    },
+    "devtools_step5_label": {
+        "string": "Lọc theo \"v2\""
+    },
+    "devtools_step5_desc": {
+        "string": "Sử dụng hộp tìm kiếm để lọc \"v2\" và thu hẹp các cookie liên quan."
+    },
+    "devtools_step6_label": {
+        "string": "Sao chép và dán giá trị"
+    },
+    "devtools_step6_desc": {
+        "string": "Sao chép giá trị của mỗi cookie và dán vào trường tương ứng bên dưới."
+    },
+    "devtools_enter_cookies": {
+        "string": "Nhập Cookie"
+    },
+    "devtools_modal_title": {
+        "string": "Nhập Giá Trị Cookie"
+    },
+    "devtools_modal_desc": {
+        "string": "Sao chép từng giá trị từ bảng DevTools Application → Cookies và dán vào bên dưới."
+    },
+    "submit_cookies": {
+        "string": "Gửi Cookie"
+    },
+    "click_to_enlarge": {
+        "string": "Nhấn để phóng to"
+    },
+    "feature_no_password": {
+        "string": "Không Cần Mật Khẩu"
+    },
+    "feature_computer_only": {
+        "string": "Chỉ Dùng Máy Tính"
+    },
+    "feature_all_platforms": {
+        "string": "Tất Cả Nền Tảng"
+    },
+    "email_verify_title": {
+        "string": "Xác Minh Email"
+    },
+    "email_verify_desc": {
+        "string": "Nhập mã xác minh 6 chữ số được gửi đến địa chỉ email của bạn"
+    },
+    "email_login_security_note": {
+        "string": "Email và mật khẩu của bạn không bao giờ được lưu trên máy chủ của chúng tôi."
+    },
+    "verification_code": {
+        "string": "Mã Xác Minh"
+    },
+    "code_expires_note": {
+        "string": "Kiểm tra hộp thư - mã sẽ hết hạn sau vài phút"
+    },
+    "verify_code": {
+        "string": "Xác Minh Mã"
+    },
+    "processing_verification": {
+        "string": "Đang xử lý xác minh…"
+    },
+    "select_accounts_title": {
+        "string": "Chọn Tài Khoản"
+    },
+    "select_accounts_desc": {
+        "string": "Chọn tài khoản game nào để thêm vào Hoyo Buddy. Tất cả tài khoản được chọn theo mặc định."
+    },
+    "no_accounts_found": {
+        "string": "Không tìm thấy tài khoản."
+    },
+    "select_all": {
+        "string": "Chọn tất cả"
+    },
+    "deselect_all": {
+        "string": "Bỏ chọn tất cả"
+    },
+    "selected_count": {
+        "string": "Đã chọn {{selected}} / {{total}}"
+    },
+    "saving": {
+        "string": "Đang lưu…"
+    },
+    "add_accounts_button": {
+        "string": "Thêm {{count}} Tài Khoản vào Hoyo Buddy"
+    },
+    "add_accounts_button_plural": {
+        "string": "Thêm {{count}} Tài Khoản vào Hoyo Buddy"
+    },
+    "failed_to_load_accounts": {
+        "string": "Không thể tải tài khoản"
+    },
+    "failed_to_save_accounts": {
+        "string": "Không thể lưu tài khoản"
+    },
+    "discord_support": {
+        "string": "Máy Chủ Discord"
+    },
+    "need_help": {
+        "string": "Cần Giúp Đỡ?"
+    },
+    "privacy_policy": {
+        "string": "Chính Sách Bảo Mật"
+    },
+    "account_security_docs": {
+        "string": "Bảo Mật Tài Khoản"
+    },
+    "switch_account": {
+        "string": "Chuyển"
+    },
+    "switch_discord_account": {
+        "string": "Chuyển tài khoản Discord"
+    },
+    "gacha_history": {
+        "string": "Lịch Sử Gacha"
+    },
+    "missing_account_id": {
+        "string": "Thiếu tham số account_id."
+    },
+    "gacha_banner_fallback": {
+        "string": "Warp/Ước Nguyện/Điều Chỉnh {{type}}"
+    },
+    "gacha_banner_permanent": {
+        "string": "Thường Trực"
+    },
+    "gacha_banner_character": {
+        "string": "Nhân Vật"
+    },
+    "gacha_banner_weapon": {
+        "string": "Vũ Khí"
+    },
+    "gacha_banner_chronicled": {
+        "string": "Biên Niên"
+    },
+    "gacha_banner_stellar": {
+        "string": "Sao"
+    },
+    "gacha_banner_light_cone": {
+        "string": "Nón Ánh Sáng"
+    },
+    "gacha_banner_departure": {
+        "string": "Khởi Hành"
+    },
+    "gacha_banner_standard": {
+        "string": "Tiêu Chuẩn"
+    },
+    "gacha_banner_exclusive": {
+        "string": "Độc Quyền"
+    },
+    "gacha_banner_w_engine": {
+        "string": "Động Cơ-W"
+    },
+    "gacha_banner_bangboo": {
+        "string": "Bangboo"
+    },
+    "banner_type_label": {
+        "string": "Banner:"
+    },
+    "rarity_label": {
+        "string": "Độ Hiếm:"
+    },
+    "search_by_name": {
+        "string": "Tìm kiếm theo tên…"
+    },
+    "table_header_name": {
+        "string": "Tên"
+    },
+    "table_header_rarity": {
+        "string": "Độ Hiếm"
+    },
+    "table_header_pity": {
+        "string": "Pity"
+    },
+    "table_header_time": {
+        "string": "Thời Gian"
+    },
+    "no_gacha_records": {
+        "string": "Không tìm thấy bản ghi gacha."
+    },
+    "total_records": {
+        "string": "Tổng {{total}} bản ghi"
+    },
+    "previous": {
+        "string": "Trước"
+    },
+    "next": {
+        "string": "Tiếp Theo"
+    },
+    "stat_total_pulls": {
+        "string": "Tổng Lần Quay"
+    },
+    "stat_pity": {
+        "string": "Pity Hiện Tại"
+    },
+    "stat_5star_pity": {
+        "string": "Pity 5★"
+    },
+    "stat_4star_pity": {
+        "string": "Pity 4★"
+    },
+    "stat_avg_per_5star": {
+        "string": "TB / 5★"
+    },
+    "stat_avg_per_4star": {
+        "string": "TB / 4★"
+    },
+    "stat_5050_win_rate": {
+        "string": "Tỷ Lệ Thắng 50/50"
+    },
+    "detail_item_id": {
+        "string": "ID Vật Phẩm"
+    },
+    "detail_pull_date": {
+        "string": "Ngày Quay"
+    },
+    "detail_pity_count": {
+        "string": "Số Pity"
+    },
+    "detail_rarity": {
+        "string": "Độ Hiếm"
+    },
+    "not_found_title": {
+        "string": "Không Tìm Thấy Trang"
+    },
+    "not_found_desc": {
+        "string": "Trang này không tồn tại hoặc có thể đã bị di chuyển. Quay về trang chủ để bắt đầu."
+    },
+    "geetest_command_title": {
+        "string": "Hoàn Tất Xác Minh"
+    },
+    "geetest_command_desc": {
+        "string": "Vui lòng hoàn thành kiểm tra bảo mật để tiếp tục."
+    },
+    "geetest_command_success": {
+        "string": "Xác minh hoàn tất!"
+    },
+    "geetest_command_success_desc": {
+        "string": "Bạn có thể quay lại Discord ngay bây giờ."
+    },
+    "return_to_discord": {
+        "string": "Quay Lại Discord"
+    },
+    "open_discord_browser": {
+        "string": "Mở Discord trong trình duyệt"
+    },
+    "geetest_command_error": {
+        "string": "Xác minh thất bại. Vui lòng thử lại."
+    },
+    "geetest_command_missing_params": {
+        "string": "Thiếu các tham số bắt buộc."
+    },
+    "retry": {
+        "string": "Thử Lại"
+    },
+    "complete_title": {
+        "string": "Tài Khoản Đã Được Thêm!"
+    },
+    "complete_desc": {
+        "string": "Tài khoản của bạn đã được thêm vào Hoyo Buddy. Bạn có thể quay lại Discord ngay bây giờ."
+    }
+}
