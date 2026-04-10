@@ -43,18 +43,16 @@ export function GachaGridItem({ item }: GachaGridItemProps) {
         )}
 
         {/* Item icon */}
-        <div className="flex h-full w-full items-center justify-center p-1">
-          {iconUrl ? (
-            <img
-              src={iconUrl}
-              alt={displayName}
-              className="h-full w-full object-contain"
-              loading="lazy"
-            />
-          ) : (
-            <div className="h-3/4 w-3/4 rounded-md bg-black/10" />
-          )}
-        </div>
+        {iconUrl ? (
+          <img
+            src={iconUrl}
+            alt={displayName}
+            className="h-full w-full object-cover"
+            loading="lazy"
+          />
+        ) : (
+          <div className="h-full w-full bg-black/10" />
+        )}
 
         {/* Pull number — bottom-right */}
         <span

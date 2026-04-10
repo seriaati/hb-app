@@ -44,9 +44,9 @@ export function GachaItemDetail({
             style={{ background: bgColor }}
           >
             {iconUrl ? (
-              <img src={iconUrl} alt={displayName} className="h-full w-full object-contain p-1" />
+              <img src={iconUrl} alt={displayName} className="h-full w-full object-cover" />
             ) : (
-              <div className="h-3/4 w-3/4 rounded-lg bg-black/10" />
+              <div className="h-full w-full bg-black/10" />
             )}
           </div>
 
