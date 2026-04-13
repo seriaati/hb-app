@@ -3,6 +3,7 @@ import type {
   LoginFlowResponse,
   EmailPasswordRequest,
   DevToolsCookiesRequest,
+  RawCookiesRequest,
   ModAppRequest,
   MobileRequest,
   OTPVerifyRequest,
@@ -44,6 +45,10 @@ export async function mobileVerify(code: string): Promise<LoginFlowResponse> {
 
 export async function devToolsLogin(body: DevToolsCookiesRequest): Promise<LoginFlowResponse> {
   return apiClient.post('api/login/dev-tools', { json: body }).json<LoginFlowResponse>()
+}
+
+export async function rawCookiesLogin(body: RawCookiesRequest): Promise<LoginFlowResponse> {
+  return apiClient.post('api/login/raw-cookies', { json: body }).json<LoginFlowResponse>()
 }
 
 export async function modAppLogin(body: ModAppRequest): Promise<LoginFlowResponse> {

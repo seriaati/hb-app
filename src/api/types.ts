@@ -70,6 +70,10 @@ export interface DevToolsCookiesRequest {
   account_mid_v2: string
 }
 
+export interface RawCookiesRequest {
+  cookies: string
+}
+
 export interface ModAppRequest {
   login_details: string
 }

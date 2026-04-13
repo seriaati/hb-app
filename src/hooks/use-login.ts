@@ -6,6 +6,7 @@ import {
   mobileSendOtp,
   mobileVerify,
   devToolsLogin,
+  rawCookiesLogin,
   modAppLogin,
   createQRCode,
   checkQRCode,
@@ -15,6 +16,7 @@ import {
 import type {
   EmailPasswordRequest,
   DevToolsCookiesRequest,
+  RawCookiesRequest,
   ModAppRequest,
   DeviceInfoRequest,
   GeetestCallbackRequest,
@@ -54,6 +56,12 @@ export function useMobileVerify() {
 export function useDevToolsLogin() {
   return useMutation({
     mutationFn: (body: DevToolsCookiesRequest) => devToolsLogin(body),
+  })
+}
+
+export function useRawCookiesLogin() {
+  return useMutation({
+    mutationFn: (body: RawCookiesRequest) => rawCookiesLogin(body),
   })
 }
 

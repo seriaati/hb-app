@@ -1,6 +1,8 @@
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { Mail, Code2, Smartphone, QrCode, Wrench, ChevronRight, BookOpen } from 'lucide-react'
+import { toast } from 'sonner'
+import { Mail, Code2, Smartphone, QrCode, Wrench, ChevronRight, BookOpen, Bug } from 'lucide-react'
 import { LoginLayout } from '@/components/layout/login-layout'
 import { getLoginMethodFaqUrl } from '@/lib/constants'
 
@@ -9,6 +11,33 @@ export function LoginMethodsPage() {
   const navigate = useNavigate()
   const { t, i18n } = useTranslation()
   const faqUrl = getLoginMethodFaqUrl(i18n.language)
+  const [devMode, setDevMode] = useState(false)
+  const bufferRef = useRef('')
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return
+      bufferRef.current += e.key.toLowerCase()
+      if (bufferRef.current.length > 3) {
+        bufferRef.current = bufferRef.current.slice(-3)
+      }
+      if (timerRef.current) clearTimeout(timerRef.current)
+      timerRef.current = setTimeout(() => {
+        bufferRef.current = ''
+      }, 2000)
+      if (bufferRef.current === 'dev') {
+        setDevMode(true)
+        toast('Dev mode activated', { description: 'Hidden login method unlocked.' })
+        bufferRef.current = ''
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+      if (timerRef.current) clearTimeout(timerRef.current)
+    }
+  }, [])
 
   const platformName = platform === 'hoyolab' ? 'HoYoLAB' : 'Miyoushe'
 
@@ -71,6 +100,18 @@ export function LoginMethodsPage() {
       path: 'qrcode',
       platforms: ['miyoushe'],
     },
+    ...(devMode
+      ? [
+          {
+            id: 'raw-cookies',
+            label: 'Dev Cookies',
+            description: 'Paste raw cookie JSON for development',
+            icon: <Bug size={18} />,
+            path: 'raw-cookies',
+            platforms: ['hoyolab', 'miyoushe'],
+          },
+        ]
+      : []),
   ]
 
   const availableMethods = loginMethods.filter((m) => m.platforms.includes(platform ?? ''))

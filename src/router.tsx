@@ -19,6 +19,9 @@ const LoginEmailPage = lazy(() =>
 const LoginDevtoolsPage = lazy(() =>
   import('@/pages/login-devtools').then((m) => ({ default: m.LoginDevtoolsPage })),
 )
+const LoginRawCookiesPage = lazy(() =>
+  import('@/pages/login-raw-cookies').then((m) => ({ default: m.LoginRawCookiesPage })),
+)
 const LoginModAppPage = lazy(() =>
   import('@/pages/login-mod-app').then((m) => ({ default: m.LoginModAppPage })),
 )
@@ -93,6 +96,14 @@ export const router = createBrowserRouter([
     element: wrap(
       <AuthGuard>
         <LoginDevtoolsPage />
+      </AuthGuard>,
+    ),
+  },
+  {
+    path: '/login/:platform/raw-cookies',
+    element: wrap(
+      <AuthGuard>
+        <LoginRawCookiesPage />
       </AuthGuard>,
     ),
   },
