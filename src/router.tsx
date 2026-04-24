@@ -173,7 +173,11 @@ export const router = createBrowserRouter([
   },
   {
     path: '/geetest_command',
-    element: wrap(<GeetestCommandPage />),
+    element: wrap(
+      <AuthGuard>
+        <GeetestCommandPage />
+      </AuthGuard>,
+    ),
   },
   {
     path: '*',
