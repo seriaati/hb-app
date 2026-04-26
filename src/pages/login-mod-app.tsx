@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { toast } from 'sonner'
 import { Wrench, Download } from 'lucide-react'
 import { useModAppLogin } from '@/hooks/use-login'
@@ -25,7 +25,8 @@ const STEPS = [
 
 export function LoginModAppPage() {
   const navigate = useNavigate()
-  const login = useModAppLogin()
+  const { platform } = useParams<{ platform: string }>()
+  const login = useModAppLogin(platform ?? 'hoyolab')
   const [loginDetails, setLoginDetails] = useState('')
 
   function handleSubmit(e: React.FormEvent) {

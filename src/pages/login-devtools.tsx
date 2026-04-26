@@ -37,7 +37,7 @@ export function LoginDevtoolsPage() {
   const navigate = useNavigate()
   const { platform } = useParams<{ platform: string }>()
   const { t } = useTranslation()
-  const login = useDevToolsLogin()
+  const login = useDevToolsLogin(platform ?? 'hoyolab')
   const ACCENT = platform === 'miyoushe' ? ACCENT_MIYOUSHE : ACCENT_HOYOLAB
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [formOpen, setFormOpen] = useState(false)

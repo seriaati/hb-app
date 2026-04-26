@@ -43,16 +43,16 @@ export async function mobileVerify(code: string): Promise<LoginFlowResponse> {
   return apiClient.post('api/login/mobile-verify', { json: body }).json<LoginFlowResponse>()
 }
 
-export async function devToolsLogin(body: DevToolsCookiesRequest): Promise<LoginFlowResponse> {
-  return apiClient.post('api/login/dev-tools', { json: body }).json<LoginFlowResponse>()
+export async function devToolsLogin(body: DevToolsCookiesRequest, platform: string): Promise<LoginFlowResponse> {
+  return apiClient.post('api/login/dev-tools', { json: body, searchParams: { platform } }).json<LoginFlowResponse>()
 }
 
-export async function rawCookiesLogin(body: RawCookiesRequest): Promise<LoginFlowResponse> {
-  return apiClient.post('api/login/raw-cookies', { json: body }).json<LoginFlowResponse>()
+export async function rawCookiesLogin(body: RawCookiesRequest, platform: string): Promise<LoginFlowResponse> {
+  return apiClient.post('api/login/raw-cookies', { json: body, searchParams: { platform } }).json<LoginFlowResponse>()
 }
 
-export async function modAppLogin(body: ModAppRequest): Promise<LoginFlowResponse> {
-  return apiClient.post('api/login/mod-app', { json: body }).json<LoginFlowResponse>()
+export async function modAppLogin(body: ModAppRequest, platform: string): Promise<LoginFlowResponse> {
+  return apiClient.post('api/login/mod-app', { json: body, searchParams: { platform } }).json<LoginFlowResponse>()
 }
 
 export async function createQRCode(): Promise<QRCodeResponse> {

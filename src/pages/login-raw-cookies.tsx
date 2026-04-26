@@ -13,7 +13,7 @@ const ACCENT = 'oklch(0.48 0.15 295)'
 export function LoginRawCookiesPage() {
   const navigate = useNavigate()
   const { platform } = useParams<{ platform: string }>()
-  const login = useRawCookiesLogin()
+  const login = useRawCookiesLogin(platform ?? 'hoyolab')
   const [cookies, setCookies] = useState('')
 
   function handleSubmit(e: React.FormEvent) {

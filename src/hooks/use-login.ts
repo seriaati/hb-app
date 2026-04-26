@@ -53,21 +53,21 @@ export function useMobileVerify() {
   })
 }
 
-export function useDevToolsLogin() {
+export function useDevToolsLogin(platform: string) {
   return useMutation({
-    mutationFn: (body: DevToolsCookiesRequest) => devToolsLogin(body),
+    mutationFn: (body: DevToolsCookiesRequest) => devToolsLogin(body, platform),
   })
 }
 
-export function useRawCookiesLogin() {
+export function useRawCookiesLogin(platform: string) {
   return useMutation({
-    mutationFn: (body: RawCookiesRequest) => rawCookiesLogin(body),
+    mutationFn: (body: RawCookiesRequest) => rawCookiesLogin(body, platform),
   })
 }
 
-export function useModAppLogin() {
+export function useModAppLogin(platform: string) {
   return useMutation({
-    mutationFn: (body: ModAppRequest) => modAppLogin(body),
+    mutationFn: (body: ModAppRequest) => modAppLogin(body, platform),
   })
 }
 
