@@ -279,10 +279,10 @@
         "string": "가챠 기록"
     },
     "missing_account_id": {
-        "string": "account_id 파라미터가 없습니다."
+        "string": "account_id 정보가 없습니다."
     },
     "gacha_banner_fallback": {
-        "string": "워프/소원/튜닝 {{type}}"
+        "string": "워프/기원/튜닝 {{type}}"
     },
     "gacha_banner_permanent": {
         "string": "상시"
@@ -294,19 +294,19 @@
         "string": "무기"
     },
     "gacha_banner_chronicled": {
-        "string": "연대기"
+        "string": "묶음기원"
     },
     "gacha_banner_stellar": {
-        "string": "성광"
+        "string": "상시"
     },
     "gacha_banner_light_cone": {
         "string": "광추"
     },
     "gacha_banner_departure": {
-        "string": "출발"
+        "string": "초행길"
     },
     "gacha_banner_standard": {
-        "string": "일반"
+        "string": "상시"
     },
     "gacha_banner_exclusive": {
         "string": "한정"
@@ -330,10 +330,10 @@
         "string": "이름"
     },
     "table_header_rarity": {
-        "string": "등급"
+        "string": "희귀도 "
     },
     "table_header_pity": {
-        "string": "Pity"
+        "string": "스택"
     },
     "table_header_time": {
         "string": "시간"
@@ -354,19 +354,19 @@
         "string": "총 뽑기 수"
     },
     "stat_pity": {
-        "string": "현재 Pity"
+        "string": "현재 스택"
     },
     "stat_5star_pity": {
-        "string": "5★ Pity"
+        "string": "★ 5성 스택"
     },
     "stat_4star_pity": {
-        "string": "4★ Pity"
+        "string": "★ 4성 스택"
     },
     "stat_avg_per_5star": {
-        "string": "평균 / 5★"
+        "string": "평균 / ★ 5성"
     },
     "stat_avg_per_4star": {
-        "string": "평균 / 4★"
+        "string": "평균 / ★ 4성"
     },
     "stat_5050_win_rate": {
         "string": "50/50 승률"
@@ -378,10 +378,10 @@
         "string": "뽑기 날짜"
     },
     "detail_pity_count": {
-        "string": "Pity 카운트"
+        "string": "천장 스택"
     },
     "detail_rarity": {
-        "string": "등급"
+        "string": "희귀도"
     },
     "not_found_title": {
         "string": "페이지를 찾을 수 없음"
@@ -396,7 +396,7 @@
         "string": "계속하려면 보안 검사를 완료해 주세요."
     },
     "geetest_command_success": {
-        "string": "인증이 완료되었습니다!"
+        "string": "인증 완료!"
     },
     "geetest_command_success_desc": {
         "string": "이제 Discord로 돌아갈 수 있습니다."
@@ -408,10 +408,10 @@
         "string": "브라우저에서 Discord 열기"
     },
     "geetest_command_error": {
-        "string": "인증에 실패했습니다. 다시 시도해 주세요."
+        "string": "인증 실패. 다시 시도해 주세요."
     },
     "geetest_command_missing_params": {
-        "string": "필수 파라미터가 없습니다."
+        "string": "필수 정보가 누락되었습니다."
     },
     "retry": {
         "string": "다시 시도"
