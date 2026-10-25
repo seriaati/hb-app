@@ -200,12 +200,20 @@ export function useGeetest(options: UseGeetestOptions): UseGeetestReturn {
     )
   }
 
+  const missingParams = gtVersion === null || mmt === null
+
+  // Reset the UI when a new challenge arrives (the page can be re-navigated without remounting)
+  const currentChallengeKey = mmt?.challenge ?? mmt?.session_id ?? null
+  const [prevChallengeKey, setPrevChallengeKey] = useState(currentChallengeKey)
+  if (currentChallengeKey !== prevChallengeKey) {
+    setPrevChallengeKey(currentChallengeKey)
+    setCaptchaState('loading')
+    setError(null)
+  }
+
   useEffect(() => {
     if (gtVersion === null || mmt === null) {
-      const msg = t('geetest_failed')
-      setError(msg)
-      setCaptchaState('error')
-      onError(msg)
+      onError(t('geetest_failed'))
       return
     }
 
@@ -213,8 +221,6 @@ export function useGeetest(options: UseGeetestOptions): UseGeetestReturn {
     if (initializedChallengeRef.current === challengeKey) return
     initializedChallengeRef.current = challengeKey
 
-    setCaptchaState('loading')
-    setError(null)
     captchaRef.current = null
 
     const sdkUrl = GEETEST_SDK_URLS[gtVersion]
@@ -247,5 +253,10 @@ export function useGeetest(options: UseGeetestOptions): UseGeetestReturn {
     setCaptchaState('ready')
   }
 
-  return { captchaState, setCaptchaState, error, launchCaptcha }
+  return {
+    captchaState: missingParams ? 'error' : captchaState,
+    setCaptchaState,
+    error: missingParams ? t('geetest_failed') : error,
+    launchCaptcha,
+  }
 }

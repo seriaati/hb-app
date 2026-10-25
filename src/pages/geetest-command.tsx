@@ -11,6 +11,31 @@ import { Button, buttonVariants } from '@/components/ui/button'
 import type { GeetestMMTData } from '@/api/types'
 import type { GeetestV3Validate, GeetestV4Validate } from '@/hooks/use-geetest'
 
+function ReturnToDiscord({
+  discordUrls,
+}: {
+  discordUrls: ReturnType<typeof buildDiscordUrls> | null
+}) {
+  const { t } = useTranslation()
+  if (!discordUrls) return null
+  return (
+    <div className="flex flex-col items-center gap-2">
+      <a href={discordUrls.deepLink} className={buttonVariants({ variant: 'default' })}>
+        {t('return_to_discord', 'Return to Discord')}
+      </a>
+      <a
+        href={discordUrls.webUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground transition-colors duration-150"
+      >
+        <ExternalLink className="h-3 w-3" />
+        {t('open_discord_browser', 'Open Discord in browser')}
+      </a>
+    </div>
+  )
+}
+
 export function GeetestCommandPage() {
   const { t } = useTranslation()
   const [searchParams] = useSearchParams()
@@ -103,26 +128,6 @@ export function GeetestCommandPage() {
 
   const discordUrls = channelId ? buildDiscordUrls(channelId, guildId) : null
 
-  function ReturnToDiscord() {
-    if (!discordUrls) return null
-    return (
-      <div className="flex flex-col items-center gap-2">
-        <a href={discordUrls.deepLink} className={buttonVariants({ variant: 'default' })}>
-          {t('return_to_discord', 'Return to Discord')}
-        </a>
-        <a
-          href={discordUrls.webUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground transition-colors duration-150"
-        >
-          <ExternalLink className="h-3 w-3" />
-          {t('open_discord_browser', 'Open Discord in browser')}
-        </a>
-      </div>
-    )
-  }
-
   if (missingParams || invalidGtVersion) {
     return (
       <PageContainer narrow>
@@ -130,7 +135,7 @@ export function GeetestCommandPage() {
           <p className="text-destructive">
             {t('geetest_command_missing_params', 'Missing required parameters.')}
           </p>
-          {discordUrls && <ReturnToDiscord />}
+          <ReturnToDiscord discordUrls={discordUrls} />
         </div>
       </PageContainer>
     )
@@ -151,7 +156,7 @@ export function GeetestCommandPage() {
               {t('geetest_command_success_desc', 'You can now return to Discord.')}
             </p>
           </div>
-          <ReturnToDiscord />
+          <ReturnToDiscord discordUrls={discordUrls} />
         </div>
       </PageContainer>
     )
@@ -165,7 +170,7 @@ export function GeetestCommandPage() {
             {error ?? t('geetest_command_error', 'Verification failed. Please try again.')}
           </p>
           <Button onClick={() => setCaptchaState('loading')}>{t('retry', 'Retry')}</Button>
-          <ReturnToDiscord />
+          <ReturnToDiscord discordUrls={discordUrls} />
         </div>
       </PageContainer>
     )
@@ -194,7 +199,7 @@ export function GeetestCommandPage() {
           </div>
           <p className="text-muted-foreground">{t('captcha_closed')}</p>
           <Button onClick={launchCaptcha}>{t('launch_captcha')}</Button>
-          <ReturnToDiscord />
+          <ReturnToDiscord discordUrls={discordUrls} />
         </div>
       </PageContainer>
     )

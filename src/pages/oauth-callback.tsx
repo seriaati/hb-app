@@ -11,21 +11,18 @@ import { useState } from 'react'
 export function OAuthCallbackPage() {
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
-  const [error, setError] = useState<string | null>(null)
+  const [callbackError, setCallbackError] = useState<string | null>(null)
   const called = useRef(false)
   const { t } = useTranslation()
 
+  const code = searchParams.get('code')
+  const state = searchParams.get('state')
+  const error = !code || !state ? t('missing_oauth_params') : callbackError
+
   useEffect(() => {
+    if (!code || !state) return
     if (called.current) return
     called.current = true
-
-    const code = searchParams.get('code')
-    const state = searchParams.get('state')
-
-    if (!code || !state) {
-      setError(t('missing_oauth_params'))
-      return
-    }
 
     discordCallback(code, state)
       .then(() => {
@@ -35,10 +32,10 @@ export function OAuthCallbackPage() {
       })
       .catch((err: unknown) => {
         const message = err instanceof Error ? err.message : t('auth_failed')
-        setError(message)
+        setCallbackError(message)
         toast.error(message)
       })
-  }, [navigate, searchParams, t])
+  }, [navigate, code, state, t])
 
   if (error) {
     return (

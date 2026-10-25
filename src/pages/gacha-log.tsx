@@ -68,11 +68,9 @@ export function GachaLogPage() {
   const bannerTypes = bannerTypesData?.banner_types ?? []
 
   // Once banner types load, default to the first one if no valid type was in the URL
-  useEffect(() => {
-    if (bannerTypes.length > 0 && bannerType === 0) {
-      setBannerType(bannerTypes[0].id)
-    }
-  }, [bannerTypes, bannerType])
+  if (bannerTypes.length > 0 && bannerType === 0) {
+    setBannerType(bannerTypes[0].id)
+  }
 
   const accentColor = GAME_ACCENT_COLORS[resolvedGame] ?? 'oklch(0.72 0.14 68)'
   const gameIconSrc = GAME_ICONS[resolvedGame]
@@ -125,16 +123,17 @@ export function GachaLogPage() {
     [resetCursor, setSearchParams],
   )
 
+  const nextCursor = logsData?.next_cursor
+
   const handleNext = useCallback(() => {
-    if (!logsData?.next_cursor) return
-    const nextCursor = logsData.next_cursor
+    if (!nextCursor) return
     setCursorStack((prev) => {
       const next = prev.slice(0, stackIndex + 1)
       next.push(nextCursor)
       return next
     })
     setStackIndex((i) => i + 1)
-  }, [logsData?.next_cursor, stackIndex])
+  }, [nextCursor, stackIndex])
 
   const handlePrev = useCallback(() => {
     if (stackIndex === 0) return
