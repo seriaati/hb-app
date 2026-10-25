@@ -421,5 +421,47 @@
     },
     "complete_desc": {
         "string": "Your accounts have been added to Hoyo Buddy. You can now return to Discord."
+    },
+    "sponsor_limit_title": {
+        "string": "Account limit reached"
+    },
+    "sponsor_limit_desc": {
+        "string": "Free users can add up to 6 accounts. Sponsors can add as many as they want."
+    },
+    "sponsor_perks_title": {
+        "string": "Sponsor perks"
+    },
+    "sponsor_perk_queue_priority": {
+        "string": "Top priority in auto task queues (daily check-in, code redemption, mimo, etc.)"
+    },
+    "sponsor_perk_unlimited_accounts": {
+        "string": "Unlimited accounts (free: 6)"
+    },
+    "sponsor_perk_custom_images": {
+        "string": "Unlimited custom images per character (free: 5)"
+    },
+    "sponsor_perk_animated_art": {
+        "string": "Animated character art on build cards (Genshin Impact, Honkai: Star Rail and Zenless Zone Zero)"
+    },
+    "sponsor_perk_ai_images": {
+        "string": "Unlimited AI image generation (free: 5 per day)"
+    },
+    "sponsor_perk_gacha_import": {
+        "string": "Automatic gacha log imports every 6 hours (Genshin Impact and Zenless Zone Zero)"
+    },
+    "sponsor_perk_auto_accompany": {
+        "string": "Auto accompany up to 10 characters per account (free: 1)"
+    },
+    "sponsor_perk_discord_role": {
+        "string": "Sponsor role in the Discord server"
+    },
+    "sponsor_perk_discord_channel": {
+        "string": "Access to the sponsor-only channel in the Discord server"
+    },
+    "sponsor_donate_note": {
+        "string": "Donate any amount, monthly or one-time, to become a sponsor. You stay a sponsor forever, even after your donation ends."
+    },
+    "sponsor_donate": {
+        "string": "Donate"
     }
 }

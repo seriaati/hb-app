@@ -145,5 +145,19 @@
     "geetest_command_missing_params": "Missing required parameters.",
     "retry": "Retry",
     "complete_title": "Accounts Added!",
-    "complete_desc": "Your accounts have been added to Hoyo Buddy. You can now return to Discord."
+    "complete_desc": "Your accounts have been added to Hoyo Buddy. You can now return to Discord.",
+    "sponsor_limit_title": "Account limit reached",
+    "sponsor_limit_desc": "Free users can add up to 6 accounts. Sponsors can add as many as they want.",
+    "sponsor_perks_title": "Sponsor perks",
+    "sponsor_perk_queue_priority": "Top priority in auto task queues (daily check-in, code redemption, mimo, etc.)",
+    "sponsor_perk_unlimited_accounts": "Unlimited accounts (free: 6)",
+    "sponsor_perk_custom_images": "Unlimited custom images per character (free: 5)",
+    "sponsor_perk_animated_art": "Animated character art on build cards (Genshin Impact, Honkai: Star Rail and Zenless Zone Zero)",
+    "sponsor_perk_ai_images": "Unlimited AI image generation (free: 5 per day)",
+    "sponsor_perk_gacha_import": "Automatic gacha log imports every 6 hours (Genshin Impact and Zenless Zone Zero)",
+    "sponsor_perk_auto_accompany": "Auto accompany up to 10 characters per account (free: 1)",
+    "sponsor_perk_discord_role": "Sponsor role in the Discord server",
+    "sponsor_perk_discord_channel": "Access to the sponsor-only channel in the Discord server",
+    "sponsor_donate_note": "Donate any amount, monthly or one-time, to become a sponsor. You stay a sponsor forever, even after your donation ends.",
+    "sponsor_donate": "Donate"
 }

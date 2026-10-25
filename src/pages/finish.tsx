@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { HTTPError } from 'ky'
 import { toast } from 'sonner'
 import { useTranslation } from 'react-i18next'
 import { useAvailableAccounts, useSubmitAccounts } from '@/hooks/use-accounts'
 import { handleLoginFlowResponse } from '@/lib/login-flow'
 import { AccountCard } from '@/components/accounts/account-card'
+import { SponsorDialog } from '@/components/accounts/sponsor-dialog'
 import { PageContainer } from '@/components/layout/page-container'
 import { LoadingSpinner } from '@/components/layout/loading-spinner'
 import { Button } from '@/components/ui/button'
@@ -15,6 +17,7 @@ export function FinishPage() {
   const { data, isLoading, error } = useAvailableAccounts()
   const submitAccounts = useSubmitAccounts()
   const [selected, setSelected] = useState<Set<string>>(new Set())
+  const [showSponsor, setShowSponsor] = useState(false)
 
   useEffect(() => {
     if (data?.status === 'device_info_required') {
@@ -39,6 +42,11 @@ export function FinishPage() {
           handleLoginFlowResponse(result, navigate)
         },
         onError: (err) => {
+          // The only 403 from this endpoint is the free-user account limit
+          if (err instanceof HTTPError && err.response.status === 403) {
+            setShowSponsor(true)
+            return
+          }
           toast.error(err instanceof Error ? err.message : t('failed_to_save_accounts'))
         },
       },
@@ -153,6 +161,8 @@ export function FinishPage() {
               : t('add_accounts_button_plural', { count: selected.size })}
         </Button>
       </div>
+
+      <SponsorDialog open={showSponsor} onOpenChange={setShowSponsor} />
     </PageContainer>
   )
 }
