@@ -3,7 +3,7 @@
  *
  * Usage:
  *   node txsync.mjs push              # flatten all locales → tx/
- *   node txsync.mjs pull              # unflatten tx/ → src/i18n/locales/
+ *   node txsync.mjs pull              # unflatten tx/ → src/locales/
  *   node txsync.mjs push --locale en  # single locale
  *   node txsync.mjs pull --locale zh-TW
  *
@@ -11,7 +11,7 @@
  *   1. Run `node txsync.mjs push` to produce Transifex-ready files in tx/
  *   2. Upload tx/<locale>.json to Transifex (or let the TX CLI do it)
  *   3. After translators finish, download updated files back into tx/
- *   4. Run `node txsync.mjs pull` to write them back to src/i18n/locales/
+ *   4. Run `node txsync.mjs pull` to write them back to src/locales/
  */
 
 import { readFileSync, writeFileSync, mkdirSync } from "fs";

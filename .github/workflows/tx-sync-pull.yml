@@ -28,4 +28,4 @@ jobs:
           commit_message: "Update translated strings from Transifex"
           commit_author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
           branch: main
-          file_pattern: "src/i18n/locales/*.json"
+          file_pattern: "src/locales/*.json"
