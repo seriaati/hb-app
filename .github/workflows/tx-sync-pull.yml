@@ -8,6 +8,9 @@ on:
       - ".github/workflows/tx-sync-pull.yml"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   pull:
     name: Pull translated strings

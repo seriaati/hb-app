@@ -8,6 +8,9 @@ on:
       - ".github/workflows/tx-sync-push.yml"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   push:
     name: Flatten source & translated strings
