@@ -3,6 +3,7 @@ import {
   emailPasswordLogin,
   geetestCallback,
   emailVerify,
+  emailResend,
   mobileSendOtp,
   mobileVerify,
   devToolsLogin,
@@ -38,6 +39,12 @@ export function useGeetestCallback() {
 export function useEmailVerify() {
   return useMutation({
     mutationFn: (code: string) => emailVerify(code),
+  })
+}
+
+export function useEmailResend() {
+  return useMutation({
+    mutationFn: emailResend,
   })
 }
 

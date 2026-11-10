@@ -33,6 +33,10 @@ export async function emailVerify(code: string): Promise<LoginFlowResponse> {
   return apiClient.post('api/login/email-verify', { json: body }).json<LoginFlowResponse>()
 }
 
+export async function emailResend(): Promise<LoginFlowResponse> {
+  return apiClient.post('api/login/email-resend').json<LoginFlowResponse>()
+}
+
 export async function mobileSendOtp(mobile: string): Promise<LoginFlowResponse> {
   const body: MobileRequest = { mobile }
   return apiClient.post('api/login/mobile-send-otp', { json: body }).json<LoginFlowResponse>()

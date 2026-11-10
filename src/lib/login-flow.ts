@@ -1,5 +1,6 @@
 import type { NavigateFunction } from 'react-router-dom'
 import type { LoginFlowResponse } from '@/api/types'
+import { useLoginStore } from '@/stores/login-store'
 
 export type GeetestPurpose = 'login' | 'email_verify'
 
@@ -24,6 +25,8 @@ export function handleLoginFlowResponse(
       })
       break
     case 'email_verify':
+      // The backend only returns email_verify right after HoYoLAB sends an email
+      useLoginStore.getState().setEmailSentAt(Date.now())
       navigate('/email-verify')
       break
     case 'verify_otp':
