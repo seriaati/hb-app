@@ -221,6 +221,15 @@
     "verify_code": {
         "string": "Verify Code"
     },
+    "resend_code": {
+        "string": "Resend Code"
+    },
+    "resend_code_countdown": {
+        "string": "Resend Code ({{seconds}}s)"
+    },
+    "resend_code_failed": {
+        "string": "Failed to resend the verification code"
+    },
     "processing_verification": {
         "string": "Processing verification…"
     },
